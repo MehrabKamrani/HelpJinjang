@@ -116,9 +116,6 @@
     <!-- jQuery -->
     <script src="js/jquery-2.2.3.min.js"></script>
 
-    <!-- login.js-->
-    <script src="login.js"></script>
-
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
