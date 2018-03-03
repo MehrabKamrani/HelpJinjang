@@ -63,12 +63,6 @@ body {
     background: black;
 }
 
-.fullscreen-bg__video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.7;
-}
 
 .aboutUs{
   background: rgba(0,0,0,0.5);
@@ -97,9 +91,6 @@ body {
         background: url('http://dev2.slicejack.com/fullscreen-video-demo/img/videoframe.jpg') center center / cover no-repeat;
     }
 
-    .fullscreen-bg__video {
-        display: none;
-    }
 }
  End Video Section Style */
 .go-down{
@@ -164,6 +155,6 @@ body {
       font-size: 16px;
   }
 }
-.aboutUs::-webkit-scrollbar { 
-    display: none; 
+.aboutUs::-webkit-scrollbar {
+    display: none;
 }
