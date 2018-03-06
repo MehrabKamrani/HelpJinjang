@@ -1,5 +1,5 @@
 <?php
-  error_reporting(0);
+error_reporting(0);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +35,7 @@
 
 <div class="container" id="signUp-section">
   <div class="row">
-    
+
 
     <div class="col-sm-6 col-sm-offset-3 form-section">
       <h1 class="text-center" style="font-family: 'Oswald', sans-serif;">Create your account</h1>
@@ -72,6 +72,16 @@
                   <p class="help-block with-errors">Please provide your E-mail (email@example.com)</p>
                 </div>
               </div>
+
+              <!-- Add field for Phone Number -->
+              <div class="form-group has-feedback ">
+                <label class="control-label" for="tel">Phone No</label>
+                <div class="controls">
+                  <input type="tel" id="tel" name="tel" class="form-control" value="<?php echo $_COOKIE['tel']; ?>" maxlength = "50" required>
+                  <p class="help-block with-errors">Please provide your phone number</p>
+                </div>
+              </div>
+
 
               <div class="form-group has-feedback">
                 <label class="control-label" for="mem_password">Password</label>
@@ -139,6 +149,16 @@
                   <p class="help-block with-errors">Please provide your E-mail (email@example.com)</p>
                 </div>
               </div>
+
+              <!-- Add field for phone number -->
+              <div class="form-group has-feedback ">
+                <label class="control-label" for="tel">Phone No</label>
+                <div class="controls">
+                  <input type="tel" id="tel" name="tel" class="form-control" value="<?php echo $_COOKIE['tel']; ?>" maxlength = "50" required>
+                  <p class="help-block with-errors">Please provide your phone number</p>
+                </div>
+              </div>
+              
 
               <div class="form-group has-feedback">
                 <label class="control-label" for="tr_password">Password</label>
