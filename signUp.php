@@ -52,7 +52,7 @@
       </div>
     </div>-->
 
-    <div class="col-sm-6 form-section">
+    <div class="col-sm-6 col-sm-offset-3 form-section">
       <h1 class="text-center" style="font-family: 'Oswald', sans-serif;">Create your account</h1>
 
       <ul class="nav nav-pills">
