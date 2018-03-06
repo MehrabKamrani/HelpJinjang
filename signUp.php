@@ -35,7 +35,7 @@
 
 <div class="container" id="signUp-section">
   <div class="row">
-    <div class="col-sm-6 social-section">
+    <!--<div class="col-sm-6 social-section">
       <h2 class="text-center" style="font-family: 'Oswald', sans-serif;">See for yourself why people love
         <h1 class="text-center" style="font-family: 'Oswald', sans-serif;">PROTINSHAPE</h1>
       </h2>
@@ -50,7 +50,7 @@
           <img src="https://unsplash.it/150/150" class="img-responsive img-thumbnail img-circle person-img" alt="Person Image">
         </div>
       </div>
-    </div>
+    </div>-->
 
     <div class="col-sm-6 form-section">
       <h1 class="text-center" style="font-family: 'Oswald', sans-serif;">Create your account</h1>
