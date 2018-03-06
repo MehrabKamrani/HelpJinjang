@@ -35,29 +35,14 @@
 
 <div class="container" id="signUp-section">
   <div class="row">
-    <!--<div class="col-sm-6 social-section">
-      <h2 class="text-center" style="font-family: 'Oswald', sans-serif;">See for yourself why people love
-        <h1 class="text-center" style="font-family: 'Oswald', sans-serif;">PROTINSHAPE</h1>
-      </h2>
-      <div class="row">
-        <div class="col-xs-4 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 text-center">
-          <img src="https://unsplash.it/150/150" class="img-responsive img-thumbnail img-circle person-img" alt="Person Image">
-        </div>
-        <div class="col-xs-4 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 text-center">
-          <img src="https://unsplash.it/150/150" class="img-responsive img-thumbnail img-circle person-img" alt="Person Image">
-        </div>
-        <div class="col-xs-4 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 text-center">
-          <img src="https://unsplash.it/150/150" class="img-responsive img-thumbnail img-circle person-img" alt="Person Image">
-        </div>
-      </div>
-    </div>-->
+    
 
     <div class="col-sm-6 col-sm-offset-3 form-section">
       <h1 class="text-center" style="font-family: 'Oswald', sans-serif;">Create your account</h1>
 
       <ul class="nav nav-pills">
-        <li class="active text-center"><a data-toggle="pill" href="#member" id="signUpMemberSection">Member</a></li>
-        <li class="text-center"><a data-toggle="pill" href="#trainer" id="signUpTrainerSection">Trainer</a></li>
+        <li class="active text-center"><a data-toggle="pill" href="#member" id="signUpMemberSection">Job Seeker</a></li>
+        <li class="text-center"><a data-toggle="pill" href="#trainer" id="signUpTrainerSection">Client</a></li>
       </ul>
 
       <div class="tab-content form-content">
