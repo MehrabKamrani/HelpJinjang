@@ -8,7 +8,7 @@ if ($conn->connect_error) {
 }
 
 if(!isset($_SESSION['cl_username']) && empty($_SESSION['cl_username'])) {
-	header("Location: home.php");
+	//header("Location: home.php");
 }
 $username = $_SESSION['cl_username'];
 
