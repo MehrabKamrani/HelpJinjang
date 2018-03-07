@@ -14,7 +14,7 @@ session_start();
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">ProteinShape</a>
+                    <a class="navbar-brand" href="#">HELPJinjang</a>
 
                 </div>
                 <!-- Collect the nav links for toggling -->
@@ -38,7 +38,7 @@ session_start();
 
 
 
-   
+
 
 
 
@@ -54,15 +54,15 @@ if (isset($_POST['submit'])) {
 	$username = $_POST['login-username'];
     $password = $_POST['login-password'];
 
-    $conn = new mysqli("localhost", "root","", "proteinshape");
+      $conn = new mysqli("localhost", "root","", "helpjinjang");
 
 
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
-    } 
+    }
 
 	if (!empty($username) && !empty($password)) {
-		
+
 		$sql_member = "SELECT username, password from member WHERE username='$username' and password='$password'";
 		$result_member = $conn->query($sql_member);
 
@@ -70,7 +70,7 @@ if (isset($_POST['submit'])) {
         $result_trainer = $conn->query($sql_trainer);
 
 
-		
+
 		while ($rs_member = $result_member->fetch_array()) {
 			$_SESSION['session_username_member'] = $rs_member['username'];
 			$_SESSION['session_password_member'] = $rs_member['password'];
@@ -81,7 +81,7 @@ if (isset($_POST['submit'])) {
             $_SESSION['session_password_trainer'] = $rs_trainer['password'];
         }
 
-        
+
 		if ($_SESSION['session_username_member'] == $username && $_SESSION['session_password_member']==$password) {
             $me_info = $conn->query("SELECT * FROM member WHERE username = '$username'");
             while ($row = $me_info->fetch_array()){
@@ -112,7 +112,7 @@ if (isset($_POST['submit'])) {
 			#login-username, #login-password{
 				border-color: red;
 			}</style>";
-		echo "<script> var element = document.getElementById('login-form') 
+		echo "<script> var element = document.getElementById('login-form')
 			element.classList.add('animated');
 			element.classList.add('shake');</script>";
 	}
