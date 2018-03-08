@@ -98,22 +98,7 @@ error_reporting(0);
                   <p class="help-block with-errors">Please confirm password</p>
                 </div>
               </div>
-              <div class="form-group">
-                <label class="control-label" for="levelOptions">Level</label>
-                <div class="controls">
-                  <label class="radio-inline">
-                    <input type="radio" name="levelOptions" checked id="beginner" value="Beginner"> Beginner
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="levelOptions" id="advanced" value="Advanced"> Advanced
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="levelOptions" id="expert" value="Expert"> Expert
-                  </label>
-                  <p class="help-block">Please select your level</p>
-                </div>
-              </div>
-
+            
               <div class="controls">
                 <button type="reset" class="btn btn-reset btn-default">Reset</button>
                 <button type="submit" class="btn btn-submit btn-success pull-right">Register</button>
@@ -175,22 +160,7 @@ error_reporting(0);
                   <p class="help-block with-errors">Please confirm password</p>
                 </div>
               </div>
-              <div class="form-group">
-                <label class="control-label" for="specialityOptions">Speciality</label>
-                <div class="controls">
-                  <label class="radio-inline">
-                    <input type="radio" name="specialityOptions" checked id="dance" value="Dance"> Dance
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="specialityOptions" id="mma" value="MMA"> MMA
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="specialityOptions" id="sport" value="Sport"> Sport
-                  </label>
-                  <p class="help-block">Please select your speciality</p>
-                </div>
-              </div>
-
+             
               <div class="controls">
                 <button type="reset" class="btn btn-reset btn-default">Reset</button>
                 <button type="submit" class="btn btn-submit btn-success pull-right">Register</button>
