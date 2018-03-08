@@ -42,7 +42,7 @@ error_reporting(0);
 
       <ul class="nav nav-pills">
         <li class="active text-center"><a data-toggle="pill" href="#jobSeeker" id="signUpJobSeekerSection">Job Seeker</a></li>
-        <li class="text-center"><a data-toggle="pill" href="#trainer" id="signUpTrainerSection">Client</a></li>
+        <li class="text-center"><a data-toggle="pill" href="#client" id="signUpClientSection">Client</a></li>
       </ul>
 
       <div class="tab-content form-content">
@@ -108,8 +108,8 @@ error_reporting(0);
           </form>
 
         </div>
-        <div id="trainer" class="tab-pane fade">
-          <form data-toggle="validator" class="form-horizontal" id="trainer-form" action="trainer.php" method="POST">
+        <div id="client" class="tab-pane fade">
+          <form data-toggle="validator" class="form-horizontal" id="client-form" action="clientSignUp.php" method="POST">
             <fieldset>
               <div class="form-group has-feedback">
                 <label class="control-label" for="cl_fullname">Full Name</label>
@@ -146,17 +146,17 @@ error_reporting(0);
               
 
               <div class="form-group has-feedback">
-                <label class="control-label" for="tr_password">Password</label>
+                <label class="control-label" for="cl_password">Password</label>
                 <div class="controls">
-                  <input type="password" data-minlength="6" id="tr_password" name="tr_password" class="form-control" data-error="Password should be at least 6 characters" maxlength = "50" required>
+                  <input type="password" data-minlength="6" id="cl_password" name="cl_password" class="form-control" data-error="Password should be at least 6 characters" maxlength = "50" required>
                   <p class="help-block with-errors">Please provide your password</p>
                 </div>
               </div>
 
               <div class="form-group has-feedback">
-                <label class="control-label" for="tr_password_confirm">Password (Confirm)</label>
+                <label class="control-label" for="cl_password_confirm">Password (Confirm)</label>
                 <div class="controls">
-                  <input type="password" id="tr_password_confirm" data-match="#tr_password" data-match-error="Whoops, these don't match" name="tr_password_confirm" class="form-control" maxlength = "50" required>
+                  <input type="password" id="cl_password_confirm" data-match="#cl_password" data-match-error="Whoops, these don't match" name="cl_password_confirm" class="form-control" maxlength = "50" required>
                   <p class="help-block with-errors">Please confirm password</p>
                 </div>
               </div>
