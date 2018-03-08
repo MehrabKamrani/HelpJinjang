@@ -5,10 +5,14 @@
 	$username = $_POST['username'];
 	$email = $_POST['email'];
 	$password = $_POST['js_password'];
+	$phoneNo = $_POST['phoneNo'];
+
 	$_SESSION['fullname'] = $fullname;
 	setcookie('fullname', $fullname, time() + 60 * 60);
 	setcookie('email', $email, time() + 60 * 60);
 	setcookie('username', $username, time() + 60 * 60);
+	setcookie('phoneNo', $phoneNo, time() + 60 * 60);
+
 
 
 
