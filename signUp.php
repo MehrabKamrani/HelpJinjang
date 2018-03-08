@@ -41,13 +41,13 @@ error_reporting(0);
       <h1 class="text-center" style="font-family: 'Oswald', sans-serif;">Create your account</h1>
 
       <ul class="nav nav-pills">
-        <li class="active text-center"><a data-toggle="pill" href="#member" id="signUpMemberSection">Job Seeker</a></li>
+        <li class="active text-center"><a data-toggle="pill" href="#jobSeeker" id="signUpJobSeekerSection">Job Seeker</a></li>
         <li class="text-center"><a data-toggle="pill" href="#trainer" id="signUpTrainerSection">Client</a></li>
       </ul>
 
       <div class="tab-content form-content">
-        <div id="member" class="tab-pane fade in active">
-          <form data-toggle="validator" class="form-horizontal" id="member-form" action="member.php" method="POST">
+        <div id="jobSeeker" class="tab-pane fade in active">
+          <form data-toggle="validator" class="form-horizontal" id="jobSeeker-form" action="jobSeekerSignUp.php" method="POST">
             <fieldset>
               <div class="form-group has-feedback">
                 <label class="control-label" for="fullname">Full Name</label>
@@ -84,17 +84,17 @@ error_reporting(0);
 
 
               <div class="form-group has-feedback">
-                <label class="control-label" for="mem_password">Password</label>
+                <label class="control-label" for="js_password">Password</label>
                 <div class="controls">
-                  <input type="password" data-minlength="6" id="mem_password" name="mem_password" class="form-control" data-error="Password should be at least 6 characters" maxlength = "50" required>
+                  <input type="password" data-minlength="6" id="js_password" name="js_password" class="form-control" data-error="Password should be at least 6 characters" maxlength = "50" required>
                   <p class="help-block with-errors">Please provide your password</p>
                 </div>
               </div>
 
               <div class="form-group has-feedback">
-                <label class="control-label" for="mem_password_confirm">Password (Confirm)</label>
+                <label class="control-label" for="js_password_confirm">Password (Confirm)</label>
                 <div class="controls">
-                  <input type="password" id="mem_password_confirm" data-match="#mem_password" data-match-error="Whoops, these don't match" name="mem_password_confirm" class="form-control" maxlength = "50" required>
+                  <input type="password" id="js_password_confirm" data-match="#js_password" data-match-error="Whoops, these don't match" name="js_password_confirm" class="form-control" maxlength = "50" required>
                   <p class="help-block with-errors">Please confirm password</p>
                 </div>
               </div>
