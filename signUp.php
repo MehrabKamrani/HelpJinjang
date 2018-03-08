@@ -52,7 +52,7 @@ error_reporting(0);
               <div class="form-group has-feedback">
                 <label class="control-label" for="fullname">Full Name</label>
                 <div class="controls">
-                  <input type="text" id="fullname" name="fullname" class="form-control" value="<?php echo $_COOKIE['fullname']; ?>" maxlength = "50" required>
+                  <input type="text" id="js_fullname" name="fullname" class="form-control" value="<?php echo $_COOKIE['fullname']; ?>" maxlength = "50" required>
                   <p class="help-block with-errors">Please provide your full name</p>
                 </div>
               </div>
@@ -60,7 +60,7 @@ error_reporting(0);
               <div class="form-group has-feedback">
                 <label class="control-label" for="username">Username</label>
                 <div class="controls">
-                  <input type="text" pattern="^[_A-z0-9]{1,}$" maxlength="15" id="username" name="username" class="form-control" value="<?php echo $_COOKIE['username']; ?>" required>
+                  <input type="text" pattern="^[_A-z0-9]{1,}$" maxlength="15" id="js_username" name="username" class="form-control" value="<?php echo $_COOKIE['username']; ?>" required>
                   <p class="help-block with-errors">Username can contain any letters or numbers, without spaces</p>
                 </div>
               </div>
@@ -68,7 +68,7 @@ error_reporting(0);
               <div class="form-group has-feedback ">
                 <label class="control-label" for="email">E-mail</label>
                 <div class="controls">
-                  <input type="email" id="email" name="email" class="form-control" value="<?php echo $_COOKIE['email']; ?>" maxlength = "50" required>
+                  <input type="email" id="js_email" name="email" class="form-control" value="<?php echo $_COOKIE['email']; ?>" maxlength = "50" required>
                   <p class="help-block with-errors">Please provide your E-mail (email@example.com)</p>
                 </div>
               </div>
@@ -77,7 +77,7 @@ error_reporting(0);
               <div class="form-group has-feedback ">
                 <label class="control-label" for="tel">Phone No</label>
                 <div class="controls">
-                  <input type="tel" id="tel" name="tel" class="form-control" value="<?php echo $_COOKIE['tel']; ?>" maxlength = "50" required>
+                  <input type="text" id="tel" name="tel" class="form-control" value="<?php echo $_COOKIE['tel']; ?>" maxlength = "50" required>
                   <p class="help-block with-errors">Please provide your phone number</p>
                 </div>
               </div>
@@ -112,7 +112,7 @@ error_reporting(0);
           <form data-toggle="validator" class="form-horizontal" id="trainer-form" action="trainer.php" method="POST">
             <fieldset>
               <div class="form-group has-feedback">
-                <label class="control-label" for="fullname">Full Name</label>
+                <label class="control-label" for="cl_fullname">Full Name</label>
                 <div class="controls">
                   <input type="text" id="fullname" name="fullname" class="form-control" value="<?php echo $_COOKIE['tr_fullname']; ?>" maxlength = "50" required>
                   <p class="help-block with-errors">Please provide your full name</p>
@@ -122,7 +122,7 @@ error_reporting(0);
               <div class="form-group has-feedback">
                 <label class="control-label" for="username">Username</label>
                 <div class="controls">
-                  <input type="text" pattern="^[_A-z0-9]{1,}$" maxlength="15" id="username" name="username" class="form-control" value="<?php echo $_COOKIE['tr_username']; ?>" required>
+                  <input type="text" pattern="^[_A-z0-9]{1,}$" maxlength="15" id="cl_username" name="username" class="form-control" value="<?php echo $_COOKIE['tr_username']; ?>" required>
                   <p class="help-block with-errors">Username can contain any letters or numbers, without spaces</p>
                 </div>
               </div>
@@ -130,7 +130,7 @@ error_reporting(0);
               <div class="form-group has-feedback ">
                 <label class="control-label" for="email">E-mail</label>
                 <div class="controls">
-                  <input type="email" id="email" name="email" class="form-control" value="<?php echo $_COOKIE['tr_email']; ?>" maxlength = "50" required>
+                  <input type="cl_email" id="email" name="email" class="form-control" value="<?php echo $_COOKIE['tr_email']; ?>" maxlength = "50" required>
                   <p class="help-block with-errors">Please provide your E-mail (email@example.com)</p>
                 </div>
               </div>
@@ -209,6 +209,11 @@ error_reporting(0);
 
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
+
+<!-- Phone number validator -->
+<script src="js/bootstrap-formhelpers-phone.js"></script>
+
+
 <!--Validator -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
 
