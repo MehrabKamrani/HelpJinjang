@@ -24,11 +24,11 @@
 	} 
 
 
-	if (!empty($username) && !empty($password) && !empty($fullname) && !empty($email) && !empty($level)) {
+	if (!empty($username) && !empty($password) && !empty($fullname) && !empty($email) && !empty($phoneNo)) {
 
 
-	$sql = "INSERT INTO member (fullname, username, email, password, level)
-	VALUES ('$fullname', '$username', '$email', '$password', '$level')";
+	$sql = "INSERT INTO jobseeker (js_username, js_fullname, js_email, js_phoneNo, js_password)
+	VALUES ('$username', '$fullname', '$email', '$phoneNo', '$password')";
 
 	//Checking for duplicates
 	$dupesql_username_tr = "SELECT * FROM trainer where (username = '$username')";
