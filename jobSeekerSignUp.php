@@ -31,25 +31,25 @@
 	VALUES ('$username', '$fullname', '$email', '$phoneNo', '$password')";
 
 	//Checking for duplicates
-	$dupesql_username_tr = "SELECT * FROM trainer where (username = '$username')";
-	$dupesql_email_tr = "SELECT * FROM trainer where (email = '$email')";
-	$dupesql_username_mem = "SELECT * FROM member where (username = '$username')";
-	$dupesql_email_mem = "SELECT * FROM member where (email = '$email')";
+	$dupesql_username_cl = "SELECT * FROM client where (username = '$username')";
+	$dupesql_email_cl = "SELECT * FROM client where (email = '$email')";
+	$dupesql_username_js = "SELECT * FROM jobseeker where (username = '$username')";
+	$dupesql_email_js = "SELECT * FROM jobseeker where (email = '$email')";
 
 
-	$duperaw_username_tr = $conn->query($dupesql_username_tr);
-	$duperaw_email_tr = $conn->query($dupesql_email_tr);
-	$duperaw_username_mem = $conn->query($dupesql_username_mem);
-	$duperaw_email_mem = $conn->query($dupesql_email_mem);
+	$duperaw_username_cl = $conn->query($dupesql_username_cl);
+	$duperaw_email_cl = $conn->query($dupesql_email_cl);
+	$duperaw_username_js = $conn->query($dupesql_username_js);
+	$duperaw_email_js = $conn->query($dupesql_email_js);
 
 
-	if (mysqli_num_rows($duperaw_username_tr) > 0 || mysqli_num_rows($duperaw_username_mem) > 0) {
+	if (mysqli_num_rows($duperaw_username_cl) > 0 || mysqli_num_rows($duperaw_username_js) > 0) {
 		$message = "The username already exists";
 		echo "<script type='text/javascript'>alert('$message'); 
 			window.location.href = 'signUp.php';</script>";
 
 	}
-	else if(mysqli_num_rows($duperaw_email_tr) > 0 || mysqli_num_rows($duperaw_email_mem) > 0){
+	else if(mysqli_num_rows($duperaw_email_cl) > 0 || mysqli_num_rows($duperaw_email_js) > 0){
 		$message = "The email already exists";
 		echo "<script type='text/javascript'>alert('$message'); 
 				window.location.href = 'signUp.php';</script>";
@@ -58,12 +58,13 @@
 	else{
 
 		if ($conn->query($sql) === TRUE) {
-			$message = "New member created successfully";
+			$message = "New jobseeker created successfully";
 			setcookie("fullname", "", time()-3600);
 			setcookie("username", "", time()-3600);
 			setcookie("email", "", time()-3600);
+			setcookie("phoneNo", "", time()-3600);
 			echo "<script type='text/javascript'>alert('$message');
-			window.location.href = 'member_main.php';</script>";
+			window.location.href = 'home.php';</script>";
 		} else {
 			echo "Error: " . $sql . "<br>" . $conn->error;
 		}
