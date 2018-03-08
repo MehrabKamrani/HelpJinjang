@@ -4,7 +4,7 @@
 	$fullname = $_POST['fullname'];
 	$username = $_POST['username'];
 	$email = $_POST['email'];
-	$password = $_POST['js_password'];
+	$password = $_POST['cl_password'];
 	$phoneNo = $_POST['phoneNo'];
 
 	$_SESSION['fullname'] = $fullname;
@@ -27,7 +27,7 @@
 	if (!empty($username) && !empty($password) && !empty($fullname) && !empty($email) && !empty($phoneNo)) {
 
 
-	$sql = "INSERT INTO jobseeker (js_username, js_fullname, js_email, js_phoneNo, js_password)
+	$sql = "INSERT INTO client (client_username, client_fullname, client_email, client_phoneNo, client_password)
 	VALUES ('$username', '$fullname', '$email', '$phoneNo', '$password')";
 
 	//Checking for duplicates
@@ -58,7 +58,7 @@
 	else{
 
 		if ($conn->query($sql) === TRUE) {
-			$message = "New jobseeker created successfully";
+			$message = "New Client created successfully";
 			setcookie("fullname", "", time()-3600);
 			setcookie("username", "", time()-3600);
 			setcookie("email", "", time()-3600);
