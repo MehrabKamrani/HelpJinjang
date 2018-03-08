@@ -1,0 +1,389 @@
+cl-html {
+    overflow-y: scroll;
+}
+body{
+    background: rgb(235, 235, 235);
+    font-family: Oswald;
+}
+
+
+.left-side-color{
+  border: 1px solid #dcdcdc;
+  background: white;
+  border-bottom-style: solid;
+}
+
+.left-side-image{
+        width:85%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 10%;
+        border-radius: 50%;
+
+}
+
+.left-side-image img{
+    width:100%;
+
+}
+
+.left-side-text {
+        width:75%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 2%;
+        text-align: center;
+        word-wrap: break-word;
+        font-family: Oswald;
+
+}
+
+.left-side-text dt{
+        font-size: 17px;
+}
+
+.left-side-text dd{
+        font-size: 12px;
+}
+
+
+
+
+.main-text {
+        font-family: 'Oswald';
+        font-size: 163%;
+        font-weight: bolder;
+
+}
+
+.bold-text{
+        font-family: Oswald;
+        font-size: 150%;
+        font-weight: bold;
+}
+
+.small-text {
+        white-space: initial;
+        font-family: Calibri;
+        font-size: 120%;
+}
+
+.normal-text{
+        font-family: Calibri;
+        font-size: 130%;
+        font-weight: bold;
+}
+
+.navbar-panel {
+        min-height: 40px;
+        background:white;
+        padding-left: 6%;
+        border-top: 1px solid #dcdcdc;
+        border-bottom: 1px solid #dcdcdc;
+}
+
+.navbar-panel li{
+      font-family: Oswald;
+      font-size: 15px;
+}
+
+
+
+.center-box {
+        width:95%;
+        height: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10%;
+        border: 1px solid #dcdcdc;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        box-shadow: 3px 3px 6px #888888;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+}
+
+
+
+.center-box:after{
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0,0,0,0.8);
+        color: white;
+        opacity: 0;
+        content: attr(data-text);
+        white-space: pre-wrap;
+        transition: 0.5s;
+        font-family: Oswald;
+        text-align: center;
+        font-size: x-large;
+
+
+}
+
+
+.center-box:hover::after{
+      opacity: 1;
+      top: 0%;
+      padding-top: 50%;
+
+}
+
+
+
+
+
+.center-button-rate{
+      position: absolute;
+      left: 4%;
+      margin-left: auto;
+      margin-right: auto;
+      top: 368px;
+      width: 100px;
+      background-color:rgba(235, 235, 235, 0.3);
+      padding: 6px 6px 6px 10px;
+      z-index:5;
+      color: white;
+      transition: .7s;
+
+
+}
+
+.center-button-rate:hover {
+      width: 150px;
+      background-color: rgba(208, 213, 221, 0.8);
+}
+
+.center-button-rate:hover p{
+      color: black;
+}
+
+.center-button-rate p{
+      color: black;
+      opacity: 1;
+      margin-bottom: 0;
+}
+
+.center-button-full {
+      position: absolute;
+      left: 5%;
+      margin-left: auto;
+      margin-right: auto;
+      top: 368px;
+      width: 150px;
+      background-color:rgba(208, 213, 221, 0.8);
+      padding: 6px 6px 6px 10px;
+      z-index:5;
+      color: white;
+}
+
+
+.center-button-full p{
+      color: black;
+      opacity: 1;
+      margin-bottom: 0;
+}
+
+
+
+
+.right-side-image{
+        width: 100%;
+        margin: 0 auto 0 auto;
+        }
+
+.right-side-image img{
+          width:100%;
+
+}
+
+
+.right-side-text {
+        width:85%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 2%;
+        text-align: center;
+        word-wrap: break-word;
+
+}
+
+
+
+
+.myBtn {
+      display: inline-block;
+      padding: 6px 12px;
+      margin-bottom: 0;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.42857143;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      -ms-touch-action: manipulation;
+      touch-action: manipulation;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      background-color: transparent;
+      border: 1px solid gray;
+      border-radius: 4px;
+}
+
+
+.myBtn:hover{
+      border: 1px solid black;
+}
+
+
+.remove-padding {
+      padding-left: 5px;
+      padding-right: 5px;
+}
+
+
+#cl-right {
+      margin-left: 10px;
+}
+
+
+.star-rating {
+      padding: 20px;
+      direction: rtl;
+      display: inline-block;
+}
+
+
+.star-input[type=radio] {
+      display:none;
+}
+
+label {
+      color: #bbb;
+      font-size: 50px;
+      cursor: pointer;
+      transition: color .3s ease-in-out;
+}
+
+label:hover, label:hover ~ label,
+.star-input[type=radio]:checked ~ label{
+      color: #f2b600;
+}
+
+.comment {
+      font-size: 15px;
+      float: left;
+      color: black;
+}
+
+
+.modal-img  {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 5%;
+}
+
+.modal-img img{
+    width: 70%;
+    border: 2px solid gray;
+    box-shadow: 1px 1px 3px #888888;
+    }
+
+.modal-dl {
+    width: 100%;
+    text-align: center;
+    font-size: medium;
+}
+
+.modal-dl table {
+      margin-right: auto;
+      margin-left: auto;
+}
+
+.modal-dl th{
+      text-align: center;
+}
+
+#session-title {
+      text-align: center;
+      margin-right: auto;
+      margin-left: auto;
+      font-weight: bold;
+      font-size: x-large;
+}
+
+
+#com-session-title{
+       width: 40%;
+       text-align: center;
+       margin-right: auto;
+       margin-left: auto;
+       font-weight: bold;
+       font-size: x-large;
+}
+
+#can-session-title{
+      width: 40%;
+       text-align: center;
+       margin-right: auto;
+       margin-left: auto;
+       font-weight: bold;
+       font-size: x-large;
+}
+
+
+#m-hs-session-title{
+       width: 40%;
+       text-align: center;
+       margin-right: auto;
+       margin-left: auto;
+       font-weight: bold;
+       font-size: x-large;
+}
+
+#reg-session-title{
+       width: 40%;
+       text-align: center;
+       margin-right: auto;
+       margin-left: auto;
+       font-weight: bold;
+       font-size: x-large;
+}
+
+#upc-session-title {
+      width: 40%;
+      text-align: center;
+      margin-right: auto;
+      margin-left: auto;
+      font-weight: bold;
+      font-size: x-large;
+}
+
+
+
+
+a{
+    outline: none!important;
+}
+
+#footer{
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: black;
+}
+.footer-logo{
+  width: 100%;
+}
+#copyright{
+  color:rgb(200,200,200);
+}
