@@ -77,7 +77,7 @@ error_reporting(0);
               <div class="form-group has-feedback ">
                 <label class="control-label" for="tel">Phone No</label>
                 <div class="controls">
-                  <input type="tel" pattern="[0-9]{1,}" data-minlength="10"  id="js_tel" name="tel" class="form-control" value="<?php echo $_COOKIE['tel']; ?>" maxlength = "12" required>
+                  <input type="tel" pattern="[0-9]{1,}" data-minlength="10"  id="js_phoneNo" name="phoneNo" class="form-control" value="<?php echo $_COOKIE['phoneNo']; ?>" maxlength = "12" required>
                   <p class="help-block with-errors">Please provide your phone number (01112345678)</p>
                 </div>
               </div>
@@ -139,7 +139,7 @@ error_reporting(0);
               <div class="form-group has-feedback ">
                 <label class="control-label" for="tel">Phone No</label>
                 <div class="controls">
-                  <input type="tel" pattern="[0-9]{1,}" data-minlength="10" id="cl_tel" name="tel" class="form-control" value="<?php echo $_COOKIE['tel']; ?>" maxlength = "12" required>
+                  <input type="tel" pattern="[0-9]{1,}" data-minlength="10" id="cl_phoneNo" name="phoneNo" class="form-control" value="<?php echo $_COOKIE['phoneNo']; ?>" maxlength = "12" required>
                   <p class="help-block with-errors">Please provide your phone number (01112345678)</p>
                 </div>
               </div>
