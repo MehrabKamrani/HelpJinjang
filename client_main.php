@@ -148,7 +148,7 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 			<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
 
 			<!-- Custom CSS -->
-			<link href="css/client-member.css" rel="stylesheet">
+			<link href="css/client-jobseeker.css" rel="stylesheet">
 
 
 		</head>
