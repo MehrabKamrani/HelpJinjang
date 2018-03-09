@@ -59,6 +59,9 @@ error_reporting(0);
                 <button type="submit" class="btn btn-submit btn-primary btn-block">Register</button>
               </div>
                <p class="help-block with-errors text-center">Or <a>Forgot Password</a></p>
+               <hr>
+               <p class="help-block with-errors text-center">Don't have an account? <a href="signUp.php">Sign Up</a></p>
+
 
             </fieldset>
           </form>
