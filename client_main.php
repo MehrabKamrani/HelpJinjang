@@ -174,7 +174,7 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 								<li><a href="#" id="completed-button">Completed</a></li>
 								<li><a href="#" id="cancelled-button">Cancelled</a></li>
 							</ul>
-							<p class="navbar-text navbar-right"><?php /*echo $_SESSION['cl_fullname'];*/ echo "Mehrab Kamrani"; ?></p>
+							<p class="navbar-text navbar-right"><?php /*echo $_SESSION['cl_username'];*/ echo "mehrab"; ?></p>
 							<a href="logout.php" type="button" id="btn-logout" class="btn btn-default navbar-btn navbar-right">Log out</a>
 						</div>
 						<!-- End .navbar-collapse -->
@@ -196,17 +196,17 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 					<div class="col-xs-12 col-sm-2" style="padding: 0px; z-index: 2;">
 						<div class="left-side-color">
 							<div class="left-side-text">
-								<p class="main-text"><?php /*echo $_SESSION['cl_username']; */ echo "Mehrab Kamrani";?></p>
+								<p class="username-text"><?php /*echo $_SESSION['cl_username']; */ echo "mehrab";?></p>
 							</div>
 						</div>
 						<div class="left-side-text">
 							<dl>
-								<dt>Name</dt>
+								<dt>Full Name</dt>
 								<dd><?php echo /*$_SESSION['cl_fullname'];*/ "Mehrab Kamrani"; ?></dd><br>
 								<dt>Email</dt>
 								<dd><?php echo /*$_SESSION['cl_email'];*/ "mk.zizou@gmail.com"; ?></dd><br>
-								<dt>Speciality</dt>
-								<dd><?php echo /*$_SESSION['cl_speciality'];*/ "Cooking"; ?></dd><br>
+								<dt>Phone Number</dt>
+								<dd><?php echo /*$_SESSION['cl_speciality'];*/ "01111703767"; ?></dd><br>
 
 
 								<!-- Update button-->
