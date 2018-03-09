@@ -195,9 +195,6 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 
 					<div class="col-xs-12 col-sm-2" style="padding: 0px; z-index: 2;">
 						<div class="left-side-color">
-							<div class="left-side-image">
-								<img src="Photo/9.jpg" alt="Mike" class="img-circle">
-							</div>
 							<div class="left-side-text">
 								<p class="main-text"><?php echo $_SESSION['cl_username']; ?></p>
 							</div>

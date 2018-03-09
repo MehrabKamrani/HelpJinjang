@@ -13,20 +13,6 @@ body{
   border-bottom-style: solid;
 }
 
-.left-side-image{
-        width:85%;
-        margin-left: auto;
-        margin-right: auto;
-        padding-top: 10%;
-        border-radius: 50%;
-
-}
-
-.left-side-image img{
-    width:100%;
-
-}
-
 .left-side-text {
         width:75%;
         margin-left: auto;
