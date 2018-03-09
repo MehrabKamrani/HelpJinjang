@@ -42,9 +42,6 @@
 	$duperaw_username_js = $conn->query($dupesql_username_js);
 	$duperaw_email_js = $conn->query($dupesql_email_js);
 
-	echo mysqli_num_rows($duperaw_username_js);
-	echo "How are you";
-
 
 	if (mysqli_num_rows($duperaw_username_cl) > 0 || mysqli_num_rows($duperaw_username_js) > 0) {
 		$message = "The username already exists";

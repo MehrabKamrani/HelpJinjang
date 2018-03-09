@@ -7,11 +7,11 @@
 	$password = $_POST['cl_password'];
 	$phoneNo = $_POST['phoneNo'];
 
-	$_SESSION['fullname'] = $fullname;
-	setcookie('fullname', $fullname, time() + 60 * 60);
-	setcookie('email', $email, time() + 60 * 60);
-	setcookie('username', $username, time() + 60 * 60);
-	setcookie('phoneNo', $phoneNo, time() + 60 * 60);
+	$_SESSION['cl_fullname'] = $fullname;
+	setcookie('cl_fullname', $fullname, time() + 60 * 60);
+	setcookie('cl_email', $email, time() + 60 * 60);
+	setcookie('cl_username', $username, time() + 60 * 60);
+	setcookie('cl_phoneNo', $phoneNo, time() + 60 * 60);
 
 
 
