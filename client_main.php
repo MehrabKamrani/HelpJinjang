@@ -184,16 +184,16 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 
 			</header>
 
-			<div class="container" style="width: 100%; padding-left: 0; padding-right: 0; margin-top:50px;">
+			<div class="container" style="margin-top:50px;">
 				<div class="alert alert-success alert-dismissable" id="welcome-message" style="position: fixed; z-index:1000;">
 					<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
 					Welcome <strong><?php /*echo $_SESSION['cl_fullname'];*/ echo "Mehrab Kamrani"; ?></strong>, you have loged in successfully.
 				</div>
 
-				<div class="row" style="margin-left: 0; margin-right: 0;">
+				<div class="row">
 
 
-					<div class="col-sm-3 sidebar" style="padding: 0px; z-index: 2;">
+					<div class="col-sm-3 sidebar">
 							<h3 class="sidebar-title"><?php /*echo $_SESSION['cl_username']; */ echo "mehrab";?></h3>
 						<div class="sidebar-detail">
 							<dl>
@@ -212,28 +212,28 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 					</div>
 
 
-					<div class="col-sm-9" style="padding: 0px;">
-						<div class="row" style="margin:2% 2% 2% 1%;">
-							<div class="col-xs-12 col-sm-12" style="padding: 0;">
+					<div class="col-sm-9">
+						<div class="row">
+							<div class="col-sm-12">
 
 								<!-- Start Available Section -->
-								<div  id="available" class="row" style="margin:0;">
-									<div  class="row" style="margin:0;">
+								<div  id="available" class="row">
+									<div  class="row">
 
 										<?php
 								// Loop through the results from the database
 										for ($i = 1; $i <=$row_count_available_session; $i++) {
 											echo
-											"<div class='col-xs-12 col-sm-3 remove-padding'>
+											"<div class='col-sm-3'>
 											<a class='getModal' href='#' id='$session_id_available_session[$i]' data-toggle='modal' data-target='#modalAvailable'>
-											<div class='center-box animated fadeInUp' style='background-image: url(Photo/Jackson3.jpg);' data-text='$title_available_session[$i]'></div>
+											<div class='center-box animated fadeInUp' data-text='$title_available_session[$i]'></div>
 											</a>
 
 											</div>";
 										}
 										?>
 
-										<div class="col-xs-12 col-sm-3 remove-padding">
+										<div class="col-sm-3">
 											<a href="newSession.html" id="create_session">
 												<div class="center-box animated fadeInUp" style="text-align: center; box-shadow: none;" data-text="Create New Training Session">
 													<i class="fa fa-plus" aria-hidden="true" style="font-size: 100px; margin-top: 150px;"></i>
@@ -245,14 +245,14 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 								</div><!-- End Available Section -->
 
 								<!-- Start Completed Section -->
-								<div  id="completed" class="row" style="margin:0px; display:none">
+								<div  id="completed" class="row">
 									<?php
 							// Loop through the results from the database
 									for ($i = 1; $i <=$row_count_completed_session; $i++) {
 										echo
-										"<div class='col-xs-12 col-sm-3 remove-padding'>
+										"<div class='col-sm-3'>
 										<a class='getModal' href='#' id='$session_id_completed_session[$i]' data-toggle='modal' data-target='#modalAvailable'>
-										<div class='center-box animated fadeInUp' style='background-image: url(Photo/Jackson3.jpg);' data-text='$title_completed_session[$i]'></div>
+										<div class='center-box animated fadeInUp' data-text='$title_completed_session[$i]'></div>
 										</a>
 
 										</div>";
@@ -261,14 +261,14 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 								</div><!-- End Completed Section -->
 
 								<!-- Start Cancelled Section -->
-								<div  id="cancelled" class="row" style="margin:0px; display:none">
+								<div  id="cancelled" class="row" style="display:none">
 									<?php
 							// Loop through the results from the database
 									for ($i = 1; $i <=$row_count_canceled_session; $i++) {
 										echo
-										"<div class='col-xs-12 col-sm-3 remove-padding'>
+										"<div class='col-sm-3'>
 										<a class='getModal' href='#' id='$session_id_canceled_session[$i]' data-toggle='modal' data-target='#modalAvailable'>
-										<div class='center-box animated fadeInUp' style='background-image: url(Photo/Jackson3.jpg);' data-text='$title_canceled_session[$i]'></div>
+										<div class='center-box animated fadeInUp' data-text='$title_canceled_session[$i]'></div>
 										</a>
 
 										</div>";
