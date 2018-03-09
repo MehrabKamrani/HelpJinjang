@@ -1,6 +1,6 @@
 <?php
 session_start();
-$conn = new mysqli("localhost", "root","", "proteinshape");
+$conn = new mysqli("localhost", "root","", "helpjinjang");
 
 
 if ($conn->connect_error) {
@@ -164,7 +164,7 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
-							<a class="navbar-brand" href="#">ProteinShape</a>
+							<a class="navbar-brand" href="#">HELPJinjang</a>
 
 						</div>
 						<!-- Collect the nav links for toggling -->
@@ -333,7 +333,7 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 			<footer id="footer">
 				<div class="container text-center">
 					<div class="footer-logo">
-						<h1 style="font-family: 'Oswald', sans-serif; color:white;">ProteInshape</h1>
+						<h1 style="font-family: 'Oswald', sans-serif; color:white;">HELPJinjang</h1>
 					</div>
 
 					<hr>
@@ -351,7 +351,7 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 							<a href="https://plus.google.com"><img alt="social icon" src="glyphs/g.png"></a>
 						</li>
 					</ul>
-					<p id="copyright">Copyright &copy; ProteInshape 2017</p>
+					<p id="copyright">Copyright &copy; HELPJinjang 2017</p>
 				</div>
 			</footer>
 
