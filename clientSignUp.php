@@ -31,8 +31,8 @@
 	VALUES ('$username', '$fullname', '$email', '$phoneNo', '$password')";
 
 	//Checking for duplicates
-	$dupesql_username_cl = "SELECT * FROM client where (cl_username = '$username')";
-	$dupesql_email_cl = "SELECT * FROM client where (cl_email = '$email')";
+	$dupesql_username_cl = "SELECT * FROM client where (client_username = '$username')";
+	$dupesql_email_cl = "SELECT * FROM client where (client_email = '$email')";
 	$dupesql_username_js = "SELECT * FROM jobseeker where (js_username = '$username')";
 	$dupesql_email_js = "SELECT * FROM jobseeker where (js_email = '$email')";
 
@@ -47,8 +47,8 @@
 		$message = "The username already exists";
 		echo "<script type='text/javascript'>alert('$message'); 
 			window.location.href = 'signUp.php';</script>";
-
 	}
+
 	else if(mysqli_num_rows($duperaw_email_cl) > 0 || mysqli_num_rows($duperaw_email_js) > 0){
 		$message = "The email already exists";
 		echo "<script type='text/javascript'>alert('$message'); 
@@ -59,10 +59,10 @@
 
 		if ($conn->query($sql) === TRUE) {
 			$message = "New Client created successfully";
-			setcookie("fullname", "", time()-3600);
-			setcookie("username", "", time()-3600);
-			setcookie("email", "", time()-3600);
-			setcookie("phoneNo", "", time()-3600);
+			setcookie("cl_fullname", "", time()-3600);
+			setcookie("cl_username", "", time()-3600);
+			setcookie("cl_email", "", time()-3600);
+			setcookie("cl_phoneNo", "", time()-3600);
 			echo "<script type='text/javascript'>alert('$message');
 			window.location.href = 'home.php';</script>";
 		} else {
