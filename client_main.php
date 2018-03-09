@@ -158,7 +158,7 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 					<div class="container">
 						<!-- Brand and toggle get grouped for better mobile display -->
 						<div class="navbar-header">
-							<button type="button" class="navbar-toggle" data-toggle = "collapse" data-target="#tr-mainNavbar">
+							<button type="button" class="navbar-toggle" data-toggle = "collapse" data-target="#cl-mainNavbar">
 								<span class="sr-only">Toggle navigation</span>
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
@@ -168,7 +168,7 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 
 						</div>
 						<!-- Collect the nav links for toggling -->
-						<div class="collapse navbar-collapse" id="tr-mainNavbar">
+						<div class="collapse navbar-collapse" id="cl-mainNavbar">
 							<ul class="nav navbar-nav">
 								<li><a href="#" id="available-button">Available</a></li>
 								<li><a href="#" id="completed-button">Completed</a></li>
@@ -193,13 +193,9 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 				<div class="row" style="margin-left: 0; margin-right: 0;">
 
 
-					<div class="col-xs-12 col-sm-2" style="padding: 0px; z-index: 2;">
-						<div class="left-side-color">
-							<div class="left-side-text">
-								<p class="username-text"><?php /*echo $_SESSION['cl_username']; */ echo "mehrab";?></p>
-							</div>
-						</div>
-						<div class="left-side-text">
+					<div class="col-sm-3 sidebar" style="padding: 0px; z-index: 2;">
+							<h3 class="sidebar-title"><?php /*echo $_SESSION['cl_username']; */ echo "mehrab";?></h3>
+						<div class="sidebar-detail">
 							<dl>
 								<dt>Full Name</dt>
 								<dd><?php echo /*$_SESSION['cl_fullname'];*/ "Mehrab Kamrani"; ?></dd><br>
@@ -216,7 +212,7 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 					</div>
 
 
-					<div class="col-xs-12 col-sm-10" style="padding: 0px;">
+					<div class="col-sm-9" style="padding: 0px;">
 						<div class="row" style="margin:2% 2% 2% 1%;">
 							<div class="col-xs-12 col-sm-12" style="padding: 0;">
 
