@@ -30,7 +30,7 @@ error_reporting(0);
 <div class="container" id="login-section">
   <div class="row">
 
-    <div class="col-sm-6 col-sm-offset-3 form-section">
+    <div class="col-sm-4 col-sm-offset-4 form-section">
       <h1 class="text-center" style="font-family: 'Oswald', sans-serif;">Log in</h1>
 
       <div class="tab-content form-content">
@@ -58,6 +58,8 @@ error_reporting(0);
               <div class="controls">
                 <button type="submit" class="btn btn-submit btn-primary btn-block">Register</button>
               </div>
+               <p class="help-block with-errors text-center">Or <a>Forgot Password</a></p>
+
             </fieldset>
           </form>
 
