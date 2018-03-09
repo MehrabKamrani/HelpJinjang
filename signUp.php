@@ -29,7 +29,7 @@ error_reporting(0);
 
 <body>
 
-  <?php include "login-header.php"; ?>
+ 
 
 </header>
 
