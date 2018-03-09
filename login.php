@@ -56,7 +56,7 @@ error_reporting(0);
 
            
               <div class="controls">
-                <button type="submit" class="btn btn-submit btn-success pull-right">Register</button>
+                <button type="submit" class="btn btn-submit btn-primary btn-block">Register</button>
               </div>
             </fieldset>
           </form>

@@ -126,7 +126,7 @@
     margin-right: 0;
     margin-left: 0;
 }
-.btn-reset, .btn-submit{
-  margin-top: 20px;
-  width: 33.3334%;
+.btn-reset, .btn-submit
+{  
+  margin-top: 15px;
 }
