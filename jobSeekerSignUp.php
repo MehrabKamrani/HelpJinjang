@@ -31,16 +31,19 @@
 	VALUES ('$username', '$fullname', '$email', '$phoneNo', '$password')";
 
 	//Checking for duplicates
-	$dupesql_username_cl = "SELECT * FROM client where (username = '$username')";
-	$dupesql_email_cl = "SELECT * FROM client where (email = '$email')";
-	$dupesql_username_js = "SELECT * FROM jobseeker where (username = '$username')";
-	$dupesql_email_js = "SELECT * FROM jobseeker where (email = '$email')";
+	$dupesql_username_cl = "SELECT * FROM client where (cl_username = '$username')";
+	$dupesql_email_cl = "SELECT * FROM client where (cl_email = '$email')";
+	$dupesql_username_js = "SELECT * FROM jobseeker where (js_username = '$username')";
+	$dupesql_email_js = "SELECT * FROM jobseeker where (js_email = '$email')";
 
 
 	$duperaw_username_cl = $conn->query($dupesql_username_cl);
 	$duperaw_email_cl = $conn->query($dupesql_email_cl);
 	$duperaw_username_js = $conn->query($dupesql_username_js);
 	$duperaw_email_js = $conn->query($dupesql_email_js);
+
+	echo mysqli_num_rows($duperaw_username_js);
+	echo "How are you";
 
 
 	if (mysqli_num_rows($duperaw_username_cl) > 0 || mysqli_num_rows($duperaw_username_js) > 0) {
