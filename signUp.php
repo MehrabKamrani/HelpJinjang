@@ -143,7 +143,7 @@ error_reporting(0);
                   <p class="help-block with-errors">Please provide your phone number (01112345678)</p>
                 </div>
               </div>
-              
+
 
               <div class="form-group has-feedback">
                 <label class="control-label" for="cl_password">Password</label>
@@ -173,30 +173,9 @@ error_reporting(0);
     </div>
   </div>
 </div>
-<footer id="footer">
-  <div class="container text-center">
-    <div class="footer-logo">
-      <h1 style="font-family: 'Oswald', sans-serif; color:white;">ProteInshape</h1>
-    </div>
 
-    <hr>
-    <ul class="footer-social list-inline">
-      <li>
-        <a href="https://facebook.com"><img alt="social icon" src="glyphs/fb.png"></a>
-      </li>
-      <li>
-        <a href="https://instagram.com"><img alt="social icon" src="glyphs/in.png"></a>
-      </li>
-      <li>
-        <a href="https://twitter.com"><img alt="social icon" src="glyphs/t.png"></a>
-      </li>
-      <li>
-        <a href="https://plus.google.com"><img alt="social icon" src="glyphs/g.png"></a>
-      </li>
-    </ul>
-    <p id="copyright">Copyright &copy; ProteInshape 2017</p>
-  </div>
-</footer>
+<?php include "footer.php"; ?>
+
 
 
 

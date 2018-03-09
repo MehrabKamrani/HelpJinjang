@@ -1,6 +1,6 @@
 <?php
 session_start();
-$conn = new mysqli("localhost", "root","", "proteinshape");
+$conn = new mysqli("localhost", "root","", "helpjinjang");
 
 
 if ($conn->connect_error) {
@@ -10,7 +10,7 @@ if ($conn->connect_error) {
 if(!isset($_SESSION['cl_username']) && empty($_SESSION['cl_username'])) {
 	//header("Location: home.php");
 }
-$username = $_SESSION['cl_username'];
+$username = "mehrab"; /* $_SESSION['cl_username'];*/
 
 $sql_update_session_status = "SELECT * FROM training_session WHERE cl_username = '$username' AND status = 'Available';";
 if ($result_update_session_status = $conn->query($sql_update_session_status)) {
@@ -148,7 +148,7 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 			<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
 
 			<!-- Custom CSS -->
-			<link href="css/client-member.css" rel="stylesheet">
+			<link href="css/client-jobseeker.css" rel="stylesheet">
 
 
 		</head>
@@ -164,7 +164,7 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
-							<a class="navbar-brand" href="#">ProteinShape</a>
+							<a class="navbar-brand" href="#">HELPJinjang</a>
 
 						</div>
 						<!-- Collect the nav links for toggling -->
@@ -174,7 +174,7 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 								<li><a href="#" id="completed-button">Completed</a></li>
 								<li><a href="#" id="cancelled-button">Cancelled</a></li>
 							</ul>
-							<p class="navbar-text navbar-right"><?php echo $_SESSION['cl_fullname']; ?></p>
+							<p class="navbar-text navbar-right"><?php /*echo $_SESSION['cl_username'];*/ echo "mehrab"; ?></p>
 							<a href="logout.php" type="button" id="btn-logout" class="btn btn-default navbar-btn navbar-right">Log out</a>
 						</div>
 						<!-- End .navbar-collapse -->
@@ -187,7 +187,7 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 			<div class="container" style="width: 100%; padding-left: 0; padding-right: 0; margin-top:50px;">
 				<div class="alert alert-success alert-dismissable" id="welcome-message" style="position: fixed; z-index:1000;">
 					<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-					Welcome <strong><?php echo $_SESSION['cl_fullname']; ?></strong>, you have loged in successfully.
+					Welcome <strong><?php /*echo $_SESSION['cl_fullname'];*/ echo "Mehrab Kamrani"; ?></strong>, you have loged in successfully.
 				</div>
 
 				<div class="row" style="margin-left: 0; margin-right: 0;">
@@ -195,21 +195,18 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 
 					<div class="col-xs-12 col-sm-2" style="padding: 0px; z-index: 2;">
 						<div class="left-side-color">
-							<div class="left-side-image">
-								<img src="Photo/9.jpg" alt="Mike" class="img-circle">
-							</div>
 							<div class="left-side-text">
-								<p class="main-text"><?php echo $_SESSION['cl_username']; ?></p>
+								<p class="username-text"><?php /*echo $_SESSION['cl_username']; */ echo "mehrab";?></p>
 							</div>
 						</div>
 						<div class="left-side-text">
 							<dl>
-								<dt>Name</dt>
-								<dd><?php echo $_SESSION['cl_fullname']; ?></dd><br>
+								<dt>Full Name</dt>
+								<dd><?php echo /*$_SESSION['cl_fullname'];*/ "Mehrab Kamrani"; ?></dd><br>
 								<dt>Email</dt>
-								<dd><?php echo $_SESSION['cl_email']; ?></dd><br>
-								<dt>Speciality</dt>
-								<dd><?php echo $_SESSION['cl_speciality']; ?></dd><br>
+								<dd><?php echo /*$_SESSION['cl_email'];*/ "mk.zizou@gmail.com"; ?></dd><br>
+								<dt>Phone Number</dt>
+								<dd><?php echo /*$_SESSION['cl_speciality'];*/ "01111703767"; ?></dd><br>
 
 
 								<!-- Update button-->
@@ -333,30 +330,8 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 					</div>
 				</div>
 			</div>
-			<footer id="footer">
-				<div class="container text-center">
-					<div class="footer-logo">
-						<h1 style="font-family: 'Oswald', sans-serif; color:white;">ProteInshape</h1>
-					</div>
 
-					<hr>
-					<ul class="footer-social list-inline">
-						<li>
-							<a href="https://facebook.com"><img alt="social icon" src="glyphs/fb.png"></a>
-						</li>
-						<li>
-							<a href="https://instagram.com"><img alt="social icon" src="glyphs/in.png"></a>
-						</li>
-						<li>
-							<a href="https://twitter.com"><img alt="social icon" src="glyphs/t.png"></a>
-						</li>
-						<li>
-							<a href="https://plus.google.com"><img alt="social icon" src="glyphs/g.png"></a>
-						</li>
-					</ul>
-					<p id="copyright">Copyright &copy; ProteInshape 2017</p>
-				</div>
-			</footer>
+			<?php include "footer.php"; ?>
 
 
 			<!-- jQuery -->
