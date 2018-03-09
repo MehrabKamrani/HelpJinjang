@@ -184,7 +184,7 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 
 			</header>
 
-			<div class="container" style="margin-top:50px;">
+			<div class="container main-container">
 				<div class="alert alert-success alert-dismissable" id="welcome-message" style="position: fixed; z-index:1000;">
 					<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
 					Welcome <strong><?php /*echo $_SESSION['cl_fullname'];*/ echo "Mehrab Kamrani"; ?></strong>, you have loged in successfully.
@@ -212,7 +212,7 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 					</div>
 
 
-					<div class="col-sm-9">
+					<div class="col-sm-9 main-section">
 						<div class="row">
 							<div class="col-sm-12">
 

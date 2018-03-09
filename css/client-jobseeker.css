@@ -5,13 +5,17 @@ body{
   background: rgb(235, 235, 235);
   font-family: Oswald;
 }
-
+.main-container{
+  margin-top: 50px;
+  border-left: 1px solid #dcdcdc;
+  border-right: 1px solid #dcdcdc;
+}
 .sidebar {
   text-align: center;
+  padding: 0;
 }
 .sidebar-title{
   border-bottom: 1px solid #dcdcdc;
-  background: white;
   padding: 20px;
   margin: 0;
 }
@@ -26,6 +30,10 @@ body{
 
 .sidebar-detail dd{
   font-size: 12px;
+}
+
+.main-section{
+  border-left: 1px solid #dcdcdc;
 }
 
 .bold-text{
@@ -215,12 +223,6 @@ body{
 
 .myBtn:hover{
       border: 1px solid black;
-}
-
-
-.remove-padding {
-      padding-left: 5px;
-      padding-right: 5px;
 }
 
 
