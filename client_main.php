@@ -12,7 +12,7 @@ if(!isset($_SESSION['cl_username']) && empty($_SESSION['cl_username'])) {
 }
 $username = "mehrab"; /* $_SESSION['cl_username'];*/
 
-$sql_update_session_status = "SELECT * FROM training_session WHERE cl_username = '$username' AND status = 'Available';";
+$sql_update_session_status = "SELECT * FROM training_session WHERE cl_username = '$username' AND status = 'upcoming';";
 if ($result_update_session_status = $conn->query($sql_update_session_status)) {
 	$row_count_update_session_status =mysqli_num_rows($result_update_session_status);
 
@@ -27,7 +27,7 @@ if ($result_update_session_status = $conn->query($sql_update_session_status)) {
 
 			$session_datetime = new DateTime($session_date_update_session_status[$i] . " " . $session_time_update_session_status[$i], new DateTimeZone('Singapore'));
 
-			$sql_update_session_status = "UPDATE training_session SET status='Completed' WHERE session_id = '$session_id_update_session_status[$i]';";
+			$sql_update_session_status = "UPDATE training_session SET status='current' WHERE session_id = '$session_id_update_session_status[$i]';";
 			if ($session_datetime <= $now) {
 				$conn->query($sql_update_session_status);
 			}
@@ -37,56 +37,56 @@ if ($result_update_session_status = $conn->query($sql_update_session_status)) {
 	}
 }
 
-$sql_available_session = "SELECT * FROM training_session WHERE cl_username = '$username' AND (status = 'Available' OR status = 'Full');";
-if ($result_available_session = $conn->query($sql_available_session)) {
-	$row_count_available_session =mysqli_num_rows($result_available_session);
+$sql_upcoming_session = "SELECT * FROM training_session WHERE cl_username = '$username' AND (status = 'upcoming' OR status = 'Full');";
+if ($result_upcoming_session = $conn->query($sql_upcoming_session)) {
+	$row_count_upcoming_session =mysqli_num_rows($result_upcoming_session);
 
-	if ($row_count_available_session>0) {
+	if ($row_count_upcoming_session>0) {
 		$i = 1;
-		while($row_available_session=mysqli_fetch_assoc($result_available_session)) {
-			$session_id_available_session[$i] = $row_available_session['session_id'];
-			$title_available_session[$i] = $row_available_session['title'];
+		while($row_upcoming_session=mysqli_fetch_assoc($result_upcoming_session)) {
+			$session_id_upcoming_session[$i] = $row_upcoming_session['session_id'];
+			$title_upcoming_session[$i] = $row_upcoming_session['title'];
 			$i++;
 		}
 	}
 } else {
-	$row_count_available_session = 0;
+	$row_count_upcoming_session = 0;
 }
 
-$sql_canceled_session = "SELECT * FROM training_session WHERE cl_username = '$username' AND status = 'Canceled';";
-if ($result_canceled_session = $conn->query($sql_canceled_session)) {
-	$row_count_canceled_session =mysqli_num_rows($result_canceled_session);
+$sql_past_session = "SELECT * FROM training_session WHERE cl_username = '$username' AND status = 'past';";
+if ($result_past_session = $conn->query($sql_past_session)) {
+	$row_count_past_session =mysqli_num_rows($result_past_session);
 
-	if ($row_count_canceled_session>0) {
+	if ($row_count_past_session>0) {
 		$i = 1;
-		while($row_canceled_session=mysqli_fetch_assoc($result_canceled_session)) {
-			$session_id_canceled_session[$i] = $row_canceled_session['session_id'];
-			$title_canceled_session[$i] = $row_canceled_session['title'];
+		while($row_past_session=mysqli_fetch_assoc($result_past_session)) {
+			$session_id_past_session[$i] = $row_past_session['session_id'];
+			$title_past_session[$i] = $row_past_session['title'];
 			$i++;
 		}
 	}
 } else {
-	$row_count_canceled_session = 0;
+	$row_count_past_session = 0;
 }
 
-$sql_completed_session = "SELECT * FROM training_session WHERE cl_username = '$username' AND status = 'Completed';";
-if ($result_completed_session = $conn->query($sql_completed_session)) {
-	$row_count_completed_session =mysqli_num_rows($result_completed_session);
+$sql_current_session = "SELECT * FROM training_session WHERE cl_username = '$username' AND status = 'current';";
+if ($result_current_session = $conn->query($sql_current_session)) {
+	$row_count_current_session =mysqli_num_rows($result_current_session);
 
-	if ($row_count_completed_session>0) {
+	if ($row_count_current_session>0) {
 		$i = 1;
-		while($row_completed_session=mysqli_fetch_assoc($result_completed_session)) {
-			$session_id_completed_session[$i] = $row_completed_session['session_id'];
-			$title_completed_session[$i] = $row_completed_session['title'];
+		while($row_current_session=mysqli_fetch_assoc($result_current_session)) {
+			$session_id_current_session[$i] = $row_current_session['session_id'];
+			$title_current_session[$i] = $row_current_session['title'];
 			$i++;
 		}
 	}
 } else {
-	$row_count_completed_session = 0;
+	$row_count_current_session = 0;
 }
 
 
-$sql_find_all_sessions = "SELECT session_id FROM training_session WHERE cl_username = '$username' AND status = 'Completed';";
+$sql_find_all_sessions = "SELECT session_id FROM training_session WHERE cl_username = '$username' AND status = 'current';";
 if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 	$row_count_all_sessions =mysqli_num_rows($result_find_all_sessions);
 	$total = [];
@@ -170,9 +170,9 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 						<!-- Collect the nav links for toggling -->
 						<div class="collapse navbar-collapse" id="cl-mainNavbar">
 							<ul class="nav navbar-nav">
-								<li><a href="#" id="available-button">Available</a></li>
-								<li><a href="#" id="completed-button">Completed</a></li>
-								<li><a href="#" id="cancelled-button">Cancelled</a></li>
+								<li><a href="#" id="upcoming-button">Upcoming</a></li>
+								<li><a href="#" id="current-button">Current</a></li>
+								<li><a href="#" id="past-button">Past</a></li>
 							</ul>
 							<p class="navbar-text navbar-right"><?php /*echo $_SESSION['cl_username'];*/ echo "mehrab"; ?></p>
 							<a href="logout.php" type="button" id="btn-logout" class="btn btn-default navbar-btn navbar-right">Log out</a>
@@ -216,17 +216,19 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 						<div class="row">
 							<div class="col-sm-12">
 
-								<!-- Start Available Section -->
-								<div  id="available" class="row">
-									<div  class="row">
+								<!-- Start upcoming Section -->
+								<div  id="upcoming" class="row">
+									<div class="main-section-category-title col-xs-12 text-center">
+										<h1>Upcoming Job Posts</h1>
+									</div>
 
 										<?php
 								// Loop through the results from the database
-										for ($i = 1; $i <=$row_count_available_session; $i++) {
+										for ($i = 1; $i <=$row_count_upcoming_session; $i++) {
 											echo
 											"<div class='col-sm-3'>
-											<a class='getModal' href='#' id='$session_id_available_session[$i]' data-toggle='modal' data-target='#modalAvailable'>
-											<div class='center-box animated fadeInUp' data-text='$title_available_session[$i]'></div>
+											<a class='getModal' href='#' id='$session_id_upcoming_session[$i]' data-toggle='modal' data-target='#modalupcoming'>
+											<div class='center-box animated fadeInUp' data-text='$title_upcoming_session[$i]'></div>
 											</a>
 
 											</div>";
@@ -241,34 +243,39 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 											</a>
 
 										</div>
-									</div>
-								</div><!-- End Available Section -->
+								</div><!-- End upcoming Section -->
 
-								<!-- Start Completed Section -->
-								<div  id="completed" class="row">
+								<!-- Start current Section -->
+								<div  id="current" class="row" style="display:none">
+									<div class="main-section-category-title col-xs-12 text-center">
+										<h1>Current Job Posts</h1>
+									</div>
 									<?php
 							// Loop through the results from the database
-									for ($i = 1; $i <=$row_count_completed_session; $i++) {
+									for ($i = 1; $i <=$row_count_current_session; $i++) {
 										echo
 										"<div class='col-sm-3'>
-										<a class='getModal' href='#' id='$session_id_completed_session[$i]' data-toggle='modal' data-target='#modalAvailable'>
-										<div class='center-box animated fadeInUp' data-text='$title_completed_session[$i]'></div>
+										<a class='getModal' href='#' id='$session_id_current_session[$i]' data-toggle='modal' data-target='#modalupcoming'>
+										<div class='center-box animated fadeInUp' data-text='$title_current_session[$i]'></div>
 										</a>
 
 										</div>";
 									}
 									?>
-								</div><!-- End Completed Section -->
+								</div><!-- End current Section -->
 
-								<!-- Start Cancelled Section -->
-								<div  id="cancelled" class="row" style="display:none">
+								<!-- Start past Section -->
+								<div  id="past" class="row" style="display:none">
+									<div class="main-section-category-title col-xs-12 text-center">
+										<h1>Past Job Posts</h1>
+									</div>
 									<?php
 							// Loop through the results from the database
-									for ($i = 1; $i <=$row_count_canceled_session; $i++) {
+									for ($i = 1; $i <=$row_count_past_session; $i++) {
 										echo
 										"<div class='col-sm-3'>
-										<a class='getModal' href='#' id='$session_id_canceled_session[$i]' data-toggle='modal' data-target='#modalAvailable'>
-										<div class='center-box animated fadeInUp' data-text='$title_canceled_session[$i]'></div>
+										<a class='getModal' href='#' id='$session_id_past_session[$i]' data-toggle='modal' data-target='#modalupcoming'>
+										<div class='center-box animated fadeInUp' data-text='$title_past_session[$i]'></div>
 										</a>
 
 										</div>";
@@ -280,7 +287,7 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 							</div>
 
 							<!--Start Modal for Session-->
-							<div id="modalAvailable" class="modal fade" role="dialog">
+							<div id="modalupcoming" class="modal fade" role="dialog">
 								<div class="modal-dialog">
 
 									<!-- Modal content-->
@@ -369,7 +376,7 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 								$('#session-participants').html(result.max_num_part);
 								$('#session-status').html(result.status);
 								$('#session-fee').html(result.fee);
-								if(result.status == "Completed") {
+								if(result.status == "current") {
 									$('#footer_to_hide').css("display", "none");
 								} else{
 									$('#footer_to_hide').css("display", "block");
