@@ -1,45 +1,66 @@
 cl-html {
-    overflow-y: scroll;
+  overflow-y: scroll;
 }
 body{
-    background: rgb(235, 235, 235);
-    font-family: Oswald;
+  background: rgb(235, 235, 235);
+  font-family: Oswald;
+}
+.main-container{
+  margin-top: 50px;
+  border-left: 1px solid #dcdcdc;
+  border-right: 1px solid #dcdcdc;
+}
+.sidebar {
+  text-align: center;
+  padding: 0;
+}
+.sidebar-title{
+  border-bottom: 1px solid #dcdcdc;
+  padding: 20px;
+  margin: 0;
 }
 
+.sidebar-detail {
+  margin: 20px;
+}
 
-.left-side-color{
-  border: 1px solid #dcdcdc;
+.sidebar-detail dt{
+  font-size: 18px;
+}
+
+.sidebar-detail dd{
+  font-size: 15px;
+}
+
+.main-section{
+  border-left: 1px solid #dcdcdc;
+  min-height: 600px;
+}
+
+.container-upcoming-posts{
+  margin-top: 100px;
+}
+.panel-header-title {
+  text-align: center;
+  margin-top: 10px;
+}
+.job-panel-table>tbody>tr>td,
+.job-panel-table>tbody>tr>th,
+.panel-footer{
+  padding: 15px;
+  font-size: 16px;
+}
+.panel-footer {
   background: white;
-  border-bottom-style: solid;
 }
 
-.left-side-text {
-        width:75%;
-        margin-left: auto;
-        margin-right: auto;
-        padding-top: 2%;
-        text-align: center;
-        word-wrap: break-word;
-        font-family: Oswald;
-
+.create-job-panel{
+  height: 280px;
 }
 
-.left-side-text dt{
-        font-size: 17px;
-}
-
-.left-side-text dd{
-        font-size: 12px;
-}
-
-
-
-
-.username-text {
-        font-family: 'Oswald';
-        font-size: 163%;
-        font-weight: bolder;
-
+.create-job-panel>a>.panel-body{
+  text-align: center;
+  padding: 55px 40px;
 }
 
 .bold-text{
@@ -229,12 +250,6 @@ body{
 
 .myBtn:hover{
       border: 1px solid black;
-}
-
-
-.remove-padding {
-      padding-left: 5px;
-      padding-right: 5px;
 }
 
 
