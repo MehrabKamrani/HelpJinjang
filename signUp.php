@@ -41,18 +41,18 @@ error_reporting(0);
       <h1 class="text-center" style="font-family: 'Oswald', sans-serif;">Create your account</h1>
 
       <ul class="nav nav-pills">
-        <li class="active text-center"><a data-toggle="pill" href="#member" id="signUpMemberSection">Job Seeker</a></li>
-        <li class="text-center"><a data-toggle="pill" href="#trainer" id="signUpTrainerSection">Client</a></li>
+        <li class="active text-center"><a data-toggle="pill" href="#jobSeeker" id="signUpJobSeekerSection">Job Seeker</a></li>
+        <li class="text-center"><a data-toggle="pill" href="#client" id="signUpClientSection">Client</a></li>
       </ul>
 
       <div class="tab-content form-content">
-        <div id="member" class="tab-pane fade in active">
-          <form data-toggle="validator" class="form-horizontal" id="member-form" action="member.php" method="POST">
+        <div id="jobSeeker" class="tab-pane fade in active">
+          <form data-toggle="validator" class="form-horizontal" id="jobSeeker-form" action="jobSeekerSignUp.php" method="POST">
             <fieldset>
               <div class="form-group has-feedback">
                 <label class="control-label" for="fullname">Full Name</label>
                 <div class="controls">
-                  <input type="text" id="fullname" name="fullname" class="form-control" value="<?php echo $_COOKIE['fullname']; ?>" maxlength = "50" required>
+                  <input type="text" id="js_fullname" name="fullname" class="form-control" value="<?php echo $_COOKIE['fullname']; ?>" maxlength = "50" required>
                   <p class="help-block with-errors">Please provide your full name</p>
                 </div>
               </div>
@@ -60,7 +60,7 @@ error_reporting(0);
               <div class="form-group has-feedback">
                 <label class="control-label" for="username">Username</label>
                 <div class="controls">
-                  <input type="text" pattern="^[_A-z0-9]{1,}$" maxlength="15" id="username" name="username" class="form-control" value="<?php echo $_COOKIE['username']; ?>" required>
+                  <input type="text" pattern="^[_A-z0-9]{1,}$" maxlength="15" id="js_username" name="username" class="form-control" value="<?php echo $_COOKIE['username']; ?>" required>
                   <p class="help-block with-errors">Username can contain any letters or numbers, without spaces</p>
                 </div>
               </div>
@@ -68,7 +68,7 @@ error_reporting(0);
               <div class="form-group has-feedback ">
                 <label class="control-label" for="email">E-mail</label>
                 <div class="controls">
-                  <input type="email" id="email" name="email" class="form-control" value="<?php echo $_COOKIE['email']; ?>" maxlength = "50" required>
+                  <input type="email" id="js_email" name="email" class="form-control" value="<?php echo $_COOKIE['email']; ?>" maxlength = "50" required>
                   <p class="help-block with-errors">Please provide your E-mail (email@example.com)</p>
                 </div>
               </div>
@@ -77,43 +77,28 @@ error_reporting(0);
               <div class="form-group has-feedback ">
                 <label class="control-label" for="tel">Phone No</label>
                 <div class="controls">
-                  <input type="tel" id="tel" name="tel" class="form-control" value="<?php echo $_COOKIE['tel']; ?>" maxlength = "50" required>
-                  <p class="help-block with-errors">Please provide your phone number</p>
+                  <input type="tel" pattern="[0-9]{1,}" data-minlength="10"  id="js_phoneNo" name="phoneNo" class="form-control" value="<?php echo $_COOKIE['phoneNo']; ?>" maxlength = "12" required>
+                  <p class="help-block with-errors">Please provide your phone number (01112345678)</p>
                 </div>
               </div>
 
 
               <div class="form-group has-feedback">
-                <label class="control-label" for="mem_password">Password</label>
+                <label class="control-label" for="js_password">Password</label>
                 <div class="controls">
-                  <input type="password" data-minlength="6" id="mem_password" name="mem_password" class="form-control" data-error="Password should be at least 6 characters" maxlength = "50" required>
+                  <input type="password" data-minlength="6" id="js_password" name="js_password" class="form-control" data-error="Password should be at least 6 characters" maxlength = "50" required>
                   <p class="help-block with-errors">Please provide your password</p>
                 </div>
               </div>
 
               <div class="form-group has-feedback">
-                <label class="control-label" for="mem_password_confirm">Password (Confirm)</label>
+                <label class="control-label" for="js_password_confirm">Password (Confirm)</label>
                 <div class="controls">
-                  <input type="password" id="mem_password_confirm" data-match="#mem_password" data-match-error="Whoops, these don't match" name="mem_password_confirm" class="form-control" maxlength = "50" required>
+                  <input type="password" id="js_password_confirm" data-match="#js_password" data-match-error="Whoops, these don't match" name="js_password_confirm" class="form-control" maxlength = "50" required>
                   <p class="help-block with-errors">Please confirm password</p>
                 </div>
               </div>
-              <div class="form-group">
-                <label class="control-label" for="levelOptions">Level</label>
-                <div class="controls">
-                  <label class="radio-inline">
-                    <input type="radio" name="levelOptions" checked id="beginner" value="Beginner"> Beginner
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="levelOptions" id="advanced" value="Advanced"> Advanced
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="levelOptions" id="expert" value="Expert"> Expert
-                  </label>
-                  <p class="help-block">Please select your level</p>
-                </div>
-              </div>
-
+            
               <div class="controls">
                 <button type="reset" class="btn btn-reset btn-default">Reset</button>
                 <button type="submit" class="btn btn-submit btn-success pull-right">Register</button>
@@ -123,11 +108,11 @@ error_reporting(0);
           </form>
 
         </div>
-        <div id="trainer" class="tab-pane fade">
-          <form data-toggle="validator" class="form-horizontal" id="trainer-form" action="trainer.php" method="POST">
+        <div id="client" class="tab-pane fade">
+          <form data-toggle="validator" class="form-horizontal" id="client-form" action="clientSignUp.php" method="POST">
             <fieldset>
               <div class="form-group has-feedback">
-                <label class="control-label" for="fullname">Full Name</label>
+                <label class="control-label" for="cl_fullname">Full Name</label>
                 <div class="controls">
                   <input type="text" id="fullname" name="fullname" class="form-control" value="<?php echo $_COOKIE['tr_fullname']; ?>" maxlength = "50" required>
                   <p class="help-block with-errors">Please provide your full name</p>
@@ -137,7 +122,7 @@ error_reporting(0);
               <div class="form-group has-feedback">
                 <label class="control-label" for="username">Username</label>
                 <div class="controls">
-                  <input type="text" pattern="^[_A-z0-9]{1,}$" maxlength="15" id="username" name="username" class="form-control" value="<?php echo $_COOKIE['tr_username']; ?>" required>
+                  <input type="text" pattern="^[_A-z0-9]{1,}$" maxlength="15" id="cl_username" name="username" class="form-control" value="<?php echo $_COOKIE['tr_username']; ?>" required>
                   <p class="help-block with-errors">Username can contain any letters or numbers, without spaces</p>
                 </div>
               </div>
@@ -145,7 +130,7 @@ error_reporting(0);
               <div class="form-group has-feedback ">
                 <label class="control-label" for="email">E-mail</label>
                 <div class="controls">
-                  <input type="email" id="email" name="email" class="form-control" value="<?php echo $_COOKIE['tr_email']; ?>" maxlength = "50" required>
+                  <input type="cl_email" id="email" name="email" class="form-control" value="<?php echo $_COOKIE['tr_email']; ?>" maxlength = "50" required>
                   <p class="help-block with-errors">Please provide your E-mail (email@example.com)</p>
                 </div>
               </div>
@@ -154,43 +139,28 @@ error_reporting(0);
               <div class="form-group has-feedback ">
                 <label class="control-label" for="tel">Phone No</label>
                 <div class="controls">
-                  <input type="tel" id="tel" name="tel" class="form-control" value="<?php echo $_COOKIE['tel']; ?>" maxlength = "50" required>
-                  <p class="help-block with-errors">Please provide your phone number</p>
+                  <input type="tel" pattern="[0-9]{1,}" data-minlength="10" id="cl_phoneNo" name="phoneNo" class="form-control" value="<?php echo $_COOKIE['phoneNo']; ?>" maxlength = "12" required>
+                  <p class="help-block with-errors">Please provide your phone number (01112345678)</p>
                 </div>
               </div>
 
 
               <div class="form-group has-feedback">
-                <label class="control-label" for="tr_password">Password</label>
+                <label class="control-label" for="cl_password">Password</label>
                 <div class="controls">
-                  <input type="password" data-minlength="6" id="tr_password" name="tr_password" class="form-control" data-error="Password should be at least 6 characters" maxlength = "50" required>
+                  <input type="password" data-minlength="6" id="cl_password" name="cl_password" class="form-control" data-error="Password should be at least 6 characters" maxlength = "50" required>
                   <p class="help-block with-errors">Please provide your password</p>
                 </div>
               </div>
 
               <div class="form-group has-feedback">
-                <label class="control-label" for="tr_password_confirm">Password (Confirm)</label>
+                <label class="control-label" for="cl_password_confirm">Password (Confirm)</label>
                 <div class="controls">
-                  <input type="password" id="tr_password_confirm" data-match="#tr_password" data-match-error="Whoops, these don't match" name="tr_password_confirm" class="form-control" maxlength = "50" required>
+                  <input type="password" id="cl_password_confirm" data-match="#cl_password" data-match-error="Whoops, these don't match" name="cl_password_confirm" class="form-control" maxlength = "50" required>
                   <p class="help-block with-errors">Please confirm password</p>
                 </div>
               </div>
-              <div class="form-group">
-                <label class="control-label" for="specialityOptions">Speciality</label>
-                <div class="controls">
-                  <label class="radio-inline">
-                    <input type="radio" name="specialityOptions" checked id="dance" value="Dance"> Dance
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="specialityOptions" id="mma" value="MMA"> MMA
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="specialityOptions" id="sport" value="Sport"> Sport
-                  </label>
-                  <p class="help-block">Please select your speciality</p>
-                </div>
-              </div>
-
+             
               <div class="controls">
                 <button type="reset" class="btn btn-reset btn-default">Reset</button>
                 <button type="submit" class="btn btn-submit btn-success pull-right">Register</button>
@@ -218,6 +188,11 @@ error_reporting(0);
 
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
+
+<!-- Phone number validator -->
+<script src="js/bootstrap-formhelpers-phone.js"></script>
+
+
 <!--Validator -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
 
