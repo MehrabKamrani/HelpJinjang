@@ -25,11 +25,11 @@ body{
 }
 
 .sidebar-detail dt{
-  font-size: 17px;
+  font-size: 18px;
 }
 
 .sidebar-detail dd{
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .main-section{
@@ -40,7 +40,12 @@ body{
   text-align: center;
   margin-top: 10px;
 }
-
+.job-panel-table>tbody>tr>td,
+.job-panel-table>tbody>tr>th,
+.panel-footer{
+  padding: 15px;
+  font-size: 16px;
+}
 .panel-footer {
   background: white;
 }

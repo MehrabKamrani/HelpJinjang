@@ -235,12 +235,12 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 										}
 										?>
 
-										<div class="job-panel col-sm-4">
+										<div class="job-panel col-sm-6 col-md-4">
 											<div class="panel panel-default">
 												<div class="panel-heading">
 													<h3 class="panel-header-title">Job Title</h3>
 												</div>
-												<table class="table">
+												<table class="table job-panel-table">
 													<tbody>
 														<tr>
 															<th>Start on</th>
