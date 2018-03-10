@@ -36,6 +36,15 @@ body{
   border-left: 1px solid #dcdcdc;
 }
 
+.panel-header-title {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.panel-footer {
+  background: white;
+}
+
 .bold-text{
         font-family: Oswald;
         font-size: 150%;

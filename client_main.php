@@ -235,6 +235,31 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 										}
 										?>
 
+										<div class="job-panel col-sm-4">
+											<div class="panel panel-default">
+												<div class="panel-heading">
+													<h3 class="panel-header-title">Job Title</h3>
+												</div>
+												<table class="table">
+													<tbody>
+														<tr>
+															<th>Start on</th>
+															<td>12/04/2018</td>
+														</tr>
+														<tr>
+															<th>Salary</th>
+															<td>RM400</td>
+														</tr>
+														<tr>
+															<th>Category</th>
+															<td>Cooking</td>
+														</tr>
+													</tbody>
+												</table>
+												<a href="#"><div class="panel-footer text-center">View Details</div></a>
+											</div>
+										</div>
+
 										<div class="col-sm-3">
 											<a href="newSession.html" id="create_session">
 												<div class="center-box animated fadeInUp" style="text-align: center; box-shadow: none;" data-text="Create New Training Session">
