@@ -236,7 +236,7 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 										}
 										?>
 
-										<div class="job-panel col-sm-6 col-md-4">
+										<div class="job-panel col-sm-6 col-md-4 animated fadeInUp">
 											<div class="panel panel-default">
 												<div class="panel-heading">
 													<h3 class="panel-header-title">Job Title</h3>
@@ -261,7 +261,7 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 											</div>
 										</div>
 
-										<div class="job-panel col-sm-6 col-md-4">
+										<div class="job-panel col-sm-6 col-md-4 animated fadeInUp">
 											<div class="panel panel-default create-job-panel">
 												<div class="panel-heading">
 													<h3 class="panel-header-title">Create New Post</h3>
