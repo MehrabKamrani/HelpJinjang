@@ -222,6 +222,7 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 										<h1>Upcoming Job Posts</h1>
 									</div>
 
+									<div class="container-upcoming-posts">
 										<?php
 								// Loop through the results from the database
 										for ($i = 1; $i <=$row_count_upcoming_session; $i++) {
@@ -260,14 +261,21 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 											</div>
 										</div>
 
-										<div class="col-sm-3">
-											<a href="newSession.html" id="create_session">
-												<div class="center-box animated fadeInUp" style="text-align: center; box-shadow: none;" data-text="Create New Training Session">
-													<i class="fa fa-plus" aria-hidden="true" style="font-size: 100px; margin-top: 150px;"></i>
+										<div class="job-panel col-sm-6 col-md-4">
+											<div class="panel panel-default create-job-panel">
+												<div class="panel-heading">
+													<h3 class="panel-header-title">Create New Post</h3>
 												</div>
-											</a>
+												<a href="newSession.html" id="create_session">
+													<div class="panel-body">
+															<i class="fa fa-plus" aria-hidden="true" style="font-size: 100px;"></i>
+													</div>
+												</a>
+											</div>
+										</div>
 
 										</div>
+									</div>
 								</div><!-- End upcoming Section -->
 
 								<!-- Start current Section -->
@@ -357,7 +365,6 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 						</div>
 					</div>
 				</div>
-			</div>
 
 			<?php include "footer.php"; ?>
 

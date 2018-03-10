@@ -34,8 +34,12 @@ body{
 
 .main-section{
   border-left: 1px solid #dcdcdc;
+  min-height: 600px;
 }
 
+.container-upcoming-posts{
+  margin-top: 100px;
+}
 .panel-header-title {
   text-align: center;
   margin-top: 10px;
@@ -48,6 +52,15 @@ body{
 }
 .panel-footer {
   background: white;
+}
+
+.create-job-panel{
+  height: 280px;
+}
+
+.create-job-panel>a>.panel-body{
+  text-align: center;
+  padding: 55px 40px;
 }
 
 .bold-text{
