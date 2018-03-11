@@ -29,10 +29,7 @@ error_reporting(0);
 
 <body>
 
-  <?php include "login-header.php"; ?>
-
-</header>
-
+ 
 <div class="container" id="signUp-section">
   <div class="row">
 
@@ -114,7 +111,7 @@ error_reporting(0);
               <div class="form-group has-feedback">
                 <label class="control-label" for="cl_fullname">Full Name</label>
                 <div class="controls">
-                  <input type="text" id="fullname" name="fullname" class="form-control" value="<?php echo $_COOKIE['tr_fullname']; ?>" maxlength = "50" required>
+                  <input type="text" id="fullname" name="fullname" class="form-control" value="<?php echo $_COOKIE['cl_fullname']; ?>" maxlength = "50" required>
                   <p class="help-block with-errors">Please provide your full name</p>
                 </div>
               </div>
@@ -122,7 +119,7 @@ error_reporting(0);
               <div class="form-group has-feedback">
                 <label class="control-label" for="username">Username</label>
                 <div class="controls">
-                  <input type="text" pattern="^[_A-z0-9]{1,}$" maxlength="15" id="cl_username" name="username" class="form-control" value="<?php echo $_COOKIE['tr_username']; ?>" required>
+                  <input type="text" pattern="^[_A-z0-9]{1,}$" maxlength="15" id="cl_username" name="username" class="form-control" value="<?php echo $_COOKIE['cl_username']; ?>" required>
                   <p class="help-block with-errors">Username can contain any letters or numbers, without spaces</p>
                 </div>
               </div>
@@ -130,7 +127,7 @@ error_reporting(0);
               <div class="form-group has-feedback ">
                 <label class="control-label" for="email">E-mail</label>
                 <div class="controls">
-                  <input type="cl_email" id="email" name="email" class="form-control" value="<?php echo $_COOKIE['tr_email']; ?>" maxlength = "50" required>
+                  <input type="cl_email" id="email" name="email" class="form-control" value="<?php echo $_COOKIE['cl_email']; ?>" maxlength = "50" required>
                   <p class="help-block with-errors">Please provide your E-mail (email@example.com)</p>
                 </div>
               </div>
@@ -139,7 +136,7 @@ error_reporting(0);
               <div class="form-group has-feedback ">
                 <label class="control-label" for="tel">Phone No</label>
                 <div class="controls">
-                  <input type="tel" pattern="[0-9]{1,}" data-minlength="10" id="cl_phoneNo" name="phoneNo" class="form-control" value="<?php echo $_COOKIE['phoneNo']; ?>" maxlength = "12" required>
+                  <input type="tel" pattern="[0-9]{1,}" data-minlength="10" id="cl_phoneNo" name="phoneNo" class="form-control" value="<?php echo $_COOKIE['cl_phoneNo']; ?>" maxlength = "12" required>
                   <p class="help-block with-errors">Please provide your phone number (01112345678)</p>
                 </div>
               </div>
