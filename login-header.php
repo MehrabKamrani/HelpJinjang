@@ -21,9 +21,9 @@ session_start();
                 <div class="collapse navbar-collapse" id="navbar-login-collapse">
                   <form class="navbar-form navbar-right" action="" method="POST" id="login-form">
                     
-                    <button type="button" class="btn btn-success" id="login-btn" name="login" onclick="location.href='loginPage.php';">Login</button>
+                    <button type="button" class="btn btn-success" id="login-btn" name="login" onclick="location.href='loginPage.php';">Log In</button>
 
-                    <button type="button" class="btn" id="signup-btn" name="signup" onclick="location.href='signUp.php';">Sign up</button>
+                    <button type="button" class="btn btn-primary" name="signup" onclick="location.href='signUp.php';">Sign Up</button>
                   </form>
                 </div>
                 <!-- End .navbar-collapse -->
