@@ -231,7 +231,7 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 										for ($i = 0; $i <=$row_count_select_upcoming; $i++) {
 											echo
 											"<div class='col-sm-3'>
-											<a class='getModal' href='#' id='$jobID_selected_upcoming[$i]' data-toggle='modal' data-target='#modalupcoming'>
+											<a class='jobModal' href='#' id='$jobID_selected_upcoming[$i]' data-toggle='modal' data-target='#modalUpcoming'>
 											<div class='center-box animated fadeInUp' data-text='$title_selected_upcoming[$i]'></div>
 											</a>
 
@@ -261,7 +261,9 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 															</tr>
 														</tbody>
 													</table>
-													<a href='#'><div class='panel-footer text-center'>View Details</div></a>
+													<a class='jobModal' href='' id='$jobID_selected_upcoming[$i]' data-toggle='modal' data-target='#modalUpcoming'>
+														<div class='panel-footer text-center' data-text='$title_selected_upcoming[$i]'>View Details</div>
+													</a>
 												</div>
 											</div>";
 										}
@@ -295,7 +297,7 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 									for ($i = 1; $i <=$row_count_current_session; $i++) {
 										echo
 										"<div class='col-sm-3'>
-										<a class='getModal' href='#' id='$jobID_current_session[$i]' data-toggle='modal' data-target='#modalupcoming'>
+										<a class='jobModal' href='#' id='$jobID_current_session[$i]' data-toggle='modal' data-target='#modalUpcoming'>
 										<div class='center-box animated fadeInUp' data-text='$title_current_session[$i]'></div>
 										</a>
 
@@ -314,7 +316,7 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 									for ($i = 1; $i <=$row_count_past_session; $i++) {
 										echo
 										"<div class='col-sm-3'>
-										<a class='getModal' href='#' id='$jobID_past_session[$i]' data-toggle='modal' data-target='#modalupcoming'>
+										<a class='jobModal' href='#' id='$jobID_past_session[$i]' data-toggle='modal' data-target='#modalUpcoming'>
 										<div class='center-box animated fadeInUp' data-text='$title_past_session[$i]'></div>
 										</a>
 
@@ -326,38 +328,45 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 
 							</div>
 
-							<!--Start Modal for Session-->
-							<div id="modalupcoming" class="modal fade" role="dialog">
+							<!--Start Modal for Job-->
+							<div id="modalUpcoming" class="modal fade" role="dialog">
 								<div class="modal-dialog">
 
 									<!-- Modal content-->
 									<div class="modal-content">
 										<div class="modal-header">
-											<button type="button" class="close" data-dismiss="modal">&times;</button>
-											<h4 class="modal-title" id="session-title"></h4>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+											<h3 class="modal-title" id="job-title"></h3>
 										</div>
 										<div class="modal-body">
 											<div class="modal-dl">
-												<table class="table">
+												<table class="table table-bordered table-striped">
 
-													<tr><th>Date:</th><td id="session-date"></td></tr>
+													<tr><th>Starting Date:</th><td id="job-startDate"></td></tr>
 
-													<tr><th>Time:</th><td id="session-time"></td></tr>
+													<tr><th>Ending Date:</th><td id="job-endDate"></td></tr>
 
-													<tr><th>Type:</th><td id="session-type"></td></tr>
+													<tr><th>Starting Time:</th><td id="job-startTime"></td></tr>
 
-													<tr><th id="session-participants-title">No of participants:</th><td id="session-participants"></td></tr>
+													<tr><th>Ending Time:</th><td id="job-endTime"></td></tr>
 
-													<tr><th>Status:</th><td id="session-status"></td></tr>
+													<tr><th>Salary:</th><td id="job-salary"></td></tr>
 
-													<tr><th>Fee:</th><td id="session-fee"></td></tr>
+													<tr><th>Category:</th><td id="job-category"></td></tr>
+
+													<tr><th>No. Needed Jobseekers:</th><td id="job-qtyOfJobSeekers"></td></tr>
+
+													<tr><th>Description:</th><td id="job-description"></td></tr>
+
+													<tr><th>Address:</th><td id="job-address"></td></tr>
+
 												</table>
 
 											</div>
 										</div>
 										<div class="modal-footer" id="footer_to_hide">
 											<form action="updateSession_main.php" method="post">
-												<input class="hidden" id="session-id" name="jobID" value="">
+												<input class="hidden" id="job-id" name="jobID" value="">
 												<button type="submit" class="btn btn-default">Update</button>
 											</form>
 										</div>
@@ -387,39 +396,36 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 			<script type="text/javascript">
 				$(function(){
 
-					$('.getModal').on('click', function(){
-						var sessionId = $(this).attr('id');
+					$('.jobModal').on('click', function(){
+						var jobID = $(this).attr('id');
 						$.ajax({
-							url: 'modal.php',
+							url: 'jobModal.php',
 							type: 'POST',
-							data: {'jobID':sessionId},
+							data: {'jobID':jobID},
 							success: function(result){
-								if (result.max_num_part == 1) {
-									$('#session-participants-title').css('display', 'none');
-									$('#session-participants').css('display', 'none');
-									result.session_type_grpOrPrs = 'Personal';
-								} else {
-									result.session_type_grpOrPrs = 'Group';
-									$('#session-participants-title').css('display', 'table-cell');
-									$('#session-participants').css('display', 'table-cell');
 
-								}
-								var time = result.session_time.split(":");
-								time = time[0] + ":" + time[1];
+								var startTime = result.startTime.split(":");
+								startTime = startTime[0] + ":" + startTime[1];
 
-								$('#session-id').attr('value', result.jobID);
-								$('#session-title').html(result.title + " (" + result.session_type_grpOrPrs + " Session)");
-								$('#session-date').html(result.session_date);
-								$('#session-time').html(time);
-								$('#session-type').html(result.type);
-								$('#session-participants').html(result.max_num_part);
-								$('#session-status').html(result.status);
-								$('#session-fee').html(result.fee);
-								if(result.status == "current") {
+								var endTime = result.endTime.split(":");
+								endTime = endTime[0] + ":" + endTime[1];
+
+								$('#job-id').attr('value', result.jobID);
+								$('#job-title').html(result.title);
+								$('#job-startDate').html(result.startDate);
+								$('#job-endDate').html(result.endDate);
+								$('#job-startTime').html(startTime);
+								$('#job-endTime').html(endTime);
+								$('#job-salary').html(result.salary);
+								$('#job-qtyOfJobSeekers').html(result.qtyOfJobSeekers);
+								$('#job-category').html(result.categoryName);
+								$('#job-address').html(result.address);
+								$('#job-description').html(result.description);
+								/*if(result.status == "current") {
 									$('#footer_to_hide').css("display", "none");
 								} else{
 									$('#footer_to_hide').css("display", "block");
-								}
+								}*/
 
 							},
 							error: function(result){

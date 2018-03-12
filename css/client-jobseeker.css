@@ -286,33 +286,16 @@ label:hover, label:hover ~ label,
       float: left;
       color: black;
 }
-
-
-.modal-img  {
-      width: 100%;
-      text-align: center;
-      margin-bottom: 5%;
-}
-
-.modal-img img{
-    width: 70%;
-    border: 2px solid gray;
-    box-shadow: 1px 1px 3px #888888;
-    }
-
 .modal-dl {
-    width: 100%;
-    text-align: center;
     font-size: medium;
 }
 
-.modal-dl table {
-      margin-right: auto;
-      margin-left: auto;
+.modal-dl th, .modal-dl td{
+      border-top: none;
 }
 
-.modal-dl th{
-      text-align: center;
+.modal-header .close {
+    font-size: 36px;
 }
 
 #session-title {
