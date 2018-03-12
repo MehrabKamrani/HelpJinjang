@@ -35,7 +35,7 @@ error_reporting(0);
 
       <div class="tab-content form-content">
         <div id="jobSeeker" class="tab-pane fade in active">
-          <form data-toggle="validator" class="form-horizontal" id="jobSeeker-form" action="jobSeekerSignUp.php" method="POST">
+          <form data-toggle="validator" class="form-horizontal" id="jobSeeker-form" action="login.php" method="POST">
             <fieldset>
              
               <div class="form-group has-feedback">
