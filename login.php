@@ -49,7 +49,7 @@ error_reporting(0);
               <div class="form-group has-feedback">
                 <label class="control-label" for="js_password">Password</label>
                 <div class="controls">
-                  <input type="password" data-minlength="6" id="js_password" name="js_password" class="form-control" data-error="Password should be at least 6 characters" maxlength = "50" required>
+                  <input type="password" id="js_password" name="js_password" class="form-control" maxlength = "50" required>
                   <p class="help-block with-errors"></p>
                 </div>
               </div>
