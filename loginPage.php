@@ -41,7 +41,7 @@ error_reporting(0);
               <div class="form-group has-feedback">
                 <label class="control-label" for="username">Username</label>
                 <div class="controls">
-                  <input type="text" pattern="^[_A-z0-9]{1,}$" maxlength="15" id="js_username" name="username" class="form-control" value="<?php echo $_COOKIE['username']; ?>" required>
+                  <input type="text" pattern="^[_A-z0-9]{1,}$" maxlength="15" id="username" name="login-username" class="form-control" value="<?php echo $_COOKIE['username']; ?>" required>
                   <p class="help-block with-errors"></p>
                 </div>
               </div>
@@ -49,14 +49,14 @@ error_reporting(0);
               <div class="form-group has-feedback">
                 <label class="control-label" for="js_password">Password</label>
                 <div class="controls">
-                  <input type="password" id="js_password" name="js_password" class="form-control" maxlength = "50" required>
+                  <input type="password" id="password" name="login-password" class="form-control" maxlength = "50" required>
                   <p class="help-block with-errors"></p>
                 </div>
               </div>
 
            
               <div class="controls">
-                <button type="submit" class="btn btn-submit btn-success btn-block">Login</button>
+                <button type="submit" name = "submit" class="btn btn-submit btn-success btn-block">Login</button>
               </div>
                <p class="help-block with-errors text-center">Or <a>Forgot Password</a></p>
                <hr>

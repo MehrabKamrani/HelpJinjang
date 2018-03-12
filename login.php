@@ -1,10 +1,9 @@
 <?php
-
-
-if (isset($_POST['submit'])) {
+    session_start();
 
 	$username = $_POST['login-username'];
     $password = $_POST['login-password'];
+
 
     $conn = new mysqli("localhost", "root","", "helpjinjang");
 
@@ -46,7 +45,7 @@ if (isset($_POST['submit'])) {
 		}
         else if ($_SESSION['session_username_client'] == $username && $_SESSION['session_password_client']==$password) {
             $cl_info = $conn->query("SELECT * FROM client WHERE client_username = '$username'");
-            while ($row = $tr_info->fetch_array()){
+            while ($row = $cl_info->fetch_array()){
                 $_SESSION['cl_fullname'] = $row['client_fullname'];
                 $_SESSION['cl_username'] = $row['client_username'];
                 $_SESSION['cl_email'] = $row['client_email'];
@@ -70,8 +69,5 @@ if (isset($_POST['submit'])) {
 	}
 
 	$conn->close();
-}
-
-
 
 ?>
