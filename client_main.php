@@ -19,7 +19,7 @@ if ($result_update_session_status = $conn->query($sql_update_session_status)) {
 	if ($row_count_update_session_status>0) {
 		$i = 1;
 		while($row_update_session_status=mysqli_fetch_assoc($result_update_session_status)) {
-			$session_id_update_session_status[$i] = $row_update_session_status['session_id'];
+			$jobID_update_session_status[$i] = $row_update_session_status['jobID'];
 			$session_time_update_session_status[$i] = $row_update_session_status['session_time'];
 			$session_date_update_session_status[$i] = $row_update_session_status['session_date'];
 
@@ -27,7 +27,7 @@ if ($result_update_session_status = $conn->query($sql_update_session_status)) {
 
 			$session_datetime = new DateTime($session_date_update_session_status[$i] . " " . $session_time_update_session_status[$i], new DateTimeZone('Singapore'));
 
-			$sql_update_session_status = "UPDATE training_session SET status='current' WHERE session_id = '$session_id_update_session_status[$i]';";
+			$sql_update_session_status = "UPDATE training_session SET status='current' WHERE jobID = '$jobID_update_session_status[$i]';";
 			if ($session_datetime <= $now) {
 				$conn->query($sql_update_session_status);
 			}
@@ -37,20 +37,23 @@ if ($result_update_session_status = $conn->query($sql_update_session_status)) {
 	}
 }
 
-$sql_upcoming_session = "SELECT * FROM training_session WHERE cl_username = '$username' AND (status = 'upcoming' OR status = 'Full');";
-if ($result_upcoming_session = $conn->query($sql_upcoming_session)) {
-	$row_count_upcoming_session =mysqli_num_rows($result_upcoming_session);
+$sql_select_upcoming = "SELECT * FROM job WHERE client_username = '$username' AND status = 'upcoming'";
+if ($result_select_upcoming = $conn->query($sql_select_upcoming)) {
+	$row_count_select_upcoming =mysqli_num_rows($result_select_upcoming);
 
-	if ($row_count_upcoming_session>0) {
+	if ($row_count_select_upcoming>0) {
 		$i = 1;
-		while($row_upcoming_session=mysqli_fetch_assoc($result_upcoming_session)) {
-			$session_id_upcoming_session[$i] = $row_upcoming_session['session_id'];
-			$title_upcoming_session[$i] = $row_upcoming_session['title'];
+		while($row_select_upcoming=mysqli_fetch_assoc($result_select_upcoming)) {
+			$jobID_selected_upcoming[$i] = $row_select_upcoming['jobID'];
+			$title_selected_upcoming[$i] = $row_select_upcoming['title'];
+			$startDate_selected_upcoming[$i] = $row_select_upcoming['startDate'];
+			$salary_selected_upcoming[$i] = $row_select_upcoming['salary'];
+			$category_selected_upcoming[$i] = $row_select_upcoming['categoryName'];
 			$i++;
 		}
 	}
 } else {
-	$row_count_upcoming_session = 0;
+	$row_count_select_upcoming = 0;
 }
 
 $sql_past_session = "SELECT * FROM training_session WHERE cl_username = '$username' AND status = 'past';";
@@ -60,7 +63,7 @@ if ($result_past_session = $conn->query($sql_past_session)) {
 	if ($row_count_past_session>0) {
 		$i = 1;
 		while($row_past_session=mysqli_fetch_assoc($result_past_session)) {
-			$session_id_past_session[$i] = $row_past_session['session_id'];
+			$jobID_past_session[$i] = $row_past_session['jobID'];
 			$title_past_session[$i] = $row_past_session['title'];
 			$i++;
 		}
@@ -76,7 +79,7 @@ if ($result_current_session = $conn->query($sql_current_session)) {
 	if ($row_count_current_session>0) {
 		$i = 1;
 		while($row_current_session=mysqli_fetch_assoc($result_current_session)) {
-			$session_id_current_session[$i] = $row_current_session['session_id'];
+			$jobID_current_session[$i] = $row_current_session['jobID'];
 			$title_current_session[$i] = $row_current_session['title'];
 			$i++;
 		}
@@ -86,7 +89,7 @@ if ($result_current_session = $conn->query($sql_current_session)) {
 }
 
 
-$sql_find_all_sessions = "SELECT session_id FROM training_session WHERE cl_username = '$username' AND status = 'current';";
+$sql_find_all_sessions = "SELECT jobID FROM training_session WHERE cl_username = '$username' AND status = 'current';";
 if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 	$row_count_all_sessions =mysqli_num_rows($result_find_all_sessions);
 	$total = [];
@@ -94,12 +97,12 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 		$i = 1;
 		$rating = [];
 		while($row_count_all_sessions=mysqli_fetch_assoc($result_find_all_sessions)) {
-			$rating[$i] = $row_count_all_sessions['session_id'];
+			$rating[$i] = $row_count_all_sessions['jobID'];
 			$i++;
 		}
 		for ($a = 1; $a <= count($rating); $a++){
 			$current_session = $rating[$a];
-			$sql_find_rating = "SELECT rating FROM rating WHERE session_id = '$current_session';";
+			$sql_find_rating = "SELECT rating FROM rating WHERE jobID = '$current_session';";
 
 			if ($result_find_rating = $conn->query($sql_find_rating)) {
 				$row_find_rating =mysqli_num_rows($result_find_rating);
@@ -224,42 +227,46 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 
 									<div class="container-upcoming-posts">
 										<?php
-								// Loop through the results from the database
-										for ($i = 1; $i <=$row_count_upcoming_session; $i++) {
+								/* Loop through the results from the database
+										for ($i = 0; $i <=$row_count_select_upcoming; $i++) {
 											echo
 											"<div class='col-sm-3'>
-											<a class='getModal' href='#' id='$session_id_upcoming_session[$i]' data-toggle='modal' data-target='#modalupcoming'>
-											<div class='center-box animated fadeInUp' data-text='$title_upcoming_session[$i]'></div>
+											<a class='getModal' href='#' id='$jobID_selected_upcoming[$i]' data-toggle='modal' data-target='#modalupcoming'>
+											<div class='center-box animated fadeInUp' data-text='$title_selected_upcoming[$i]'></div>
 											</a>
 
+											</div>";
+										}*/
+										?>
+										<?php
+										for ($i = 1; $i <=$row_count_select_upcoming; $i++) {
+											echo "<div id='$jobID_selected_upcoming[$i]' class='job-panel col-sm-6 col-md-4 animated fadeInUp'>
+												<div class='panel panel-default'>
+													<div class='panel-heading'>
+														<h3 class='panel-header-title'>$title_selected_upcoming[$i]</h3>
+													</div>
+													<table class='table job-panel-table'>
+														<tbody>
+															<tr>
+																<th>Start on</th>
+																<td>$startDate_selected_upcoming[$i]</td>
+															</tr>
+															<tr>
+																<th>Salary</th>
+																<td>$salary_selected_upcoming[$i]</td>
+															</tr>
+															<tr>
+																<th>Category</th>
+																<td>$category_selected_upcoming[$i]</td>
+															</tr>
+														</tbody>
+													</table>
+													<a href='#'><div class='panel-footer text-center'>View Details</div></a>
+												</div>
 											</div>";
 										}
 										?>
 
-										<div class="job-panel col-sm-6 col-md-4 animated fadeInUp">
-											<div class="panel panel-default">
-												<div class="panel-heading">
-													<h3 class="panel-header-title">Job Title</h3>
-												</div>
-												<table class="table job-panel-table">
-													<tbody>
-														<tr>
-															<th>Start on</th>
-															<td>12/04/2018</td>
-														</tr>
-														<tr>
-															<th>Salary</th>
-															<td>RM400</td>
-														</tr>
-														<tr>
-															<th>Category</th>
-															<td>Cooking</td>
-														</tr>
-													</tbody>
-												</table>
-												<a href="#"><div class="panel-footer text-center">View Details</div></a>
-											</div>
-										</div>
 
 										<div class="job-panel col-sm-6 col-md-4 animated fadeInUp">
 											<div class="panel panel-default create-job-panel">
@@ -288,7 +295,7 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 									for ($i = 1; $i <=$row_count_current_session; $i++) {
 										echo
 										"<div class='col-sm-3'>
-										<a class='getModal' href='#' id='$session_id_current_session[$i]' data-toggle='modal' data-target='#modalupcoming'>
+										<a class='getModal' href='#' id='$jobID_current_session[$i]' data-toggle='modal' data-target='#modalupcoming'>
 										<div class='center-box animated fadeInUp' data-text='$title_current_session[$i]'></div>
 										</a>
 
@@ -307,7 +314,7 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 									for ($i = 1; $i <=$row_count_past_session; $i++) {
 										echo
 										"<div class='col-sm-3'>
-										<a class='getModal' href='#' id='$session_id_past_session[$i]' data-toggle='modal' data-target='#modalupcoming'>
+										<a class='getModal' href='#' id='$jobID_past_session[$i]' data-toggle='modal' data-target='#modalupcoming'>
 										<div class='center-box animated fadeInUp' data-text='$title_past_session[$i]'></div>
 										</a>
 
@@ -350,7 +357,7 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 										</div>
 										<div class="modal-footer" id="footer_to_hide">
 											<form action="updateSession_main.php" method="post">
-												<input class="hidden" id="session-id" name="session_id" value="">
+												<input class="hidden" id="session-id" name="jobID" value="">
 												<button type="submit" class="btn btn-default">Update</button>
 											</form>
 										</div>
@@ -385,7 +392,7 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 						$.ajax({
 							url: 'modal.php',
 							type: 'POST',
-							data: {'session_id':sessionId},
+							data: {'jobID':sessionId},
 							success: function(result){
 								if (result.max_num_part == 1) {
 									$('#session-participants-title').css('display', 'none');
@@ -400,7 +407,7 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 								var time = result.session_time.split(":");
 								time = time[0] + ":" + time[1];
 
-								$('#session-id').attr('value', result.session_id);
+								$('#session-id').attr('value', result.jobID);
 								$('#session-title').html(result.title + " (" + result.session_type_grpOrPrs + " Session)");
 								$('#session-date').html(result.session_date);
 								$('#session-time').html(time);
