@@ -56,7 +56,7 @@ error_reporting(0);
 
            
               <div class="controls">
-                <button type="submit" class="btn btn-submit btn-primary btn-block">Register</button>
+                <button type="submit" class="btn btn-submit btn-success btn-block">Login</button>
               </div>
                <p class="help-block with-errors text-center">Or <a>Forgot Password</a></p>
                <hr>

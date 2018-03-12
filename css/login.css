@@ -116,6 +116,7 @@
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   padding: 20px;
+  margin-bottom: 60px;
 }
 .form-control{
   box-shadow: none;
