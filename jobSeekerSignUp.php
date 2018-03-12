@@ -31,8 +31,8 @@
 	VALUES ('$username', '$fullname', '$email', '$phoneNo', '$password')";
 
 	//Checking for duplicates
-	$dupesql_username_cl = "SELECT * FROM client where (cl_username = '$username')";
-	$dupesql_email_cl = "SELECT * FROM client where (cl_email = '$email')";
+	$dupesql_username_cl = "SELECT * FROM client where (client_username = '$username')";
+	$dupesql_email_cl = "SELECT * FROM client where (client_email = '$email')";
 	$dupesql_username_js = "SELECT * FROM jobseeker where (js_username = '$username')";
 	$dupesql_email_js = "SELECT * FROM jobseeker where (js_email = '$email')";
 
