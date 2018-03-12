@@ -20,13 +20,10 @@ session_start();
                 <!-- Collect the nav links for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-login-collapse">
                   <form class="navbar-form navbar-right" action="" method="POST" id="login-form">
-                    <div class="form-group">
-                      <input type="text" placeholder="Username" class="form-control" id="login-username" name="login-username" required>
-                    </div>
-                    <div class="form-group">
-                      <input type="password" placeholder="Password" class="form-control" id="login-password" name="login-password" required>
-                    </div>
-                    <button type="submit" class="btn btn-success" id="login-btn" name="submit">Login</button>
+                    
+                    <button type="button" class="btn btn-success" id="login-btn" name="login" onclick="location.href='loginPage.php';">Login</button>
+
+                    <button type="button" class="btn" id="signup-btn" name="signup" onclick="location.href='signUp.php';">Sign up</button>
                   </form>
                 </div>
                 <!-- End .navbar-collapse -->
