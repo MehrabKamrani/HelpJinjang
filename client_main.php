@@ -266,7 +266,7 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 												<div class="panel-heading">
 													<h3 class="panel-header-title">Create New Post</h3>
 												</div>
-												<a href="postNewJob.php" id="create_session">
+												<a href="postNewJob_main.php" id="create_session">
 													<div class="panel-body">
 															<i class="fa fa-plus" aria-hidden="true" style="font-size: 100px;"></i>
 													</div>
