@@ -75,74 +75,46 @@ if ($result_select_upcoming = $conn->query($sql_select_upcoming)) {
 	$row_count_select_upcoming = 0;
 }
 
-$sql_Passed_session = "SELECT * FROM training_session WHERE cl_username = '$username' AND status = 'Passed';";
-if ($result_Passed_session = $conn->query($sql_Passed_session)) {
-	$row_count_Passed_session =mysqli_num_rows($result_Passed_session);
-
-	if ($row_count_Passed_session>0) {
+// Select current posts
+$sql_select_current = "SELECT * FROM job WHERE client_username = '$username' AND status = 'current'";
+if ($result_select_current = $conn->query($sql_select_current)) {
+	$row_count_select_current =mysqli_num_rows($result_select_current);
+	if ($row_count_select_current>0) {
 		$i = 1;
-		while($row_Passed_session=mysqli_fetch_assoc($result_Passed_session)) {
-			$jobID_Passed_session[$i] = $row_Passed_session['jobID'];
-			$title_Passed_session[$i] = $row_Passed_session['title'];
+		while($row_select_current=mysqli_fetch_assoc($result_select_current)) {
+			$jobID_selected_current[$i] = $row_select_current['jobID'];
+			$title_selected_current[$i] = $row_select_current['title'];
+			$startDate_selected_current[$i] = $row_select_current['startDate'];
+			$salary_selected_current[$i] = $row_select_current['salary'];
+			$category_selected_current[$i] = $row_select_current['categoryName'];
 			$i++;
 		}
 	}
 } else {
-	$row_count_Passed_session = 0;
+	$row_count_select_current = 0;
 }
 
-$sql_current_session = "SELECT * FROM training_session WHERE cl_username = '$username' AND status = 'current';";
-if ($result_current_session = $conn->query($sql_current_session)) {
-	$row_count_current_session =mysqli_num_rows($result_current_session);
-
-	if ($row_count_current_session>0) {
+// Select passed posts
+$sql_select_passed = "SELECT * FROM job WHERE client_username = '$username' AND status = 'passed'";
+if ($result_select_passed = $conn->query($sql_select_passed)) {
+	$row_count_select_passed =mysqli_num_rows($result_select_passed);
+	if ($row_count_select_passed>0) {
 		$i = 1;
-		while($row_current_session=mysqli_fetch_assoc($result_current_session)) {
-			$jobID_current_session[$i] = $row_current_session['jobID'];
-			$title_current_session[$i] = $row_current_session['title'];
+		while($row_select_passed=mysqli_fetch_assoc($result_select_passed)) {
+			$jobID_selected_passed[$i] = $row_select_passed['jobID'];
+			$title_selected_passed[$i] = $row_select_passed['title'];
+			$startDate_selected_passed[$i] = $row_select_passed['startDate'];
+			$salary_selected_passed[$i] = $row_select_passed['salary'];
+			$category_selected_passed[$i] = $row_select_passed['categoryName'];
 			$i++;
 		}
 	}
 } else {
-	$row_count_current_session = 0;
+	$row_count_select_passed = 0;
 }
 
 
-$sql_find_all_sessions = "SELECT jobID FROM training_session WHERE cl_username = '$username' AND status = 'current';";
-if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
-	$row_count_all_sessions =mysqli_num_rows($result_find_all_sessions);
-	$total = [];
-	if ($row_count_all_sessions>0) {
-		$i = 1;
-		$rating = [];
-		while($row_count_all_sessions=mysqli_fetch_assoc($result_find_all_sessions)) {
-			$rating[$i] = $row_count_all_sessions['jobID'];
-			$i++;
-		}
-		for ($a = 1; $a <= count($rating); $a++){
-			$current_session = $rating[$a];
-			$sql_find_rating = "SELECT rating FROM rating WHERE jobID = '$current_session';";
-
-			if ($result_find_rating = $conn->query($sql_find_rating)) {
-				$row_find_rating =mysqli_num_rows($result_find_rating);
-				if ($row_find_rating>0) {
-					$i = 1;
-					while($row_find_rating=mysqli_fetch_assoc($result_find_rating)) {
-						$total[$i] = $row_find_rating['rating'];
-						$i++;
-					}
-				}
-			}
-		}
-
-
-	}
-}
-
-
-
-
-		?>
+?>
 
 		<!DOCTYPE html>
 		<html>
@@ -194,7 +166,7 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 							<ul class="nav navbar-nav">
 								<li><a href="#" id="upcoming-button">Upcoming</a></li>
 								<li><a href="#" id="current-button">Current</a></li>
-								<li><a href="#" id="Passed-button">Passed</a></li>
+								<li><a href="#" id="passed-button">Passed</a></li>
 							</ul>
 							<p class="navbar-text navbar-right"><?php /*echo $_SESSION['cl_username'];*/ echo "mehrab"; ?></p>
 							<a href="logout.php" type="button" id="btn-logout" class="btn btn-default navbar-btn navbar-right">Log out</a>
@@ -207,7 +179,7 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 			</header>
 
 			<div class="container main-container">
-				<div class="alert alert-success alert-dismissable" id="welcome-message" style="position: fixed; z-index:1000;">
+				<div class="alert alert-success alert-dismissable animated fadeInLeft" id="welcome-message" style="position: fixed; z-index:1000;">
 					<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
 					Welcome <strong><?php /*echo $_SESSION['cl_fullname'];*/ echo "Mehrab Kamrani"; ?></strong>, you have loged in successfully.
 				</div>
@@ -235,8 +207,6 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 
 
 					<div class="col-sm-9 main-section">
-						<div class="row">
-							<div class="col-sm-12">
 
 								<!-- Start upcoming Section -->
 								<div  id="upcoming" class="row">
@@ -245,18 +215,6 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 									</div>
 
 									<div class="container-upcoming-posts">
-										<?php
-								/* Loop through the results from the database
-										for ($i = 0; $i <=$row_count_select_upcoming; $i++) {
-											echo
-											"<div class='col-sm-3'>
-											<a class='jobModal' href='#' id='$jobID_selected_upcoming[$i]' data-toggle='modal' data-target='#modalUpcoming'>
-											<div class='center-box animated fadeInUp' data-text='$title_selected_upcoming[$i]'></div>
-											</a>
-
-											</div>";
-										}*/
-										?>
 										<?php
 										for ($i = 1; $i <=$row_count_select_upcoming; $i++) {
 											echo "<div id='$jobID_selected_upcoming[$i]' class='job-panel col-sm-6 col-md-4 animated fadeInUp'>
@@ -280,7 +238,7 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 															</tr>
 														</tbody>
 													</table>
-													<a class='jobModal' href='' id='$jobID_selected_upcoming[$i]' data-toggle='modal' data-target='#modalUpcoming'>
+													<a class='displayJobModal' href='' id='$jobID_selected_upcoming[$i]' data-toggle='modal' data-target='#jobModal'>
 														<div class='panel-footer text-center' data-text='$title_selected_upcoming[$i]'>View Details</div>
 													</a>
 												</div>
@@ -302,8 +260,7 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 											</div>
 										</div>
 
-										</div>
-									</div>
+									</div><!-- container-upcoming-posts -->
 								</div><!-- End upcoming Section -->
 
 								<!-- Start current Section -->
@@ -312,43 +269,78 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 										<h1>Current Job Posts</h1>
 									</div>
 									<?php
-							// Loop through the results from the database
-									for ($i = 1; $i <=$row_count_current_session; $i++) {
-										echo
-										"<div class='col-sm-3'>
-										<a class='jobModal' href='#' id='$jobID_current_session[$i]' data-toggle='modal' data-target='#modalUpcoming'>
-										<div class='center-box animated fadeInUp' data-text='$title_current_session[$i]'></div>
-										</a>
-
+									for ($i = 1; $i <=$row_count_select_current; $i++) {
+										echo "<div id='$jobID_selected_current[$i]' class='job-panel col-sm-6 col-md-4 animated fadeInUp'>
+											<div class='panel panel-default'>
+												<div class='panel-heading'>
+													<h3 class='panel-header-title'>$title_selected_current[$i]</h3>
+												</div>
+												<table class='table job-panel-table'>
+													<tbody>
+														<tr>
+															<th>Start on</th>
+															<td>$startDate_selected_current[$i]</td>
+														</tr>
+														<tr>
+															<th>Salary</th>
+															<td>$salary_selected_current[$i]</td>
+														</tr>
+														<tr>
+															<th>Category</th>
+															<td>$category_selected_current[$i]</td>
+														</tr>
+													</tbody>
+												</table>
+												<a class='displayJobModal' href='' id='$jobID_selected_current[$i]' data-toggle='modal' data-target='#jobModal'>
+													<div class='panel-footer text-center' data-text='$title_selected_current[$i]'>View Details</div>
+												</a>
+											</div>
 										</div>";
 									}
 									?>
 								</div><!-- End current Section -->
 
 								<!-- Start Passed Section -->
-								<div  id="Passed" class="row" style="display:none">
+								<div  id="passed" class="row" style="display:none">
 									<div class="main-section-category-title col-xs-12 text-center">
 										<h1>Passed Job Posts</h1>
 									</div>
 									<?php
-							// Loop through the results from the database
-									for ($i = 1; $i <=$row_count_Passed_session; $i++) {
-										echo
-										"<div class='col-sm-3'>
-										<a class='jobModal' href='#' id='$jobID_Passed_session[$i]' data-toggle='modal' data-target='#modalUpcoming'>
-										<div class='center-box animated fadeInUp' data-text='$title_Passed_session[$i]'></div>
-										</a>
-
+									for ($i = 1; $i <=$row_count_select_passed; $i++) {
+										echo "<div id='$jobID_selected_passed[$i]' class='job-panel col-sm-6 col-md-4 animated fadeInUp'>
+											<div class='panel panel-default'>
+												<div class='panel-heading'>
+													<h3 class='panel-header-title'>$title_selected_passed[$i]</h3>
+												</div>
+												<table class='table job-panel-table'>
+													<tbody>
+														<tr>
+															<th>Start on</th>
+															<td>$startDate_selected_passed[$i]</td>
+														</tr>
+														<tr>
+															<th>Salary</th>
+															<td>$salary_selected_passed[$i]</td>
+														</tr>
+														<tr>
+															<th>Category</th>
+															<td>$category_selected_passed[$i]</td>
+														</tr>
+													</tbody>
+												</table>
+												<a class='displayJobModal' href='' id='$jobID_selected_passed[$i]' data-toggle='modal' data-target='#jobModal'>
+													<div class='panel-footer text-center' data-text='$title_selected_passed[$i]'>View Details</div>
+												</a>
+											</div>
 										</div>";
 									}
 									?>
 								</div>
-								<!-- End Cancelled Section -->
+								<!-- End Passed Section -->
 
-							</div>
 
 							<!--Start Modal for Job-->
-							<div id="modalUpcoming" class="modal fade" role="dialog">
+							<div id="jobModal" class="modal fade" role="dialog">
 								<div class="modal-dialog">
 
 									<!-- Modal content-->
@@ -397,9 +389,9 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 
 
 
-						</div>
-					</div>
-				</div>
+						</div><!-- col-sm-9 main-section -->
+					</div><!-- row -->
+				</div><!-- container main-container -->
 
 			<?php include "footer.php"; ?>
 
@@ -415,7 +407,7 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 			<script type="text/javascript">
 				$(function(){
 
-					$('.jobModal').on('click', function(){
+					$('.displayJobModal').on('click', function(){
 						var jobID = $(this).attr('id');
 						$.ajax({
 							url: 'jobModal.php',
@@ -440,11 +432,11 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 								$('#job-category').html(result.categoryName);
 								$('#job-address').html(result.address);
 								$('#job-description').html(result.description);
-								/*if(result.status == "current") {
+								if(result.status === "passed") {
 									$('#footer_to_hide').css("display", "none");
 								} else{
 									$('#footer_to_hide').css("display", "block");
-								}*/
+								}
 
 							},
 							error: function(result){
