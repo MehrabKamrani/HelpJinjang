@@ -32,12 +32,8 @@ $result = mysqli_query($connect, $query);
   <!-- Custom CSS -->
   <link href="css/signUp.css" rel="stylesheet">
 
-
-  <link href="css/bootstrap-select.min.css" rel="stylesheet">
-
-  <link href="css/bootstrap-select.css" rel="stylesheet">
-
   
+
 
 </head>
 
@@ -102,16 +98,25 @@ $result = mysqli_query($connect, $query);
                         <option value="<?php echo $row[0];?>"><?php echo $row[0];?></option>
                       <?php endwhile;?>
                     </select>
-
-                    <select class="selectpicker" multiple>
-                      <option>Mustard</option>
-                      <option>Ketchup</option>
-                      <option>Relish</option>
-                    </select>
                     <p class="help-block with-errors">Please specify your speciality</p>
                   </div>
                 </div>
 
+                <h2 id="multiple-select-boxes">Multiple select boxes</h2>
+<div class="bs-docs-example">
+  <select class="selectpicker" multiple>
+    <option>Mustard</option>
+    <option>Ketchup</option>
+    <option>Relish</option>
+  </select>
+</div>
+
+<pre><code class="html">&lt;select class=&quot;selectpicker&quot; multiple&gt;
+  &lt;option&gt;Mustard&lt;/option&gt;
+  &lt;option&gt;Ketchup&lt;/option&gt;
+  &lt;option&gt;Relish&lt;/option&gt;
+&lt;/select&gt;
+</code></pre>
 
 
                 <div class="form-group has-feedback">
@@ -212,6 +217,8 @@ $result = mysqli_query($connect, $query);
 
 
 
+
+
   <!-- jQuery -->
   <script src="js/jquery-2.2.3.min.js"></script>
 
@@ -222,25 +229,8 @@ $result = mysqli_query($connect, $query);
   <script src="js/bootstrap-formhelpers-phone.js"></script>
 
 
-  <!-- Bootstrap Core JavaScript -->
-  <script src="js/bootstrap-select.min.js"></script>
-
-  <!-- Bootstrap Core JavaScript -->
-  <script src="js/bootstrap-select.js"></script>
-
   <!--Validator -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
-
-
-  <script type="text/javascript">
-    $(document ).ready(function() {
-      $('.selectpicker').selectpicker({
-        style: 'btn',
-        size: 4
-      });
-    });
-  </script>
-
 
 
 </body>
