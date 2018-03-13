@@ -97,7 +97,7 @@ $result = mysqli_query($connect, $query);
                 <div class="form-group">
                   <label class="control-label" for="speciality">Speciality</label>
                   <div class="controls">
-                   <select class="selectpicker form-control" id="speciality" name="speciality" multiple required>
+                   <select class="selectpicker form-control" id="speciality" name="speciality[]" multiple required>
                     <?php while($row = mysqli_fetch_array($result)):;?>
                       <option value="<?php echo $row[0];?>"><?php echo $row[0];?></option>
                     <?php endwhile;?>

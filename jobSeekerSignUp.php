@@ -29,65 +29,66 @@
 	if (!empty($username) && !empty($password) && !empty($fullname) && !empty($email) && !empty($phoneNo)) {
 
 
-	$sql = "INSERT INTO jobseeker (js_username, js_fullname, js_email, js_phoneNo, js_password)
-	VALUES ('$username', '$fullname', '$email', '$phoneNo', '$password')";
-
-	echo $speciality;
-
-	$sql_ctgr = "INSERT INTO  js_category(categoryName) VALUES ('$speciality')";
+		$sql = "INSERT INTO jobseeker (js_username, js_fullname, js_email, js_phoneNo, js_password)
+		VALUES ('$username', '$fullname', '$email', '$phoneNo', '$password')";
 
 
 
 	//Checking for duplicates
-	$dupesql_username_cl = "SELECT * FROM client where (client_username = '$username')";
-	$dupesql_email_cl = "SELECT * FROM client where (client_email = '$email')";
-	$dupesql_username_js = "SELECT * FROM jobseeker where (js_username = '$username')";
-	$dupesql_email_js = "SELECT * FROM jobseeker where (js_email = '$email')";
+		$dupesql_username_cl = "SELECT * FROM client where (client_username = '$username')";
+		$dupesql_email_cl = "SELECT * FROM client where (client_email = '$email')";
+		$dupesql_username_js = "SELECT * FROM jobseeker where (js_username = '$username')";
+		$dupesql_email_js = "SELECT * FROM jobseeker where (js_email = '$email')";
 
 
-	$duperaw_username_cl = $conn->query($dupesql_username_cl);
-	$duperaw_email_cl = $conn->query($dupesql_email_cl);
-	$duperaw_username_js = $conn->query($dupesql_username_js);
-	$duperaw_email_js = $conn->query($dupesql_email_js);
+		$duperaw_username_cl = $conn->query($dupesql_username_cl);
+		$duperaw_email_cl = $conn->query($dupesql_email_cl);
+		$duperaw_username_js = $conn->query($dupesql_username_js);
+		$duperaw_email_js = $conn->query($dupesql_email_js);
 
 
-	if (mysqli_num_rows($duperaw_username_cl) > 0 || mysqli_num_rows($duperaw_username_js) > 0) {
-		$message = "The username already exists";
-		echo "<script type='text/javascript'>alert('$message'); 
+		if (mysqli_num_rows($duperaw_username_cl) > 0 || mysqli_num_rows($duperaw_username_js) > 0) {
+			$message = "The username already exists";
+			echo "<script type='text/javascript'>alert('$message'); 
 			window.location.href = 'signUp.php';</script>";
 
-	}
-	else if(mysqli_num_rows($duperaw_email_cl) > 0 || mysqli_num_rows($duperaw_email_js) > 0){
-		$message = "The email already exists";
-		echo "<script type='text/javascript'>alert('$message'); 
-				window.location.href = 'signUp.php';</script>";
-	}
+		}
+		else if(mysqli_num_rows($duperaw_email_cl) > 0 || mysqli_num_rows($duperaw_email_js) > 0){
+			$message = "The email already exists";
+			echo "<script type='text/javascript'>alert('$message'); 
+			window.location.href = 'signUp.php';</script>";
+		}
 
-	else{
+		else{
 
-		if ($conn->query($sql) === TRUE) {
-			$conn->query($sql_ctgr);
-			$message = "New jobseeker created successfully";
-			setcookie("fullname", "", time()-3600);
-			setcookie("username", "", time()-3600);
-			setcookie("email", "", time()-3600);
-			setcookie("phoneNo", "", time()-3600);
-			echo "<script type='text/javascript'>alert('$message');
-			</script>";
-		} else {
-			echo "Error: " . $sql . "<br>" . $conn->error;
+			if ($conn->query($sql) === TRUE) {
+				$numOfSpeciality = count($speciality);
+				echo $numOfSpeciality;
+				for ($i=0; $i < $numOfSpeciality; $i++) { 
+					${"sql$i"} = "INSERT INTO js_category VALUES ('$speciality[$i]', '$username')";
+					$conn -> query(${"sql$i"});
+				}
+				$message = "New jobseeker created successfully";
+				setcookie("fullname", "", time()-3600);
+				setcookie("username", "", time()-3600);
+				setcookie("email", "", time()-3600);
+				setcookie("phoneNo", "", time()-3600);
+				echo "<script type='text/javascript'>alert('$message');
+				</script>";
+			} else {
+				echo "Error: " . $sql . "<br>" . $conn->error;
+			}
+
 		}
 
 	}
-
-}
 	else{
 		$message = "Fill the required fields";
 		echo "<script type='text/javascript'>alert('$message'); </script>";
 	}
 
 
- $conn->close();
+	$conn->close();
 
 
-?>
+	?>
