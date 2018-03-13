@@ -12,35 +12,54 @@ if(!isset($_SESSION['cl_username']) && empty($_SESSION['cl_username'])) {
 }
 $username = "mehrab"; /* $_SESSION['cl_username'];*/
 
-$sql_update_session_status = "SELECT * FROM training_session WHERE cl_username = '$username' AND status = 'upcoming';";
-if ($result_update_session_status = $conn->query($sql_update_session_status)) {
-	$row_count_update_session_status =mysqli_num_rows($result_update_session_status);
-
-	if ($row_count_update_session_status>0) {
+// Update Upcoming posts to Current post when startdate passed today
+$sql_select_upcoming_post = "SELECT * FROM job WHERE client_username = '$username' AND status = 'upcoming';";
+if ($result_select_upcoming_post = $conn->query($sql_select_upcoming_post)) {
+	$row_count_select_upcoming_post =mysqli_num_rows($result_select_upcoming_post);
+	if ($row_count_select_upcoming_post>0) {
 		$i = 1;
-		while($row_update_session_status=mysqli_fetch_assoc($result_update_session_status)) {
-			$jobID_update_session_status[$i] = $row_update_session_status['jobID'];
-			$session_time_update_session_status[$i] = $row_update_session_status['session_time'];
-			$session_date_update_session_status[$i] = $row_update_session_status['session_date'];
+		while($row_update_upcoming_to_current=mysqli_fetch_assoc($result_select_upcoming_post)) {
+			$jobID_update_upcoming_to_current[$i] = $row_update_upcoming_to_current['jobID'];
+			$job_startDate_update_upcoming_to_current[$i] = $row_update_upcoming_to_current['startDate'];
 
-			$now = new DateTime("now", new DateTimeZone('Singapore'));
+			$today_datetime = new DateTime("today", new DateTimeZone('Asia/Kuala_Lumpur'));
+			$job_startDate_datetime = new DateTime($job_startDate_update_upcoming_to_current[$i], new DateTimeZone('Asia/Kuala_Lumpur'));
 
-			$session_datetime = new DateTime($session_date_update_session_status[$i] . " " . $session_time_update_session_status[$i], new DateTimeZone('Singapore'));
-
-			$sql_update_session_status = "UPDATE training_session SET status='current' WHERE jobID = '$jobID_update_session_status[$i]';";
-			if ($session_datetime <= $now) {
-				$conn->query($sql_update_session_status);
+			$sql_update_upcoming_to_current = "UPDATE job SET status='current' WHERE jobID = '$jobID_update_upcoming_to_current[$i]';";
+			if ($job_startDate_datetime <= $today_datetime) {
+				$conn->query($sql_update_upcoming_to_current);
 			}
-
 			$i++;
 		}
 	}
 }
 
+// Update Current posts to Passed post when enddate passed today
+$sql_select_current_post = "SELECT * FROM job WHERE client_username = '$username' AND status = 'current';";
+if ($result_select_current_post = $conn->query($sql_select_current_post)) {
+	$row_count_select_current_post =mysqli_num_rows($result_select_current_post);
+	if ($row_count_select_current_post>0) {
+		$i = 1;
+		while($row_update_current_to_passed=mysqli_fetch_assoc($result_select_current_post)) {
+			$jobID_update_current_to_passed[$i] = $row_update_current_to_passed['jobID'];
+			$job_endDate_update_current_to_passed[$i] = $row_update_current_to_passed['endDate'];
+
+			$today_datetime = new DateTime("today", new DateTimeZone('Asia/Kuala_Lumpur'));
+			$job_endDate_datetime = new DateTime($job_endDate_update_current_to_passed[$i], new DateTimeZone('Asia/Kuala_Lumpur'));
+
+			$sql_update_current_to_passed = "UPDATE job SET status='passed' WHERE jobID = '$jobID_update_current_to_passed[$i]';";
+			if ($job_endDate_datetime <= $today_datetime) {
+				$conn->query($sql_update_current_to_passed);
+			}
+			$i++;
+		}
+	}
+}
+
+// Select upcoming posts
 $sql_select_upcoming = "SELECT * FROM job WHERE client_username = '$username' AND status = 'upcoming'";
 if ($result_select_upcoming = $conn->query($sql_select_upcoming)) {
 	$row_count_select_upcoming =mysqli_num_rows($result_select_upcoming);
-
 	if ($row_count_select_upcoming>0) {
 		$i = 1;
 		while($row_select_upcoming=mysqli_fetch_assoc($result_select_upcoming)) {
@@ -56,20 +75,20 @@ if ($result_select_upcoming = $conn->query($sql_select_upcoming)) {
 	$row_count_select_upcoming = 0;
 }
 
-$sql_past_session = "SELECT * FROM training_session WHERE cl_username = '$username' AND status = 'past';";
-if ($result_past_session = $conn->query($sql_past_session)) {
-	$row_count_past_session =mysqli_num_rows($result_past_session);
+$sql_Passed_session = "SELECT * FROM training_session WHERE cl_username = '$username' AND status = 'Passed';";
+if ($result_Passed_session = $conn->query($sql_Passed_session)) {
+	$row_count_Passed_session =mysqli_num_rows($result_Passed_session);
 
-	if ($row_count_past_session>0) {
+	if ($row_count_Passed_session>0) {
 		$i = 1;
-		while($row_past_session=mysqli_fetch_assoc($result_past_session)) {
-			$jobID_past_session[$i] = $row_past_session['jobID'];
-			$title_past_session[$i] = $row_past_session['title'];
+		while($row_Passed_session=mysqli_fetch_assoc($result_Passed_session)) {
+			$jobID_Passed_session[$i] = $row_Passed_session['jobID'];
+			$title_Passed_session[$i] = $row_Passed_session['title'];
 			$i++;
 		}
 	}
 } else {
-	$row_count_past_session = 0;
+	$row_count_Passed_session = 0;
 }
 
 $sql_current_session = "SELECT * FROM training_session WHERE cl_username = '$username' AND status = 'current';";
@@ -175,7 +194,7 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 							<ul class="nav navbar-nav">
 								<li><a href="#" id="upcoming-button">Upcoming</a></li>
 								<li><a href="#" id="current-button">Current</a></li>
-								<li><a href="#" id="past-button">Past</a></li>
+								<li><a href="#" id="Passed-button">Passed</a></li>
 							</ul>
 							<p class="navbar-text navbar-right"><?php /*echo $_SESSION['cl_username'];*/ echo "mehrab"; ?></p>
 							<a href="logout.php" type="button" id="btn-logout" class="btn btn-default navbar-btn navbar-right">Log out</a>
@@ -306,18 +325,18 @@ if ($result_find_all_sessions = $conn->query($sql_find_all_sessions)) {
 									?>
 								</div><!-- End current Section -->
 
-								<!-- Start past Section -->
-								<div  id="past" class="row" style="display:none">
+								<!-- Start Passed Section -->
+								<div  id="Passed" class="row" style="display:none">
 									<div class="main-section-category-title col-xs-12 text-center">
-										<h1>Past Job Posts</h1>
+										<h1>Passed Job Posts</h1>
 									</div>
 									<?php
 							// Loop through the results from the database
-									for ($i = 1; $i <=$row_count_past_session; $i++) {
+									for ($i = 1; $i <=$row_count_Passed_session; $i++) {
 										echo
 										"<div class='col-sm-3'>
-										<a class='jobModal' href='#' id='$jobID_past_session[$i]' data-toggle='modal' data-target='#modalUpcoming'>
-										<div class='center-box animated fadeInUp' data-text='$title_past_session[$i]'></div>
+										<a class='jobModal' href='#' id='$jobID_Passed_session[$i]' data-toggle='modal' data-target='#modalUpcoming'>
+										<div class='center-box animated fadeInUp' data-text='$title_Passed_session[$i]'></div>
 										</a>
 
 										</div>";

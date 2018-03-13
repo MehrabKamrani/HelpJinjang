@@ -290,10 +290,6 @@ label:hover, label:hover ~ label,
     font-size: medium;
 }
 
-.modal-dl th, .modal-dl td{
-      border-top: none;
-}
-
 .modal-header .close {
     font-size: 36px;
 }
