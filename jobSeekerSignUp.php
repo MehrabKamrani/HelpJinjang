@@ -6,6 +6,8 @@
 	$email = $_POST['email'];
 	$password = $_POST['js_password'];
 	$phoneNo = $_POST['phoneNo'];
+	$speciality = $_POST['speciality'];
+
 
 	$_SESSION['fullname'] = $fullname;
 	setcookie('fullname', $fullname, time() + 60 * 60);
@@ -29,6 +31,12 @@
 
 	$sql = "INSERT INTO jobseeker (js_username, js_fullname, js_email, js_phoneNo, js_password)
 	VALUES ('$username', '$fullname', '$email', '$phoneNo', '$password')";
+
+	echo $speciality;
+
+	$sql_ctgr = "INSERT INTO  js_category(categoryName) VALUES ('$speciality')";
+
+
 
 	//Checking for duplicates
 	$dupesql_username_cl = "SELECT * FROM client where (client_username = '$username')";
@@ -58,13 +66,14 @@
 	else{
 
 		if ($conn->query($sql) === TRUE) {
+			$conn->query($sql_ctgr);
 			$message = "New jobseeker created successfully";
 			setcookie("fullname", "", time()-3600);
 			setcookie("username", "", time()-3600);
 			setcookie("email", "", time()-3600);
 			setcookie("phoneNo", "", time()-3600);
 			echo "<script type='text/javascript'>alert('$message');
-			window.location.href = 'home.php';</script>";
+			</script>";
 		} else {
 			echo "Error: " . $sql . "<br>" . $conn->error;
 		}
