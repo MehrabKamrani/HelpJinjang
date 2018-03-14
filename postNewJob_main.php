@@ -85,7 +85,7 @@ $result = mysqli_query($connect, $query);
                     <div class="form-group has-feedback">
                       <label class="control-label" for="startingDate">Starting Date</label>
                       <div class="controls">
-                        <input type="date" id="startingDate" name="startingDate" class="form-control" data-min-error="Date must be tomorrow or later." required>
+                        <input type="date" id="startingDate" name="startingDate" class="form-control" data-min-error="Starting date must be tomorrow or later." required>
                         <p class="help-block with-errors">Please provide the starting date</p>
                       </div>
                     </div>
@@ -93,7 +93,7 @@ $result = mysqli_query($connect, $query);
                     <div class="form-group has-feedback">
                       <label class="control-label" for="endingDate">Ending Date</label>
                       <div class="controls">
-                        <input type="date" id="endingDate" name="endingDate" class="form-control" data-min-error="Date must be tomorrow or later." required>
+                        <input type="date" id="endingDate" name="endingDate" class="form-control" data-min-error="Starting date must be tomorrow or later." required>
                         <p class="help-block with-errors">Please provide the ending date</p>
                       </div>
                     </div>
@@ -196,8 +196,16 @@ $result = mysqli_query($connect, $query);
 
 
       today = yyyy+'-'+mm+'-'+dd;
-      document.getElementById("date").setAttribute("min", today);
-      document.getElementById("personal-date").setAttribute("min", today);
+      document.getElementById("startingDate").setAttribute("min", today);
+      document.getElementById("endingDate").setAttribute("min", today);
+
+      $("#startingDate").change(function() {
+        var startingDate = $("#startingDate").val();
+        $("#endingDate").attr("min", startingDate);
+        $("#endingDate").attr("data-min-error", "Ending date must be after starting date.");
+
+      });
+
 
     });
     </script>
