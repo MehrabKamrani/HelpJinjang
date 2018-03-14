@@ -7,10 +7,10 @@ if ($conn->connect_error) {
 	die("Connection failed: " . $conn->connect_error);
 }
 
-if(!isset($_SESSION['cl_username']) && empty($_SESSION['cl_username'])) {
-	//header("Location: home.php");
+if(!isset($_SESSION['cl_username'])) {
+	header("Location: home.php");
 }
-$username = "mehrab"; /* $_SESSION['cl_username'];*/
+$username = $_SESSION['cl_username'];
 
 // Update Upcoming posts to Current post when startdate passed today
 $sql_select_upcoming_post = "SELECT * FROM job WHERE client_username = '$username' AND status = 'upcoming';";
@@ -168,7 +168,7 @@ if ($result_select_passed = $conn->query($sql_select_passed)) {
 								<li><a href="#" id="current-button">Current</a></li>
 								<li><a href="#" id="passed-button">Passed</a></li>
 							</ul>
-							<p class="navbar-text navbar-right"><?php /*echo $_SESSION['cl_username'];*/ echo "mehrab"; ?></p>
+							<p class="navbar-text navbar-right"><?php echo $_SESSION['cl_username'];?></p>
 							<a href="logout.php" type="button" id="btn-logout" class="btn btn-default navbar-btn navbar-right">Log out</a>
 						</div>
 						<!-- End .navbar-collapse -->
@@ -181,22 +181,22 @@ if ($result_select_passed = $conn->query($sql_select_passed)) {
 			<div class="container main-container">
 				<div class="alert alert-success alert-dismissable animated fadeInLeft" id="welcome-message" style="position: fixed; z-index:1000;">
 					<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-					Welcome <strong><?php /*echo $_SESSION['cl_fullname'];*/ echo "Mehrab Kamrani"; ?></strong>, you have loged in successfully.
+					Welcome <strong><?php echo $_SESSION['cl_fullname']; ?></strong>, you have loged in successfully.
 				</div>
 
 				<div class="row">
 
 
 					<div class="col-sm-3 sidebar">
-							<h3 class="sidebar-title"><?php /*echo $_SESSION['cl_username']; */ echo "mehrab";?></h3>
+							<h3 class="sidebar-title"><?php echo $_SESSION['cl_username']; ?></h3>
 						<div class="sidebar-detail">
 							<dl>
 								<dt>Full Name</dt>
-								<dd><?php echo /*$_SESSION['cl_fullname'];*/ "Mehrab Kamrani"; ?></dd><br>
+								<dd><?php echo $_SESSION['cl_fullname']; ?></dd><br>
 								<dt>Email</dt>
-								<dd><?php echo /*$_SESSION['cl_email'];*/ "mk.zizou@gmail.com"; ?></dd><br>
+								<dd><?php echo $_SESSION['cl_email']; ?></dd><br>
 								<dt>Phone Number</dt>
-								<dd><?php echo /*$_SESSION['cl_speciality'];*/ "01111703767"; ?></dd><br>
+								<dd><?php echo $_SESSION['cl_phoneNo']; ?></dd><br>
 
 
 								<!-- Update button-->
