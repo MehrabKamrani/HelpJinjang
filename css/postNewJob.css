@@ -82,9 +82,7 @@
     border-color: #333;
     box-shadow: none;
 }
-.has-error .form-control:focus, .has-success .form-control:focus  {
-    box-shadow: none;
-}
+
 .form-horizontal .form-group {
     margin-right: 0;
     margin-left: 0;
