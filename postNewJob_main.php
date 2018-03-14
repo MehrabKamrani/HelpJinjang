@@ -2,7 +2,7 @@
 
 $connect = mysqli_connect("localhost", "root","", "helpjinjang");
 
-$query = "SELECT * FROM `category` ORDER BY `categoryName`";
+$query = "SELECT * FROM `category` WHERE `categoryName` != 'Others' ORDER BY `categoryName`";
 
 $result = mysqli_query($connect, $query);
 
@@ -141,6 +141,7 @@ $result = mysqli_query($connect, $query);
                             <?php while($row = mysqli_fetch_array($result)):;?>
                             <option value="<?php echo $row[0];?>"><?php echo $row[0];?></option>
                             <?php endwhile;?>
+                            <option value="Others">Others</option>
                         </select>
                         <p class="help-block with-errors">Please provide the category</p>
                       </div>
