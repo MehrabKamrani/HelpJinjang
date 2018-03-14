@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>WE-photographer</title>
+    <title>About Us</title>
 
     <!-- icon -->
     <link rel="icon" href="icon.ico">
@@ -22,57 +22,13 @@
     <link href="css/lightbox.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/aboutUs.css" rel="stylesheet">
 
 
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <header id="navigation">
-        <nav class="navbar navbar-fixed-top">
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="home.html"><img alt="Logo" src="logo.png" height="40"></a>
-
-                </div>
-                <!-- Collect the nav links for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav pull-right">
-                        <li>
-                            <a href="home.html">Home</a>
-                        </li>
-                        <li>
-                            <a href="#about">About</a>
-                        </li>
-                        <li>
-                            <a href="#blogs">Blogs</a>
-                        </li>
-                        <li>
-                            <a href="#gadgets">New Gadgets</a>
-                        </li>
-                        <li>
-                            <a href="#photos">Photos</a>
-                        </li>
-                        <li>
-                            <a href="#contact">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- End .navbar-collapse -->
-            </div>
-            <!-- End .container -->
-        </nav>
-
-    </header>
     
     <!-- Start Home Section -->
     <div id="myCarousel" class="carousel slide home">
