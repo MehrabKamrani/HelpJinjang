@@ -33,7 +33,36 @@
 <body>
 
 
-    <?php include "login-header.php"; ?>
+  <!-- Navigation -->
+     <header id="navigation">
+         <nav class="navbar navbar-inverse navbar-fixed-top">
+             <div class="container">
+                 <!-- Brand and toggle get grouped for better mobile display -->
+                 <div class="navbar-header">
+                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-login-collapse">
+                         <span class="sr-only">Toggle navigation</span>
+                         <span class="icon-bar"></span>
+                         <span class="icon-bar"></span>
+                         <span class="icon-bar"></span>
+                     </button>
+                     <a class="navbar-brand" href="#">HELPJinjang</a>
+
+                 </div>
+                 <!-- Collect the nav links for toggling -->
+                 <div class="collapse navbar-collapse" id="navbar-login-collapse">
+                   <form class="navbar-form navbar-right" action="" method="POST" id="login-form">
+
+                     <button type="button" class="btn btn-success" id="login-btn" name="login" onclick="location.href='loginPage.php';">Log In</button>
+
+                     <button type="button" class="btn btn-primary" name="signup" onclick="location.href='signUp.php';">Sign Up</button>
+                   </form>
+                 </div>
+                 <!-- End .navbar-collapse -->
+             </div>
+             <!-- End .container -->
+         </nav>
+
+     </header>
 
 
     <!-- Start Video Section -->
@@ -42,7 +71,7 @@
               <h1 class="about-head text-center">HELPJinjang</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            
+
           </div>
           <div class="go-down animated bounce infinite">
             <a href="#service-section" class="scroll-link" id="go-down-link">
