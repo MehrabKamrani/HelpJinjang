@@ -28,7 +28,6 @@
 
 	if (!empty($username) && !empty($password) && !empty($fullname) && !empty($email) && !empty($phoneNo)) {
 
-
 		$sql = "INSERT INTO jobseeker (js_username, js_fullname, js_email, js_phoneNo, js_password)
 		VALUES ('$username', '$fullname', '$email', '$phoneNo', '$password')";
 
@@ -63,7 +62,6 @@
 
 			if ($conn->query($sql) === TRUE) {
 				$numOfSpeciality = count($speciality);
-				echo $numOfSpeciality;
 				for ($i=0; $i < $numOfSpeciality; $i++) { 
 					${"sql$i"} = "INSERT INTO js_category VALUES ('$speciality[$i]', '$username')";
 					$conn -> query(${"sql$i"});
@@ -74,6 +72,7 @@
 				setcookie("email", "", time()-3600);
 				setcookie("phoneNo", "", time()-3600);
 				echo "<script type='text/javascript'>alert('$message');
+				window.location.href = 'jobseeker_main.php';
 				</script>";
 			} else {
 				echo "Error: " . $sql . "<br>" . $conn->error;

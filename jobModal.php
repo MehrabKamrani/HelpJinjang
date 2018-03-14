@@ -8,7 +8,7 @@
   }
 
   $jobID = $_POST['jobID'];
-
+  
   $sql = "SELECT * FROM job WHERE jobID = '$jobID'";
 
   if ($result = $conn->query($sql)) {

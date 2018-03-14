@@ -64,7 +64,7 @@
 			setcookie("cl_email", "", time()-3600);
 			setcookie("cl_phoneNo", "", time()-3600);
 			echo "<script type='text/javascript'>alert('$message');
-			window.location.href = 'home.php';</script>";
+			window.location.href = 'client_main.php';</script>";
 		} else {
 			echo "Error: " . $sql . "<br>" . $conn->error;
 		}

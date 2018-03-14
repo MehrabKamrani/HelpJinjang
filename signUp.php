@@ -3,7 +3,7 @@ error_reporting(0);
 
 $connect = mysqli_connect("localhost", "root","", "helpjinjang");
 
-$query = "SELECT * FROM `category`";
+$query = "SELECT * FROM category WHERE categoryName != 'Other' ORDER BY categoryName";
 
 $result = mysqli_query($connect, $query);
 

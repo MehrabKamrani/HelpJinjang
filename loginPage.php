@@ -58,7 +58,7 @@ error_reporting(0);
               <div class="controls">
                 <button type="submit" name = "submit" class="btn btn-submit btn-success btn-block">Login</button>
               </div>
-               <p class="help-block with-errors text-center">Or <a>Forgot Password</a></p>
+               <p class="help-block with-errors text-center">Or <a href="forgotPassword.php">Forgot Password</a></p>
                <hr>
                <p class="help-block with-errors text-center">Don't have an account? <a href="signUp.php">Sign Up</a></p>
 
