@@ -61,9 +61,6 @@ body {
 }
 
 
-#about {
-  background-color: rgb(200,200,200);
-}
 .about-img, .blog-img, .contact-aside-img{
   width:100%;
 }
@@ -90,7 +87,7 @@ body {
 .contact-head, #footer .container{
   text-align: center;
 }
-.blogs-latest, .gadgets-latest, .photos-popular, .contact-form, .contact-description{
+.gadgets-latest, .photos-popular, .contact-form, .contact-description{
   margin:70px 0;
 }
 .blogs-img, .gadgets-img, .photos-img, .footer-logo{
@@ -239,4 +236,21 @@ textarea{
   .blogs-link, .gadgets-link{
     margin-bottom: 50px;
   }
+}
+
+
+
+#ourWork
+{
+  background-color: rgb(235,235,235);
+}
+
+.blogs-latest
+{
+  margin-top: 0;
+}
+
+.about-wrapper
+{
+  margin-top: 35px;
 }

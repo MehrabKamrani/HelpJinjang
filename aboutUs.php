@@ -27,6 +27,8 @@
 
 </head>
 
+<?php include "login-header.php"; ?>
+
 <body>
 
 
@@ -93,7 +95,7 @@
 
     <div id="blogs"><!-- Literacy Section -->
         <div class="container">
-            <div class="row blogs-latest">
+            <div class="row literacy">
                 <div class="col-sm-12">
                     <h1 class="literacy-title">Literacy and Numeracy program</h1>
 
@@ -119,9 +121,7 @@
                     </p>
                 </div>
             </div>
-            <footer>
-                <h2 class="blogs-all"><a href="blogs.html">View All Blogs</a></h2>
-            </footer>
+           
         </div>
     </div><!-- / Leteracy Section -->
 

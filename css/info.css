@@ -1,0 +1,77 @@
+html,
+body {
+    height: 100%;
+}
+
+
+.about-paragraph, .blogs-description, .gadgets-description{
+  margin-top: 10px;
+}
+#blogs, #gadgets, #photos, #contact, #footer, #photos-main, #blogspg-wrapper, #gadgetspg-wrapper{
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.blogs-head, .blogs-all, .blogs-description, .blogs-link,
+.gadgets-head, .gadgets-all, .gadgets-description, .gadgets-link,
+.photos-head, .photos-all,
+.contact-head, #footer .container{
+  text-align: center;
+}
+.blogs-latest, .gadgets-latest, .photos-popular, .contact-form, .contact-description{
+  margin:70px 0;
+}
+.blogs-img, .gadgets-img, .photos-img, .footer-logo{
+  width: 100%;
+}
+.blogs-description, .gadgets-description{
+  line-height: 16px;
+  font-size: 16px;
+  font-weight: bold;
+}
+#gadgets{
+  background-color: rgb(220,220,220);
+}
+
+textarea{
+  resize:none;
+}
+
+
+
+/*----------------------------------------
+  BLOGS, GADGETS STYLESHEET
+----------------------------------------*/
+.each-blog-wrapper, .each-gadget-wrapper{
+  margin-bottom: 60px;
+}
+
+.literacy-paragraph
+{
+  font-size: 16px;
+  text-align: center;
+}
+
+.literacy-title
+{
+  text-align: center;
+  font-size: 50px;
+}
+
+
+#copyright{
+  color:rgb(200,200,200);
+}
+
+#footer{
+  background-color: black;
+}
+
+.footer-nav{
+  margin: 30px;
+}
+
+
+.links
+{
+  margin-top: 50px;
+}
