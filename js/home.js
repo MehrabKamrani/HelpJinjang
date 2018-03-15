@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var thirdCol = document.getElementsByClassName('third-col')[0]
   var fourthCol = document.getElementsByClassName('fourth-col')[0]
   var fifthCol = document.getElementsByClassName('fifth-col')[0]
+  var sixthCol = document.getElementsByClassName('sixth-col')[0]
 
   // animate element when it is in view
   function animate() {
@@ -66,13 +67,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
         firstCol.classList.remove('hidden');
         firstCol.classList.add('animated', 'fadeInLeft');
         secondCol.classList.remove('hidden');
-        secondCol.classList.add('animated', 'fadeInUp');
+        secondCol.classList.add('animated', 'fadeInDown');
         thirdCol.classList.remove('hidden');
         thirdCol.classList.add('animated', 'fadeInRight');
         fourthCol.classList.remove('hidden');
-        fourthCol.classList.add('animated', 'fadeInUp');
+        fourthCol.classList.add('animated', 'fadeInLeft');
         fifthCol.classList.remove('hidden');
         fifthCol.classList.add('animated', 'fadeInUp');
+        sixthCol.classList.remove('hidden');
+        sixthCol.classList.add('animated', 'fadeInRight');
     }
   }
 

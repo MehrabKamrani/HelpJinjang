@@ -98,13 +98,17 @@
                     <a href=""><h3 class="help-title text-center">School Supplies</h3></a>
                     <img class="img-responsive help-img" src="images/school-supplies.png" alt="School Supplies Photo">
                 </div>
-                <div class="col-sm-offset-2 col-sm-4 col-xs-6 fourth-col hidden">
+                <div class="col-sm-4 col-xs-6 fourth-col hidden">
                     <a href=""><h3 class="help-title text-center">Sponsor a Child</h3></a>
                     <img class="img-responsive help-img" src="images/sponsor.png" alt="Sponsor a Child Photo">
                 </div>
                 <div class="col-sm-4 col-xs-6 fifth-col hidden">
                     <a href=""><h3 class="help-title text-center">E-Business</h3></a>
                     <img class="img-responsive help-img" src="images/e-business.png" alt="E-Business Photo">
+                </div>
+                <div class="col-sm-4 col-xs-6 sixth-col hidden">
+                    <a href=""><h3 class="help-title text-center">Donation</h3></a>
+                    <img class="img-responsive help-img" src="images/donation.png" alt="Donation Photo">
                 </div>
             </div>
         </div>
