@@ -1,6 +1,6 @@
 <?php
-
-$client_username = "mehrab";
+session_start();
+$client_username = $_SESSION["cl_username"];
 $title = $_POST['title'];
 $startDate = $_POST['startingDate'];
 $endDate = $_POST['endingDate'];
