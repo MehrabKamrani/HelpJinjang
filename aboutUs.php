@@ -27,6 +27,8 @@
 
 </head>
 
+<?php include "login-header.php"; ?>
+
 <body>
 
 
@@ -62,18 +64,18 @@
             <div class="about-wrapper row">
 
                 <div class="about-text-section col-md-6 col-sm-8">
-                    <h1 class="about-title">Our Work</h1>
-                    <p class="about-paragraph">
+                    <h1 class="ourWork-title">Our Work</h1>
+                    <p class="ourWork-paragraph">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac tellus at orci lacinia aliquet. In ornare tellus condimentum libero tincidunt vehicula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus ut enim diam. Nulla semper justo a nisi ullamcorper ultrices. Curabitur tristique quam quis massa lacinia cursus. Duis tortor risus, pellentesque eget enim sit amet, pellentesque pharetra risus.
 
                         s 
 
                     </p>
-                    <p class="about-paragraph">
+                    <p class="ourWork-paragraph">
                         Aliquam rhoncus laoreet ante, id imperdiet massa ornare ac. Nam quis mollis justo. Aenean ac nibh id dui volutpat viverra. Curabitur non dolor dui. Morbi volutpat metus vitae lectus aliquet ullamcorper. Nulla vestibulum rutrum quam et tempor. Quisque volutpat nec massa eget molestie. Proin sollicitudin nibh augue, at consectetur nulla volutpat eu. Donec nec efficitur est. Aliquam ornare dolor eget condimentum condimentum. Nunc felis est, tincidunt in tincidunt sed, condimentum sit amet velit. Curabitur interdum imperdiet massa at sollicitudin. Pellentesque pretium tincidunt leo, facilisis dignissim justo dapibus et. Proin facilisis neque leo, lacinia iaculis sapien malesuada sit amet. Etiam sit amet libero semper, rhoncus risus vitae, tincidunt neque.
                     </p>
                 </div>
-                <aside class="about-img-section col-md-6 col-sm-4">
+                <aside class="ourWork-img-section col-md-6 col-sm-4">
                     <img class="img-responsive about-img" src="images/agn.jpg" alt="about photo">
                 </aside>
             </div> 
@@ -82,18 +84,9 @@
 
 
 
-
-
-
-
-
-
-
-
-
-    <div id="blogs"><!-- Literacy Section -->
+    <div id="literacy"><!-- Literacy Section -->
         <div class="container">
-            <div class="row blogs-latest">
+            <div class="row literacy">
                 <div class="col-sm-12">
                     <h1 class="literacy-title">Literacy and Numeracy program</h1>
 
@@ -119,9 +112,7 @@
                     </p>
                 </div>
             </div>
-            <footer>
-                <h2 class="blogs-all"><a href="blogs.html">View All Blogs</a></h2>
-            </footer>
+           
         </div>
     </div><!-- / Leteracy Section -->
 
@@ -139,12 +130,6 @@
     <!-- Lightbox JavaScript -->
     <script src="js/lightbox.min.js"></script>
 
-    <!-- Script to Activate the Carousel -->
-    <script>
-        $('.carousel').carousel({
-        interval: 5000 //changes the speed
-    })
-</script>
 
 </body>
 

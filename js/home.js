@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   function scroll(e) {
       e.preventDefault();
-      animateScroll(document.getElementById('service-section').getBoundingClientRect().top);
+      animateScroll(document.getElementById('help-section').getBoundingClientRect().top);
   }
 
   function animateScroll(targetHeight) {
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   }
 
   // get the element to animate
-  var element = document.getElementsByClassName('services')[0];
+  var element = document.getElementsByClassName('helps')[0];
   var elementHeight = element.clientHeight;
 
   // listen for scroll event and call animate function
@@ -55,6 +55,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var firstCol = document.getElementsByClassName('first-col')[0]
   var secondCol = document.getElementsByClassName('second-col')[0]
   var thirdCol = document.getElementsByClassName('third-col')[0]
+  var fourthCol = document.getElementsByClassName('fourth-col')[0]
+  var fifthCol = document.getElementsByClassName('fifth-col')[0]
 
   // animate element when it is in view
   function animate() {
@@ -67,6 +69,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
         secondCol.classList.add('animated', 'fadeInUp');
         thirdCol.classList.remove('hidden');
         thirdCol.classList.add('animated', 'fadeInRight');
+        fourthCol.classList.remove('hidden');
+        fourthCol.classList.add('animated', 'fadeInUp');
+        fifthCol.classList.remove('hidden');
+        fifthCol.classList.add('animated', 'fadeInUp');
     }
   }
 

@@ -84,7 +84,7 @@ body {
 .about-head{
   margin-top: 0;
 }
-.aboutUs, .service-head, .service-title{
+.aboutUs, .help-head, .help-title{
   font-family: 'Oswald', sans-serif;
 }
 /*
@@ -112,17 +112,23 @@ body {
     color: white;
 }
 
-#service-section{
+#help-section{
   padding-top: 70px;
   padding-bottom: 50px;
   margin-top: 100vh;
   background: white;
 }
-.services{
+.helps{
   margin: 70px 0;
 }
-.service-img{
+.help-img{
   width: 100%;
+  max-width: 256px;
+  margin: auto;
+}
+
+.first-col, .second-col, .third-col {
+  margin-bottom: 50px;
 }
 
 
@@ -140,12 +146,11 @@ body {
 }
 
 @media screen and (max-width: 991px) and (min-width: 768px) {
-  .services > div{
-    margin-left: 16.66666667%;
+  .helps > div{
   }
 }
 @media (max-width: 991px){
-  .first-col, .second-col{
+  .fourth-col{
     margin-bottom: 50px;
   }
 }

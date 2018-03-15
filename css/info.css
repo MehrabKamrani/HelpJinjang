@@ -1,0 +1,49 @@
+html,
+body {
+    height: 100%;
+}
+
+
+.about-paragraph, {
+  margin-top: 10px;
+}
+#info, #footer{
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+#footer .container{
+  text-align: center;
+}
+
+
+.literacy-paragraph
+{
+  font-size: 16px;
+  text-align: center;
+}
+
+.literacy-title
+{
+  text-align: center;
+  font-size: 50px;
+}
+
+
+#copyright{
+  color:rgb(200,200,200);
+}
+
+#footer{
+  background-color: black;
+}
+
+.footer-nav{
+  margin: 30px;
+}
+
+
+.links
+{
+  margin-top: 50px;
+}

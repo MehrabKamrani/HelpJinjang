@@ -74,7 +74,7 @@
 
           </div>
           <div class="go-down animated bounce infinite">
-            <a href="#service-section" class="scroll-link" id="go-down-link">
+            <a href="#help-section" class="scroll-link" id="go-down-link">
                 <i class="fa fa-angle-down fa-5x" aria-hidden="true"></i>
             </a>
         </div>
@@ -82,34 +82,33 @@
 
 
 
-    <div id="service-section"><!-- Service Section -->
+    <div id="help-section"><!-- Help Section -->
         <div class="container">
-            <header><h1 class="service-head text-center">Our Classes</h1></header>
-            <div class="row services">
-                <div class="col-md-4 col-sm-8 first-col hidden">
-                    <h2 class="service-title text-center">Dance</h2>
-                    <img class="img-responsive service-img" src="https://unsplash.it/350/200" alt="Dance Photo">
-                    <div class="service-description text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </div>
+            <header><h1 class="help-head text-center">How You Can Help?</h1></header>
+            <div class="row helps">
+                <div class="col-sm-4 col-xs-6 first-col hidden">
+                    <a href=""><h3 class="help-title text-center">Volunteers</h3></a>
+                    <img class="img-responsive help-img" src="images/volunteers.png" alt="Volunteers Photo">
                 </div>
-                <div class="col-md-4 col-sm-8 second-col hidden">
-                    <h2 class="service-title text-center">MMA</h2>
-                    <img class="img-responsive service-img" src="https://unsplash.it/350/200" alt="MMA Photo">
-                    <div class="service-description text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </div>
+                <div class="col-sm-4 col-xs-6 second-col hidden">
+                    <a href=""><h3 class="help-title text-center">Learning Materials</h3></a>
+                    <img class="img-responsive help-img" src="images/learning-materials.png" alt="Learning Materials Photo">
                 </div>
-                <div class="col-md-4 col-sm-8 third-col hidden">
-                    <h2 class="service-title text-center">Sport</h2>
-                    <img class="img-responsive service-img" src="https://unsplash.it/350/200" alt="Sport Photo">
-                    <div class="service-description text-justify">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </div>
+                <div class="col-sm-4 col-xs-6 third-col hidden">
+                    <a href=""><h3 class="help-title text-center">School Supplies</h3></a>
+                    <img class="img-responsive help-img" src="images/school-supplies.png" alt="School Supplies Photo">
+                </div>
+                <div class="col-sm-offset-2 col-sm-4 col-xs-6 fourth-col hidden">
+                    <a href=""><h3 class="help-title text-center">Sponsor a Child</h3></a>
+                    <img class="img-responsive help-img" src="images/sponsor.png" alt="Sponsor a Child Photo">
+                </div>
+                <div class="col-sm-4 col-xs-6 fifth-col hidden">
+                    <a href=""><h3 class="help-title text-center">E-Business</h3></a>
+                    <img class="img-responsive help-img" src="images/e-business.png" alt="E-Business Photo">
                 </div>
             </div>
         </div>
-    </div><!-- / Service Section -->
+    </div><!-- / Help Section -->
 
     <?php include "footer.php"; ?>
 
