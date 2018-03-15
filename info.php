@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>About Us</title>
+    <title>Information of the Jinjang Utara Community</title>
 
     <!-- icon -->
     <link rel="icon" href="icon.ico">
@@ -32,21 +32,21 @@
 
 
     <!-- Start Home Section -->
-    <div id="blogs"><!-- Literacy Section -->
+    <div id="info"><!-- Literacy Section -->
         <div class="container">
             <div class="row information">
                 <div class="col-sm-12">
                     <h1 class="literacy-title">Information on the Jinjang Utara Community</h1>
 
                     <p class="literacy-paragraph">
-                       The entire housing was built on the city’s landfilled rubbish dump. It is currently notorious for the high crime rate, drug abuse, gang fights and conflicts. A harbor for drug addicts, alcoholics, gangsters, prostitutes and petty criminals.
-                       Jinjang Utara is littered with dilapidated rumah transit (supposed to be temporary housing). Currently, housing more than 2000 people. These are forgotten people who became disillusioned and embittered. The inhabitants waited for 40 years to date, to be relocated to their new residence under Projek Perumahan (PPR) which has yet to happen. This is 38 years later than the promised duration by the government. Even if they are offered low cost housing tomorrow, they will not be able to afford it as they can hardly afford the RM40 per month rent even now. The average combined income per month for each family is less than RM1000.
-                       The integrity of the rumah transit is questionable because they were not built to last. This poses a health and safety hazard for the family staying under the roof of each unit. The occupants have grown over the years to include three generations with an average of ten people in each unit. Each unit is cramped in a 480-square-feet space for the entire family of over 10 pax each.
+                     The entire housing was built on the city’s landfilled rubbish dump. It is currently notorious for the high crime rate, drug abuse, gang fights and conflicts. A harbor for drug addicts, alcoholics, gangsters, prostitutes and petty criminals.
+                     Jinjang Utara is littered with dilapidated rumah transit (supposed to be temporary housing). Currently, housing more than 2000 people. These are forgotten people who became disillusioned and embittered. The inhabitants waited for 40 years to date, to be relocated to their new residence under Projek Perumahan (PPR) which has yet to happen. This is 38 years later than the promised duration by the government. Even if they are offered low cost housing tomorrow, they will not be able to afford it as they can hardly afford the RM40 per month rent even now. The average combined income per month for each family is less than RM1000.
+                     The integrity of the rumah transit is questionable because they were not built to last. This poses a health and safety hazard for the family staying under the roof of each unit. The occupants have grown over the years to include three generations with an average of ten people in each unit. Each unit is cramped in a 480-square-feet space for the entire family of over 10 pax each.
 
-                       The children in Jinjang Utara have been growing up in a poverty stricken environment. Some were abandoned by their parents or are neglected in an environment of abject poverty. Violence is rampant in this place. Teenagers are at risk of being recruited by gangs. With their home so broken and crowded, the teenagers have no place to turn to. The gangs offered financial and communal support/relief, including a sense of belonging.
+                     The children in Jinjang Utara have been growing up in a poverty stricken environment. Some were abandoned by their parents or are neglected in an environment of abject poverty. Violence is rampant in this place. Teenagers are at risk of being recruited by gangs. With their home so broken and crowded, the teenagers have no place to turn to. The gangs offered financial and communal support/relief, including a sense of belonging.
 
-                   </p>
-                   <p class="literacy-paragraph">
+                 </p>
+                 <p class="literacy-paragraph">
                     <br>
                     Jonathan Ambalagan and Mary Ramamoothy started the community work and have been reaching out to the children of Jinjang Utara for the past 17 years. It is their life mission to see the community transformed and changed through helping the children - one child at a time. The chief focus is on education and social concern activities. They conduct weekly outdoor activities to instill moral values in children. Over 100 children attend their session every week. Over the years, many of these children have progressed to complete their secondary education. Few are even completing their college education through the sponsorship of kind benefactors like HELP Education Group. 
 
@@ -60,24 +60,24 @@
                 <hr>
 
                 <div class="links">
-                <p>
-                    <h3>Related articles to Jinjang Utara </h3>
-                </p>
+                    <p>
+                        <h3>Related articles to Jinjang Utara </h3>
+                    </p>
 
-                 <p>
-                    <a href="http://m.thesundaily.my/node/288992">http://m.thesundaily.my/node/288992</a>
-                </p>
+                    <p>
+                        <a href="http://m.thesundaily.my/node/288992">http://m.thesundaily.my/node/288992</a>
+                    </p>
 
-                 <p >
-                    <a href="http://christianitymalaysia.com/wp/bringing-the-plight-of-children-in-jinjang-utara-to-the-forefront-an-outdoor-christmas-party/"> http://christianitymalaysia.com/wp/bringing-the-plight-of-children-in-jinjang-utara-to-the-forefront-an-outdoor-christmas-party/</a>
-                </p>
-                 <p>
-                    <a href="http://mykampung.sinchew.com.my/node/338181"> http://mykampung.sinchew.com.my/node/338181</a>
-                </p>
+                    <p >
+                        <a href="http://christianitymalaysia.com/wp/bringing-the-plight-of-children-in-jinjang-utara-to-the-forefront-an-outdoor-christmas-party/"> http://christianitymalaysia.com/wp/bringing-the-plight-of-children-in-jinjang-utara-to-the-forefront-an-outdoor-christmas-party/</a>
+                    </p>
+                    <p>
+                        <a href="http://mykampung.sinchew.com.my/node/338181"> http://mykampung.sinchew.com.my/node/338181</a>
+                    </p>
 
-                 <p>
-                    <a href=" http://asianbeacon.org/celebration-of-love/"> http://asianbeacon.org/celebration-of-love/</a>
-                </p>
+                    <p>
+                        <a href=" http://asianbeacon.org/celebration-of-love/"> http://asianbeacon.org/celebration-of-love/</a>
+                    </p>
 
                 </div>
             </div>
@@ -101,11 +101,6 @@
 <script src="js/lightbox.min.js"></script>
 
 <!-- Script to Activate the Carousel -->
-<script>
-    $('.carousel').carousel({
-        interval: 5000 //changes the speed
-    })
-</script>
 
 </body>
 
