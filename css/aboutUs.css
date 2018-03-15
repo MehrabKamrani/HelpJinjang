@@ -60,12 +60,10 @@ body {
   background-color: white;
 }
 
-#ourWork
-{
-  background-color: rgb(235,235,235);
+
+#about {
+  background-color: rgb(200,200,200);
 }
-
-
 .about-img, .blog-img, .contact-aside-img{
   width:100%;
 }

@@ -35,10 +35,9 @@
     <div id="about"><!-- About Section -->
         <div class="container">
             <div class="about-wrapper row">
-                
-                    <div class="about-img-section col-md-6 col-sm-4">
-                        <img class="img-responsive about-img" src="images/agn_from_doc.jpg" alt="about photo">
-                    </div>
+                <aside class="about-img-section col-md-6 col-sm-4">
+                    <img class="img-responsive about-img" src="images/agn_from_doc.jpg" alt="about photo">
+                </aside>
                 <div class="about-text-section col-md-6 col-sm-8">
                     <h1 class="about-title">About AGN</h1>
                     <p class="about-paragraph">
@@ -66,6 +65,8 @@
                     <h1 class="about-title">Our Work</h1>
                     <p class="about-paragraph">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac tellus at orci lacinia aliquet. In ornare tellus condimentum libero tincidunt vehicula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus ut enim diam. Nulla semper justo a nisi ullamcorper ultrices. Curabitur tristique quam quis massa lacinia cursus. Duis tortor risus, pellentesque eget enim sit amet, pellentesque pharetra risus.
+
+                        s 
 
                     </p>
                     <p class="about-paragraph">
@@ -118,12 +119,15 @@
                     </p>
                 </div>
             </div>
-        |   </div>
+            <footer>
+                <h2 class="blogs-all"><a href="blogs.html">View All Blogs</a></h2>
+            </footer>
+        </div>
     </div><!-- / Leteracy Section -->
 
+  
 
-
-    <?php include "footer.php"; ?>
+   <?php include "footer.php"; ?>
 
 
     <!-- jQuery -->
