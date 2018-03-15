@@ -4,46 +4,18 @@ body {
 }
 
 
-.about-paragraph, .blogs-description, .gadgets-description{
+.about-paragraph, {
   margin-top: 10px;
 }
-#info, #gadgets, #photos, #contact, #footer, #photos-main, #blogspg-wrapper, #gadgetspg-wrapper{
+#info, #footer{
   padding-top: 50px;
   padding-bottom: 50px;
 }
-.blogs-head, .blogs-all, .blogs-description, .blogs-link,
-.gadgets-head, .gadgets-all, .gadgets-description, .gadgets-link,
-.photos-head, .photos-all,
-.contact-head, #footer .container{
+
+#footer .container{
   text-align: center;
 }
-.blogs-latest, .gadgets-latest, .photos-popular, .contact-form, .contact-description{
-  margin:70px 0;
-}
-.blogs-img, .gadgets-img, .photos-img, .footer-logo{
-  width: 100%;
-}
-.blogs-description, .gadgets-description{
-  line-height: 16px;
-  font-size: 16px;
-  font-weight: bold;
-}
-#gadgets{
-  background-color: rgb(220,220,220);
-}
 
-textarea{
-  resize:none;
-}
-
-
-
-/*----------------------------------------
-  BLOGS, GADGETS STYLESHEET
-----------------------------------------*/
-.each-blog-wrapper, .each-gadget-wrapper{
-  margin-bottom: 60px;
-}
 
 .literacy-paragraph
 {

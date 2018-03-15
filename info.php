@@ -100,7 +100,6 @@
 <!-- Lightbox JavaScript -->
 <script src="js/lightbox.min.js"></script>
 
-<!-- Script to Activate the Carousel -->
 
 </body>
 
