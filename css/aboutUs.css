@@ -3,143 +3,25 @@ body {
     height: 100%;
 }
 
-.carousel,
-.item,
-.active {
-    height: 100%;
-}
-
-.carousel-inner {
-    height: 100%;
-}
-
-.fill {
-  width: 100%;
-  height: 100%;
-  background-position: center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-
-#navigation .navbar{
-  background-color: rgba(0,0,0,0.3);
-}
-
-.navbar-fixed-top {
-    border:none;
-}
-
-.navbar-nav>li>a {
-  line-height: 40px;
-  color: white;
-  font-size: 18px;
-}
-.navbar-nav>li>a:hover,
-.navbar-nav>li>a:focus {
-  background: none;
-  color: rgb(0,0,0);
-  text-shadow: 0 0 15px white;
-  font-weight: bold;
-}
-.navbar-inverse .navbar-nav>li>a {
-    color: #9d9d9d;
-    font-size: 18px;
-}
-.navbar-brand {
-  height: initial;
-}
-.navbar-toggle{
-  background-color: rgb(100,100,100);
-  margin-top: 18px;
-  margin-bottom: 18px;
-}
-.icon-bar{
-  background-color: white;
-}
-
-
-.about-img, .blog-img, .contact-aside-img{
+.about-img{
   width:100%;
 }
 .about-text-section{
   padding-bottom: 20px;
 }
-.about-title{
+.about-title, .ourWork-title{
   font-size:50px;
 }
-.about-paragraph{
+.about-paragraph, .ourWork-paragraph{
   font-size: 16px;
   text-align: justify;
 }
-.about-paragraph, .blogs-description, .gadgets-description{
+.about-paragraph, .ourWork-paragraph{
   margin-top: 10px;
 }
-#blogs, #gadgets, #photos, #contact, #footer, #photos-main, #blogspg-wrapper, #gadgetspg-wrapper{
+#literacy{
   padding-top: 50px;
   padding-bottom: 50px;
-}
-.blogs-head, .blogs-all, .blogs-description, .blogs-link,
-.gadgets-head, .gadgets-all, .gadgets-description, .gadgets-link,
-.photos-head, .photos-all,
-.contact-head, #footer .container{
-  text-align: center;
-}
-.gadgets-latest, .photos-popular, .contact-form, .contact-description{
-  margin:70px 0;
-}
-.blogs-img, .gadgets-img, .photos-img, .footer-logo{
-  width: 100%;
-}
-.blogs-description, .gadgets-description{
-  line-height: 16px;
-  font-size: 16px;
-  font-weight: bold;
-}
-#gadgets{
-  background-color: rgb(220,220,220);
-}
-.photos-img{
-  margin-bottom: 30px;
-}
-#contact{
-  background-color: rgb(75,75,75);
-}
-.contact-form label, .contact-head{
-  color: rgb(220,220,220);
-}
-textarea{
-  resize:none;
-}
-.contact-aside-img-section{
-  margin-bottom: 10px;
-}
-.contact-description-text{
-  color: white;
-}
-#copyright{
-  color:rgb(200,200,200);
-}
-#footer{
-  background-color: black;
-}
-.footer-nav{
-  margin: 30px;
-}
-.navbar-nav>li>a, .page-header, .about-title, .blogs-head,
-.blogs-all, .gadgets-head, .gadgets-all,
-.photos-head, .photos-all,.contact-head,
-.footer-nav a, .single-heading, #header-popular, #header-recommended{
-  font-family: 'Oswald', sans-serif;
-}
-
-/*----------------------------------------
-  BLOGS, GADGETS STYLESHEET
-----------------------------------------*/
-.each-blog-wrapper, .each-gadget-wrapper{
-  margin-bottom: 60px;
 }
 
 .literacy-paragraph
@@ -154,101 +36,11 @@ textarea{
   font-size: 50px;
 }
 
-
-/* photos style */
-.thumb{
-  margin-bottom: 30px;
-}
-.img-thumbnail{
-  background: transparent;
-  border-color: rgb(175,175,175); 
-}
-
-/*----------------------------------------
-  SINGLE BLOG STYLESHEET
-----------------------------------------*/
-#single-main-sec {
-  margin-top: 50px;
-  padding-top: 30px;
-  margin-bottom: 75px;
-}
-.single-article-page {
-  border-bottom: 1px dotted #d2d2d2;
-  margin-bottom: 40px;
-}
-.single-heading {
-  font-size: 34px;
-  font-weight: 700;
-}
-.byline-single > div {
-  font-size: 16px;
-  margin: 15px 0px 5px;
-}
-.single-wrapper {
-  padding-bottom: 50px;
-  margin-bottom: 50px;
-}
-.single-blog-description, .single-gadget-description{
-  font-size: 18px;
-}
-.single-each-photo{
-  margin-bottom: 20px;
-}
-#header-popular,
-#header-recommended {
-  border-bottom: 1px solid #d2d2d2;
-  line-height: 0.1em;
-  margin-bottom: 30px;
-  text-align: center;
-}
-#span-popular,
-#span-recommended {
-  background-color: white;
-  padding: 0 5px;
-}
-.popular {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.popular li {
-  margin-bottom: 20px;
-  display: inline-block;
-}
-.single-popular-img {
-  margin: 4px 10px 0 0;
-  width:40%;
-}
-.with-image {
-  display: block;
-  line-height: 16px;
-  margin-top: 5px;
-  font-size: 16px;
-  font-weight: bold;
-}
-@media (max-width: 767px) {
-  .navbar-nav>li>a {
-  line-height: 15px;
-  }
-  .about-img{
-    display: none;
-  }
-  .blogs-link, .gadgets-link{
-    margin-bottom: 50px;
-  }
-}
-
-
-
 #ourWork
 {
   background-color: rgb(235,235,235);
 }
 
-.blogs-latest
-{
-  margin-top: 0;
-}
 
 .about-wrapper
 {
