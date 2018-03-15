@@ -127,53 +127,7 @@
 
   
 
-   
-
-    <footer id="footer">
-        <div class="container">
-            <div class="footer-logo">
-                <img alt="Logo" src="logo.png" height="60">
-            </div>
-            <ul class="footer-nav list-inline">
-                <li>
-                    <a href="home.html">Home</a>
-                </li>
-                <li>
-                    <a href="#about">About</a>
-                </li>
-                <li>
-                    <a href="#blogs">Blogs</a>
-                </li>
-                <li>
-                    <a href="#gadgets">New Gadgets</a>
-                </li>
-                <li>
-                    <a href="#photos">Photos</a>
-                </li>
-                <li>
-                    <a href="#contact">Contact</a>
-                </li>
-            </ul>
-            <hr>
-            <ul class="footer-social list-inline">
-                <li>
-                    <a href="https://facebook.com"><img alt="social icon" src="glyphs/fb.png"></a>
-                </li>
-                <li>
-                    <a href="https://instagram.com"><img alt="social icon" src="glyphs/in.png"></a>
-                </li>
-                <li>
-                    <a href="https://twitter.com"><img alt="social icon" src="glyphs/t.png"></a>
-                </li>
-                <li>
-                    <a href="https://plus.google.com"><img alt="social icon" src="glyphs/g.png"></a>
-                </li>
-            </ul>
-            <p id="copyright">Copyright &copy; WE-photographer 2016</p>
-        </div>
-    </footer>
-
-
+   <?php include "footer.php"; ?>
 
 
     <!-- jQuery -->
