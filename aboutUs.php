@@ -35,10 +35,10 @@
     <!-- Start Home Section -->
 
     <div id="about"><!-- About Section -->
-        <div class="container wrapper">
+        <div class="container wrapper-about">
             <div class="about-wrapper row">
                 <aside class="about-img-section col-md-6 col-sm-4">
-                    <img class="img-responsive about-img" src="images/agnlogo.png" alt="about photo">
+                    <img class="img-responsive about-img hidden-xs" src="images/agnlogo.png" alt="about photo">
                 </aside>
                 <div class="about-text-section col-md-6 col-sm-8">
                     <h1 class="about-title">About AGN</h1>
@@ -56,7 +56,7 @@
 <hr>
 
  <div id="ourWork"><!-- Our Work Section -->
-    <div class="container wrapper-second">
+    <div class="container wrapper-ourWork">
         <div class="ourWork-wrapper row">
 
             <div class="about-text-section col-md-6 col-sm-8">
@@ -70,7 +70,7 @@
               
         </div>
         <aside class="ourWork-img-section col-md-6 col-sm-4">
-            <img class="img-responsive about-img" src="images/our-work.png" alt="our work">
+            <img class="img-responsive about-img hidden-xs" src="images/our-work.png" alt="our work">
         </aside>
     </div> 
 </div>
