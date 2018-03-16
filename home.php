@@ -24,6 +24,9 @@
     <!-- FontAwesome CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
+    <!-- Lightbox CSS -->
+    <link href="css/lightbox.min.css" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link href="css/home.css" rel="stylesheet">
 
@@ -144,9 +147,21 @@
               </a>
             </div>
 
-            <a href="#">
-              <h3 class="gallery-link text-center">View all photos</h3>
-            </a>
+            <a href="gallery/001.jpg" data-lightbox="event-set" data-title="A student of HELP university teaching the poor children of Jinjang Utara how to read"><h3 class="gallery-link text-center">View all photos</h3></a>
+            <a href="gallery/002.jpg" data-lightbox="event-set" data-title="A HELP University student teaching the children, Jolly Phonics English curriculum"></a>
+            <a href="gallery/003.jpg" data-lightbox="event-set" data-title="Arrival of the poor children of Jinjang Utara at the school by a AGN-sponsored bus"></a>
+            <a href="gallery/004.jpg" data-lightbox="event-set" data-title="Enthusiastic faces of the children, having mastered all 42 sounds"></a>
+            <a href="gallery/005.jpg" data-lightbox="event-set" data-title="Revision of the lessons led by Jolly Phonics trainer, Datin Sarah Skadiang"></a>
+            <a href="gallery/006.jpg" data-lightbox="event-set" data-title="Pastor Raymond Mooi, AGN Director, giving a speech in the closing ceremony"></a>
+            <a href="gallery/009.jpg" data-lightbox="event-set" data-title="Live Demo of the Jinjang Utara children of the Jolly Phonics programme"></a>
+            <a href="gallery/010.jpg" data-lightbox="event-set" data-title="Presentation of appreciation plaque by YB Datuk Dr. Loga (middle) to HELP representative Dato’ Professor Dr. Zakaria Ahmad (right), accompanied by AGN Director Rev Raymond Mooi (left)"></a>
+            <a href="gallery/011.jpg" data-lightbox="event-set" data-title="Group photo at the Closing Ceremony with the VIPS, Jinjang Utara children, teachers from HELP and volunteers from AGN"></a>
+            <a href="gallery/IMG_6824.jpg" data-lightbox="event-set" data-title="Beloved children of Jinjang Utara"></a>
+            <a href="gallery/IMG_6868.jpg" data-lightbox="event-set" data-title="Clowning act for the children of the Christmas Party"></a>
+            <a href="gallery/IMG_6915.jpg" data-lightbox="event-set" data-title="Children having fun in the party"></a>
+            <a href="gallery/IMG_7010.jpg" data-lightbox="event-set" data-title="From right to left: YB Hannah Yeoh, Dato’ Chua Jui Meng, YB Chua Tian Chang, and Rev Raymond Mooi"></a>
+            <a href="gallery/IMG_7245.jpg" data-lightbox="event-set" data-title="The volunteers of the event handing out food"></a>
+            <a href="gallery/IMG_7329.jpg" data-lightbox="event-set" data-title="The children receiving their Christmas gifts"></a>
           </div>
           <div class="col-sm-4">
             <header><h1 class="event-head text-center">News</h1></header>
@@ -174,6 +189,9 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
+    <!-- Lightbox JavaScript -->
+    <script src="js/lightbox.min.js"></script>
 
     <!-- Costom JavaScript -->
     <script src="js/home.js"></script>
