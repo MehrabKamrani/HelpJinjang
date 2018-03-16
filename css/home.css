@@ -67,7 +67,7 @@ body {
     left: 0;
     overflow: hidden;
     z-index: -100;
-    background: black;
+    background: #c3faf8;
 }
 
 
@@ -169,4 +169,10 @@ body {
 }
 .aboutUs::-webkit-scrollbar {
     display: none;
+}
+
+
+.box-text
+{
+  text-align: center;
 }
