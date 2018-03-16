@@ -37,7 +37,7 @@
     <div id="about"><!-- About Section -->
         <div class="container wrapper-about">
             <div class="about-wrapper row">
-                <aside class="about-img-section col-md-6 col-sm-4">
+                <aside class="about-img-section col-md-6 col-sm-7">
                     <img class="img-responsive about-img hidden-xs" src="images/agnlogo.png" alt="about photo">
                 </aside>
                 <div class="about-text-section col-md-6 col-sm-8">

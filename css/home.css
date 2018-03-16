@@ -7,6 +7,11 @@ body {
   margin-top: 8px;
   margin-bottom: 8px;
 }
+
+.navbar-form-user{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
 #navigation .navbar{
   background-color: rgba(0,0,0,0.8);
 }
