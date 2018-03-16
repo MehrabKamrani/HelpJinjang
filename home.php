@@ -114,6 +114,88 @@
         </div>
     </div><!-- / Help Section -->
 
+    <div id="event-news-section"><!-- Event Section -->
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8">
+            <header><h1 class="event-head text-center">Past Events</h1></header>
+            <div id="eventCarousel" class="carousel slide" data-ride="carousel">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#eventCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#eventCarousel" data-slide-to="1"></li>
+                <li data-target="#eventCarousel" data-slide-to="2"></li>
+                <li data-target="#eventCarousel" data-slide-to="3"></li>
+              </ol>
+
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner">
+                <div class="item active">
+                  <img src="gallery/002.jpg" alt="Los Angeles">
+                  <div class="carousel-caption">
+                    <h3>English literacy programme</h3>
+                    <p>A HELP University student teaching the children, Jolly Phonics English curriculum</p>
+                  </div>
+                </div>
+
+                <div class="item">
+                  <img src="gallery/004.jpg" alt="Chicago">
+                  <div class="carousel-caption">
+                    <h3>English literacy programme</h3>
+                    <p>Enthusiastic faces of the children, having mastered all 42 sounds</p>
+                  </div>
+                </div>
+
+                <div class="item">
+                  <img src="gallery/IMG_6915.jpg" alt="New York">
+                  <div class="carousel-caption">
+                    <h3>Christmas party</h3>
+                    <p>Children having fun in the party</p>
+                  </div>
+                </div>
+
+                <div class="item">
+                  <img src="gallery/IMG_7329.jpg" alt="New York">
+                  <div class="carousel-caption">
+                    <h3>Christmas party</h3>
+                    <p>The children receiving their Christmas gifts</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Left and right controls -->
+              <a class="left carousel-control" href="#eventCarousel" data-slide="prev">
+                <span><i class="fa fa-angle-left fa-2x"></i></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#eventCarousel" data-slide="next">
+                <span><i class="fa fa-angle-right fa-2x"></i></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+
+            <a href="#">
+              <h3 class="gallery-link text-center">View all photos</h3>
+            </a>
+          </div>
+          <div class="col-sm-4">
+            <header><h1 class="event-head text-center">News</h1></header>
+            <a href="http://christianitymalaysia.com/wp/bringing-the-plight-of-children-in-jinjang-utara-to-the-forefront-an-outdoor-christmas-party/">
+              <h4 class="news-link">Bringing the Plight of Children in Jinjang Utara to the Forefront: An Outdoor Christmas Party</h4>
+            </a>
+            <a href="https://christianitymalaysia.com/wp/liberating-the-illiterate-holiday-education-for-the-poor-children-of-jinjang-utara/">
+              <h4 class="news-link">Liberating the Illiterate – Holiday Education for the Poor Children of Jinjang Utara</h4>
+            </a>
+            <a href="http://www.thesundaily.my/node/288992">
+              <h4 class="news-link">Hannah Yeoh calls on the government to take notice of poor children across the country</h4>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div><!-- / Event Section -->
+
+
+
     <?php include "footer.php"; ?>
 
 

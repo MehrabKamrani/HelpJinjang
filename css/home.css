@@ -84,7 +84,7 @@ body {
 .about-head{
   margin-top: 0;
 }
-.aboutUs, .help-head, .help-title{
+.aboutUs, .help-head, .help-title, .event-head, .gallery-link{
   font-family: 'Oswald', sans-serif;
 }
 /*
@@ -131,7 +131,24 @@ body {
   margin-bottom: 50px;
 }
 
+#event-news-section{
+  background: lightcyan;
+  padding-top: 70px;
+  padding-bottom: 50px;
+}
 
+.event-head{
+  margin-bottom: 50px;
+}
+
+.fa-angle-left, .fa-angle-right {
+  position: absolute;
+  top: 45%;
+}
+
+.news-link{
+  margin-bottom: 50px;
+}
 
 #footer{
   padding-top: 50px;
