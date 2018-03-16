@@ -22,10 +22,14 @@ session_start();
                 <!-- Collect the nav links for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-login-collapse">
                   <form class="navbar-form navbar-right" action="" method="POST" id="login-form">
-                    
+                    <?php if(!empty($_SESSION['cl_username'])) : ?>
+                    <p class="navbar-text navbar-right"> <a href="client_main.php"><?php echo $_SESSION['cl_username'];?></a></p>
+                    <?php else: ?>
                     <button type="button" class="btn btn-success" id="login-btn" name="login" onclick="location.href='loginPage.php';">Log In</button>
 
                     <button type="button" class="btn btn-primary" name="signup" onclick="location.href='signUp.php';">Sign Up</button>
+                    <?php endif; ?>
+
                   </form>
                 </div>
                 <!-- End .navbar-collapse -->
