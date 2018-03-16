@@ -22,11 +22,11 @@ session_start();
             <!-- Collect the nav links for toggling -->
             <div class="collapse navbar-collapse" id="navbar-login-collapse">
 
-               <!-- Check if the Client is signed in -->
+               <!-- Start If. Check if the Client is signed in -->
             <?php if(!empty($_SESSION['cl_username'])) : ?>
-                <!-- If Client signed in put his username -->
+                <!-- If Client signed in put his fullname -->
                 <form class="navbar-form-user navbar-right" action="" method="POST" id="login-form">
-                    <p class="navbar-text navbar-right"> <a href="client_main.php"><?php echo $_SESSION['cl_username'];?></a></p>
+                    <p class="navbar-text navbar-right"> <a href="client_main.php"><?php echo $_SESSION['cl_fullname'];?></a></p>
                 </form>
 
             <?php else: ?>
