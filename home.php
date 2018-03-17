@@ -32,18 +32,21 @@
 
 
 </head>
-<?php include "login-header.php";?>
+<?php include "login-header.php";?> 
 
 <body>
-
 
 
     <!-- Start Video Section -->
     <div class="fullscreen-bg">
           <div class="aboutUs">
               <h1 class="about-head text-center">Impact a life, transform a community</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p> ACTS Global Networking (AGN) is a non-profit organization mainly focusing on education and social concern activities. One of the community activities that it has been involved in over the past fourteen years is its “street ministry” where the organization reaches out and helps the hurting and neglected children and youth in Jinjang. AGN has been extending support, counselling and meeting the material needs of this needful community for over fourteen years.  <button type="button" class="btn btn-default"  name="login" onclick="location.href='aboutUs.php';">More</button></p>
+
+              <br>
+
+
+              <p> The children in Jinjang Utara have been growing up in a poverty stricken environment. Some were abandoned by their parents or are neglected in an environment of abject poverty. Jonathan Ambalagan and Mary Ramamoothy started the community work and have been reaching out to the children of Jinjang Utara for the past 17 years.                                             <button type="button" class="btn btn-default"  name="login" onclick="location.href='info.php';">More</button></p>
 
           </div>
           <div class="go-down animated bounce infinite">
