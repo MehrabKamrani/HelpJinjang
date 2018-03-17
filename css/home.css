@@ -155,6 +155,10 @@ body {
   margin-bottom: 50px;
 }
 
+.carousel-inner .item img {
+  width: 100%;
+}
+
 #footer{
   padding-top: 50px;
   padding-bottom: 50px;
