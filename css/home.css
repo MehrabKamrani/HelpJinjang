@@ -67,7 +67,11 @@ body {
     left: 0;
     overflow: hidden;
     z-index: -100;
+<<<<<<< HEAD
     background: #c3faf8;
+=======
+    background: #509650;
+>>>>>>> 5912babf63a664ca05eed0e5ef21f593d9c786ee
 }
 
 
@@ -89,7 +93,7 @@ body {
 .about-head{
   margin-top: 0;
 }
-.aboutUs, .help-head, .help-title{
+.aboutUs, .help-head, .help-title, .event-head, .gallery-link{
   font-family: 'Oswald', sans-serif;
 }
 /*
@@ -136,7 +140,24 @@ body {
   margin-bottom: 50px;
 }
 
+#event-news-section{
+  background: rgb(245,245,245);
+  padding-top: 70px;
+  padding-bottom: 50px;
+}
 
+.event-head{
+  margin-bottom: 50px;
+}
+
+.fa-angle-left, .fa-angle-right {
+  position: absolute;
+  top: 45%;
+}
+
+.news-link{
+  margin-bottom: 50px;
+}
 
 #footer{
   padding-top: 50px;
