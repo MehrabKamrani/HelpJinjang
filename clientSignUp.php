@@ -7,7 +7,10 @@
 	$password = $_POST['cl_password'];
 	$phoneNo = $_POST['phoneNo'];
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5674f01cb5a18d93dde2f642a9e652a364e463fc
 	setcookie('cl_fullname', $fullname, time() + 60 * 60);
 	setcookie('cl_email', $email, time() + 60 * 60);
 	setcookie('cl_username', $username, time() + 60 * 60);
@@ -21,7 +24,7 @@
 
 	if ($conn->connect_error) {
 		die("Connection failed: " . $conn->connect_error);
-	} 
+	}
 
 
 	if (!empty($username) && !empty($password) && !empty($fullname) && !empty($email) && !empty($phoneNo)) {
@@ -45,13 +48,13 @@
 
 	if (mysqli_num_rows($duperaw_username_cl) > 0 || mysqli_num_rows($duperaw_username_js) > 0) {
 		$message = "The username already exists";
-		echo "<script type='text/javascript'>alert('$message'); 
+		echo "<script type='text/javascript'>alert('$message');
 			window.location.href = 'signUp.php';</script>";
 	}
 
 	else if(mysqli_num_rows($duperaw_email_cl) > 0 || mysqli_num_rows($duperaw_email_js) > 0){
 		$message = "The email already exists";
-		echo "<script type='text/javascript'>alert('$message'); 
+		echo "<script type='text/javascript'>alert('$message');
 				window.location.href = 'signUp.php';</script>";
 	}
 
@@ -67,7 +70,10 @@
 			$_SESSION['cl_username'] = $username;
 			$_SESSION['cl_email'] = $email;
 			$_SESSION['cl_phoneNo'] = $phoneNo;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5674f01cb5a18d93dde2f642a9e652a364e463fc
 			echo "<script type='text/javascript'>alert('$message');
 			window.location.href = 'client_main.php';</script>";
 		} else {
