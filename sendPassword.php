@@ -1,26 +1,28 @@
 <?php
+require_once('PHPMailer/get_oauth_token.php');
 
-$email = $_POST['email'];
-// Create connection
-$conn = new mysqli("localhost", "root","", "helpjinjang");
+$mail = new PHPMAiler();
+$mail->isSMTP();
+$mail->SMTPAuth = true;
 
-if ($conn->connect_error) {
-	die("Connection failed: " . $conn->connect_error);
-} 
+$mail->SMTPSecure = 'ssl';
+
+$mail->HOST = 'smtp.gmail.com';
+
+$mail->Port = '587';
+
+$mail->isHTML();
+
+$mail->Username = 'desakondo697@gmail.com';
+$mail->Password = 'vedunya5';
+$mail->SetFrom('desakondo697@gmail.com');
+$mail->Subject = 'Heyyyyyyyyyyyyyyy';
+$mail->Body = 'A test email';
+$mail-> AddAddress('desakondo697@gmail.com');
 
 
-	// The message
-$message = "Your function is working. Yeeeey!";
+$mail->Send();
 
-// In case any of our lines are larger than 70 characters, we should use wordwrap()
-$message = wordwrap($message, 70, "\r\n");
-
-$headers = 'From: desakondo697@gmail.com' . "\r\n" .
-    'Reply-To: desakondo697@gmail.com' . "\r\n" .
-    'X-Mailer: PHP/' . phpversion();
-
-// Send
-mail($email, 'Password recovery', $message, $headers);
 
 ?>
 

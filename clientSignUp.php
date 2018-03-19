@@ -7,7 +7,7 @@
 	$password = $_POST['cl_password'];
 	$phoneNo = $_POST['phoneNo'];
 
-	$_SESSION['cl_fullname'] = $fullname;
+
 	setcookie('cl_fullname', $fullname, time() + 60 * 60);
 	setcookie('cl_email', $email, time() + 60 * 60);
 	setcookie('cl_username', $username, time() + 60 * 60);
@@ -63,6 +63,11 @@
 			setcookie("cl_username", "", time()-3600);
 			setcookie("cl_email", "", time()-3600);
 			setcookie("cl_phoneNo", "", time()-3600);
+			$_SESSION['cl_fullname'] = $fullname;
+			$_SESSION['cl_username'] = $username;
+			$_SESSION['cl_email'] = $email;
+			$_SESSION['cl_phoneNo'] = $phoneNo;
+
 			echo "<script type='text/javascript'>alert('$message');
 			window.location.href = 'client_main.php';</script>";
 		} else {
