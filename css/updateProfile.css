@@ -1,0 +1,41 @@
+#update-profile-section{
+  margin-top: 100px;
+}
+
+/* Start Footer Style */
+#footer{
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: black;
+}
+.footer-logo{
+  width: 100%;
+}
+#copyright{
+  color:rgb(200,200,200);
+}
+
+/* Start SignUp Style */
+#update-profile-section{
+  margin-bottom: 100px;
+}
+.form-content{
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 20px;
+}
+.form-control{
+  box-shadow: none;
+}
+.form-control:focus {
+    border-color: #333;
+    box-shadow: none;
+}
+.form-horizontal .form-group {
+    margin-right: 0;
+    margin-left: 0;
+}
+.btn-reset, .btn-submit{
+  margin-top: 20px;
+  width: 33.3334%;
+}
