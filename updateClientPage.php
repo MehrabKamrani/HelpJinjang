@@ -56,7 +56,7 @@
 
   <div class="container" id="update-client-profile-section">
     <div class="row">
-      <div class="col-sm-6 form-section">
+      <div class="col-sm-6 col-sm-offset-3 form-section">
         <h1 class="text-center" style="font-family: 'Oswald', sans-serif;">Update Your Profile</h1>
 
 

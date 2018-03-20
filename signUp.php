@@ -3,7 +3,7 @@ error_reporting(0);
 
 $connect = mysqli_connect("localhost", "root","", "helpjinjang");
 
-$query = "SELECT * FROM category WHERE categoryName != 'Other' ORDER BY categoryName";
+$query = "SELECT * FROM category WHERE categoryName != 'Others' ORDER BY categoryName";
 
 $result = mysqli_query($connect, $query);
 
@@ -27,7 +27,10 @@ $result = mysqli_query($connect, $query);
   <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 
   <!-- Bootstrap Core CSS -->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+
   <link href="css/bootstrap.min.css" rel="stylesheet">
+
 
   <!-- Custom CSS -->
   <link href="css/signUp.css" rel="stylesheet">
@@ -101,6 +104,7 @@ $result = mysqli_query($connect, $query);
                     <?php while($row = mysqli_fetch_array($result)):;?>
                       <option value="<?php echo $row[0];?>"><?php echo $row[0];?></option>
                     <?php endwhile;?>
+                    <option value = "Others">Others</option>
                   </select>
                   <p class="help-block with-errors">Please specify your speciality</p>
                 </div>

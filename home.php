@@ -39,6 +39,7 @@
 
     <!-- Start Video Section -->
     <div class="fullscreen-bg">
+      <img src="images/background-image.jpg" class="fullscreen-bg__video">
           <div class="aboutUs">
               <h1 class="about-head text-center">Impact a life, transform a community</h1>
               <p> ACTS Global Networking (AGN) is a non-profit organization mainly focusing on education and social concern activities. One of the community activities that it has been involved in over the past fourteen years is its “street ministry” where the organization reaches out and helps the hurting and neglected children and youth in Jinjang. AGN has been extending support, counselling and meeting the material needs of this needful community for over fourteen years.  <button type="button" class="btn btn-default"  name="login" onclick="location.href='aboutUs.php';">More</button></p>
