@@ -6,8 +6,10 @@ $query = "SELECT * FROM `category` WHERE `categoryName` != 'Others' ORDER BY `ca
 
 $result = mysqli_query($connect, $query);
 
-
- ?>
+if(!isset($_SESSION['cl_username'])) {
+	header("Location: home.php");
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,31 +40,8 @@ $result = mysqli_query($connect, $query);
 <body>
 
   <!-- Navigation -->
-  <header>
-		<nav class="navbar navbar-inverse navbar-fixed-top">
-			<div class="container">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle = "collapse" data-target="#tr-mainNavbar">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="client_main.php">HELPJinjang</a>
+  <?php include "login-header.php";?>
 
-				</div>
-				<!-- Collect the nav links for toggling -->
-				<div class="collapse navbar-collapse" id="tr-mainNavbar">
-					<p class="navbar-text navbar-right"><?php echo "Mehrab Kamrani"; ?></p>
-					<a href="home.html" type="button" id="btn-logout" class="btn btn-default navbar-btn navbar-right">Log out</a>
-				</div>
-				<!-- End .navbar-collapse -->
-			</div>
-			<!-- End .container -->
-		</nav>
-
-	</header>
     <div class="container" id="new-job-section">
       <div class="row">
 
@@ -158,7 +137,7 @@ $result = mysqli_query($connect, $query);
                     <div class="form-group">
                       <label class="control-label" for="description">Description</label>
                       <div class="controls">
-                          <textarea class="form-control" id="description" name="description" rows="3" maxlength="500" required></textarea>
+                            <textarea class="form-control" id="description" name="description" rows="3" maxlength="500" required></textarea>
                           <p class="help-block with-errors">Please provide the descriptions</p>
                       </div>
                     </div>

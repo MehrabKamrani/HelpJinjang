@@ -75,7 +75,7 @@
 =======
 >>>>>>> 5674f01cb5a18d93dde2f642a9e652a364e463fc
 			echo "<script type='text/javascript'>alert('$message');
-			window.location.href = 'client_main.php';</script>";
+			window.location.href = 'clientPage.php';</script>";
 		} else {
 			echo "Error: " . $sql . "<br>" . $conn->error;
 		}

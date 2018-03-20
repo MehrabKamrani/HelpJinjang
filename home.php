@@ -32,7 +32,7 @@
 
 
 </head>
-<?php include "login-header.php";?> 
+<?php include "login-header.php";?>
 
 <body>
 
@@ -64,27 +64,27 @@
             <header><h1 class="help-head text-center">How You Can Help?</h1></header>
             <div class="row helps">
                 <div class="col-sm-4 col-xs-6 first-col hidden">
-                    <a href="howCanHelp.html#volunteers"><h3 class="help-title text-center">Volunteers</h3></a>
+                    <a href="howCanHelp.php#volunteers"><h3 class="help-title text-center">Volunteers</h3></a>
                     <img class="img-responsive help-img" src="images/volunteers.png" alt="Volunteers Photo">
                 </div>
                 <div class="col-sm-4 col-xs-6 second-col hidden">
-                    <a href="howCanHelp.html#learningMaterials"><h3 class="help-title text-center">Learning Materials</h3></a>
+                    <a href="howCanHelp.php#learningMaterials"><h3 class="help-title text-center">Learning Materials</h3></a>
                     <img class="img-responsive help-img" src="images/learning-materials.png" alt="Learning Materials Photo">
                 </div>
                 <div class="col-sm-4 col-xs-6 third-col hidden">
-                    <a href="howCanHelp.html#schoolSupplies"><h3 class="help-title text-center">School Supplies</h3></a>
+                    <a href="howCanHelp.php#schoolSupplies"><h3 class="help-title text-center">School Supplies</h3></a>
                     <img class="img-responsive help-img" src="images/school-supplies.png" alt="School Supplies Photo">
                 </div>
                 <div class="col-sm-4 col-xs-6 fourth-col hidden">
-                    <a href="howCanHelp.html#sponsorChild"><h3 class="help-title text-center">Sponsor a Child</h3></a>
+                    <a href="howCanHelp.php#sponsorChild"><h3 class="help-title text-center">Sponsor a Child</h3></a>
                     <img class="img-responsive help-img" src="images/sponsor.png" alt="Sponsor a Child Photo">
                 </div>
                 <div class="col-sm-4 col-xs-6 fifth-col hidden">
-                    <a href="howCanHelp.html#e-business"><h3 class="help-title text-center">E-Business</h3></a>
+                    <a href="howCanHelp.php#e-business"><h3 class="help-title text-center">E-Business</h3></a>
                     <img class="img-responsive help-img" src="images/e-business.png" alt="E-Business Photo">
                 </div>
                 <div class="col-sm-4 col-xs-6 sixth-col hidden">
-                    <a href="howCanHelp.html#donation"><h3 class="help-title text-center">Donation</h3></a>
+                    <a href="howCanHelp.php#donation"><h3 class="help-title text-center">Donation</h3></a>
                     <img class="img-responsive help-img" src="images/donation.png" alt="Donation Photo">
                 </div>
             </div>

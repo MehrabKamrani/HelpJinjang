@@ -19,13 +19,22 @@
       body {
         font-size: 18px;
       }
+      .navbar-text {
+        font-size: 14px;
+      }
+      .howCanHelp-section {
+        margin-top: 50px;
+      }
     </style>
 
 </head>
 
 <body>
 
-     <div class="container">
+  <!-- Navigation -->
+  <?php include "login-header.php";?>
+
+     <div class="container howCanHelp-section">
 
       <div class="page-header">
         <h1>How You Can Help?</h1>
@@ -70,8 +79,8 @@
 
       <br>
       <h2 id="donation">Donation</h2>
-      <p></p>
-
+      <p>If you would like to impact a life and bring happiness to Jinjang families to not feel alone, please donate now:</p>
+      <p>Tel: +60 123456789</p>
 
       <br>
       <br>
@@ -85,6 +94,7 @@
      </div>
 
 
+     <?php include "footer.php"; ?>
 
 
  </body>

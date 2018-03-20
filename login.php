@@ -57,11 +57,11 @@ else if ($_SESSION['session_username_client'] == $username && $_SESSION['session
         $_SESSION['cl_email'] = $row['client_email'];
         $_SESSION['cl_phoneNo'] = $row['client_phoneNo'];
     }
-    header("location: client_main.php");
+    header("location: clientPage.php");
 }
 else{
  $message = "Wrong username or password";
- echo "<script type='text/javascript'>alert('$message'); 
+ echo "<script type='text/javascript'>alert('$message');
 window.location.href = 'loginPage.php';</script>";
 }
 

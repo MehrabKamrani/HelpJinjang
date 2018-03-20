@@ -39,7 +39,7 @@
 			$_SESSION['cl_email'] = $email;
 			$_SESSION['cl_phoneNo'] = $phoneNo;
 			echo "<script type='text/javascript'>alert('$message');
-			window.location.href = 'client_main.php';</script>";
+			window.location.href = 'clientPage.php';</script>";
 		} else {
 			echo "Error: " . $sql . "<br>" . $conn->error;
 		}
