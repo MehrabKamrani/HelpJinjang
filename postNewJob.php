@@ -26,7 +26,7 @@ $sql = "INSERT INTO job (title, startDate, endDate, startTime, endTime, salary, 
 if ($conn->query($sql) === TRUE) {
   $message = "New Job is Posted Successfully";
 	echo "<script type='text/javascript'>alert('$message');
-	window.location.href = 'client_main.php';
+	window.location.href = 'clientPage.php';
 	</script>";
 } else {
 	echo "Error: " . $sql . "<br>" . $conn->error;

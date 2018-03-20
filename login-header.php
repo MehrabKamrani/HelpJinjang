@@ -26,7 +26,7 @@ session_start();
             <?php if(!empty($_SESSION['cl_username'])) : ?>
                 <!-- If Client signed in put his fullname -->
                 <form class="navbar-form-user navbar-right" action="" method="POST" id="login-form">
-                    <p class="navbar-text navbar-right"> <a href="client_main.php"><?php echo $_SESSION['cl_fullname'];?></a></p>
+                    <p class="navbar-text navbar-right"> <a href="clientPage.php"><?php echo $_SESSION['cl_fullname'];?></a></p>
                 </form>
 
             <?php else: ?>
@@ -46,10 +46,3 @@ session_start();
 </nav>
 
 </header>
-
-
-
-
-
-
-
