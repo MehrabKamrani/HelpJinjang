@@ -6,8 +6,10 @@ $query = "SELECT * FROM `category` WHERE `categoryName` != 'Others' ORDER BY `ca
 
 $result = mysqli_query($connect, $query);
 
-
- ?>
+if(!isset($_SESSION['cl_username'])) {
+	header("Location: home.php");
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +41,7 @@ $result = mysqli_query($connect, $query);
 
   <!-- Navigation -->
   <?php include "login-header.php";?>
-  
+
     <div class="container" id="new-job-section">
       <div class="row">
 
