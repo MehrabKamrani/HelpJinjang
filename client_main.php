@@ -200,7 +200,7 @@ if ($result_select_passed = $conn->query($sql_select_passed)) {
 
 
 								<!-- Update button-->
-								<dt><a href="updateProfile.html" role="button" class="btn btn-default myBtn">Update Profile</a></dt>
+								<dt><a href="updateClientPage.php" role="button" class="btn btn-default myBtn">Update Profile</a></dt>
 							</dl>
 						</div>
 					</div>
