@@ -278,7 +278,7 @@ if ($result_select_passed = $conn->query($sql_select_passed)) {
 												<table class='table job-panel-table'>
 													<tbody>
 														<tr>
-															<th>Start on</th>
+															<th>Started on</th>
 															<td>$startDate_selected_current[$i]</td>
 														</tr>
 														<tr>
@@ -315,7 +315,7 @@ if ($result_select_passed = $conn->query($sql_select_passed)) {
 												<table class='table job-panel-table'>
 													<tbody>
 														<tr>
-															<th>Start on</th>
+															<th>Started on</th>
 															<td>$startDate_selected_passed[$i]</td>
 														</tr>
 														<tr>
