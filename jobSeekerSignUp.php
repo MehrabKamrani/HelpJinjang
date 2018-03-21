@@ -72,7 +72,7 @@
 				setcookie("email", "", time()-3600);
 				setcookie("phoneNo", "", time()-3600);
 				echo "<script type='text/javascript'>alert('$message');
-				window.location.href = 'jobseeker_main.php';
+				window.location.href = 'home.php';
 				</script>";
 			} else {
 				echo "Error: " . $sql . "<br>" . $conn->error;

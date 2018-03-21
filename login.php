@@ -3,7 +3,10 @@ session_start();
 
 $username = $_POST['login-username'];
 $password = $_POST['login-password'];
-
+$correct_username_js = '';
+$correct_password_js = '';
+$correct_username_cl = '';
+$correct_password_cl = '';
 
 $conn = new mysqli("localhost", "root","", "helpjinjang");
 
@@ -23,17 +26,17 @@ if (!empty($username) && !empty($password)) {
 
 
   while ($rs_jobseeker = $result_jobseeker->fetch_array()) {
-     $_SESSION['session_username_jobseeker'] = $rs_jobseeker['js_username'];
-     $_SESSION['session_password_jobseeker'] = $rs_jobseeker['js_password'];
+     $correct_username_js = $rs_jobseeker['js_username'];
+     $correct_password_js = $rs_jobseeker['js_password'];
  }
 
  while ($rs_client = $result_client->fetch_array()) {
-    $_SESSION['session_username_client'] = $rs_client['client_username'];
-    $_SESSION['session_password_client'] = $rs_client['client_password'];
+    $correct_username_cl = $rs_client['client_username'];
+    $correct_password_cl = $rs_client['client_password'];
 }
 
 
-if ($_SESSION['session_username_jobseeker'] == $username && $_SESSION['session_password_jobseeker']==$password) {
+if ($correct_username_js == $username && $correct_password_js==$password) {
     $message = "Job Seeker page is not available yet";
     echo "<script type='text/javascript'>alert('$message'); 
     window.location.href = 'loginPage.php';</script>";
@@ -49,7 +52,7 @@ if ($_SESSION['session_username_jobseeker'] == $username && $_SESSION['session_p
     header("location: jobseeker_main.php");
 */
 }
-else if ($_SESSION['session_username_client'] == $username && $_SESSION['session_password_client']==$password) {
+else if ($correct_username_cl == $username && $correct_password_cl==$password) {
     $cl_info = $conn->query("SELECT * FROM client WHERE client_username = '$username'");
     while ($row = $cl_info->fetch_array()){
         $_SESSION['cl_fullname'] = $row['client_fullname'];
@@ -62,19 +65,10 @@ else if ($_SESSION['session_username_client'] == $username && $_SESSION['session
 else{
  $message = "Wrong username or password";
  echo "<script type='text/javascript'>alert('$message');
-window.location.href = 'loginPage.php';</script>";
+      window.location.href = 'loginPage.php'</script>";
 }
 
-} else{
-  echo "<style type='text/css'>
-			#login-username, #login-password{
-  border-color: red;
-}</style>";
-echo "<script> var element = document.getElementById('login-form')
-element.classList.add('animated');
-element.classList.add('shake');</script>";
 }
-
 $conn->close();
 
 ?>

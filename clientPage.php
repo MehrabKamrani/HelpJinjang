@@ -158,7 +158,7 @@ if ($result_select_passed = $conn->query($sql_select_passed)) {
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
-							<a class="navbar-brand" href="#">HELPJinjang</a>
+							<a class="navbar-brand" href="home.php">HELPJinjang</a>
 
 						</div>
 						<!-- Collect the nav links for toggling -->

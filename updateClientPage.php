@@ -38,7 +38,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="trainer.html">HelpJinjang</a>
+        <a class="navbar-brand" href="home.php">HelpJinjang</a>
 
       </div>
       <!-- Collect the nav links for toggling -->
