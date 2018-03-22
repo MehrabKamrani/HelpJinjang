@@ -90,10 +90,6 @@ error_reporting(0);
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 
-<!-- Phone number validator -->
-<script src="js/bootstrap-formhelpers-phone.js"></script>
-
-
 <!--Validator -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
 

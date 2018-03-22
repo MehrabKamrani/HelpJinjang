@@ -215,8 +215,6 @@ $result = mysqli_query($connect, $query);
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 
-<!-- Phone number validator -->
-<script src="js/bootstrap-formhelpers-phone.js"></script>
 
 
 <!-- Bootstrap Core JavaScript -->
