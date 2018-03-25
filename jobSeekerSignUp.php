@@ -23,7 +23,7 @@
 
 	if ($conn->connect_error) {
 		die("Connection failed: " . $conn->connect_error);
-	} 
+	}
 
 
 	if (!empty($username) && !empty($password) && !empty($fullname) && !empty($email) && !empty($phoneNo)) {
@@ -48,13 +48,13 @@
 
 		if (mysqli_num_rows($duperaw_username_cl) > 0 || mysqli_num_rows($duperaw_username_js) > 0) {
 			$message = "The username already exists";
-			echo "<script type='text/javascript'>alert('$message'); 
+			echo "<script type='text/javascript'>alert('$message');
 			window.location.href = 'signUp.php';</script>";
 
 		}
 		else if(mysqli_num_rows($duperaw_email_cl) > 0 || mysqli_num_rows($duperaw_email_js) > 0){
 			$message = "The email already exists";
-			echo "<script type='text/javascript'>alert('$message'); 
+			echo "<script type='text/javascript'>alert('$message');
 			window.location.href = 'signUp.php';</script>";
 		}
 
@@ -62,7 +62,7 @@
 
 			if ($conn->query($sql) === TRUE) {
 				$numOfSpeciality = count($speciality);
-				for ($i=0; $i < $numOfSpeciality; $i++) { 
+				for ($i=0; $i < $numOfSpeciality; $i++) {
 					${"sql$i"} = "INSERT INTO js_category VALUES ('$speciality[$i]', '$username')";
 					$conn -> query(${"sql$i"});
 				}
@@ -71,8 +71,12 @@
 				setcookie("username", "", time()-3600);
 				setcookie("email", "", time()-3600);
 				setcookie("phoneNo", "", time()-3600);
+				$_SESSION['js_fullname'] = $fullname;
+				$_SESSION['js_username'] = $username;
+				$_SESSION['js_email'] = $email;
+				$_SESSION['js_phoneNo'] = $phoneNo;
 				echo "<script type='text/javascript'>alert('$message');
-				window.location.href = 'home.php';
+				window.location.href = 'jobseekerPage.php';
 				</script>";
 			} else {
 				echo "Error: " . $sql . "<br>" . $conn->error;

@@ -6,11 +6,11 @@ $conn = new mysqli("localhost", "root","", "helpjinjang");
 if ($conn->connect_error) {
 	die("Connection failed: " . $conn->connect_error);
 }
-/*
+
 if(!isset($_SESSION['js_username'])) {
 	header("Location: home.php");
 }
-*
+
 $username = $_SESSION['js_username'];
 
 /*
