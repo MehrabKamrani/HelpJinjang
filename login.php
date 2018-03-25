@@ -37,11 +37,11 @@ if (!empty($username) && !empty($password)) {
 
 
 if ($correct_username_js == $username && $correct_password_js==$password) {
-    $message = "Job Seeker page is not available yet";
-    echo "<script type='text/javascript'>alert('$message'); 
-    window.location.href = 'loginPage.php';</script>";
+    /*$message = "Job Seeker page is not available yet";
+    echo "<script type='text/javascript'>alert('$message');
+    window.location.href = 'loginPage.php';</script>";*/
 
-/*//Comment it out until jobseeker page is done
+//Comment it out until jobseeker page is done
     $js_info = $conn->query("SELECT * FROM jobseeker WHERE js_username = '$username'");
     while ($row = $js_info->fetch_array()){
         $_SESSION['js_fullname'] = $row['js_fullname'];
@@ -49,8 +49,8 @@ if ($correct_username_js == $username && $correct_password_js==$password) {
         $_SESSION['js_email'] = $row['js_email'];
         $_SESSION['js_phoneNo'] = $row['js_phoneNo'];
     }
-    header("location: jobseeker_main.php");
-*/
+    header("location: jobseekerPage.php");
+
 }
 else if ($correct_username_cl == $username && $correct_password_cl==$password) {
     $cl_info = $conn->query("SELECT * FROM client WHERE client_username = '$username'");
