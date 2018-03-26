@@ -117,6 +117,22 @@ if ($result_select_passed = $conn->query($sql_select_passed)) {
 }
 */
 
+// Select specialities
+$sql_select_specialities = "SELECT * FROM js_category WHERE js_username = '$username'";
+if ($result_select_specialities = $conn->query($sql_select_specialities)) {
+	$row_count_select_specialities =mysqli_num_rows($result_select_specialities);
+	if ($row_count_select_specialities>0) {
+		$i = 1;
+		while($row_select_specialities=mysqli_fetch_assoc($result_select_specialities)) {
+			$speciality_selected_specialities[$i] = $row_select_specialities['categoryName'];
+			$i++;
+		}
+	}
+} else {
+	$row_count_select_specialities = 0;
+}
+
+
 ?>
 
 		<!DOCTYPE html>
@@ -200,6 +216,14 @@ if ($result_select_passed = $conn->query($sql_select_passed)) {
 								<dd><?php echo $_SESSION['js_email']; ?></dd><br>
 								<dt>Phone Number</dt>
 								<dd><?php echo $_SESSION['js_phoneNo']; ?></dd><br>
+								<dt>Speciality</dt>
+									<?php
+									for ($i = 1; $i <=$row_count_select_specialities; $i++) {
+										echo "<dd> $speciality_selected_specialities[$i] </dd>";
+									}
+ 									?>
+
+									<br>
 
 
 								<!-- Update button-->
