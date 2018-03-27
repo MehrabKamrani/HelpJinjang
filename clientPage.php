@@ -47,7 +47,7 @@ if ($result_select_current_post = $conn->query($sql_select_current_post)) {
 			$today_datetime = new DateTime("today", new DateTimeZone('Asia/Kuala_Lumpur'));
 			$job_endDate_datetime = new DateTime($job_endDate_update_current_to_passed[$i], new DateTimeZone('Asia/Kuala_Lumpur'));
 
-			$sql_update_current_to_passed = "UPDATE job SET status='passed' WHERE jobID = '$jobID_update_current_to_passed[$i]';";
+			$sql_update_current_to_passed = "UPDATE job SET status='passed', isAvailable='0' WHERE jobID = '$jobID_update_current_to_passed[$i]';";
 			if ($job_endDate_datetime <= $today_datetime) {
 				$conn->query($sql_update_current_to_passed);
 			}
