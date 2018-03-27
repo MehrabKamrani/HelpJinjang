@@ -12,7 +12,7 @@ $categoryName = $_POST['category'];
 $address = $_POST['address'];
 $description = $_POST['description'];
 $status = "upcoming";
-$isAvailable = "TRUE";
+$isAvailable = 1;
 
 $conn = new mysqli("localhost", "root","", "helpjinjang");
 
