@@ -58,9 +58,9 @@ if ($result_select_current_post = $conn->query($sql_select_current_post)) {
 	}
 }
 
-
+*/
 // Select available posts
-$sql_select_available = "SELECT * FROM job WHERE js_username = '$username' AND status = 'available'";
+$sql_select_available = "SELECT * FROM js_category JOIN job ON js_category.categoryName = job.categoryName WHERE js_username = '$username' AND isAvailable = 1 AND status = 'upcoming' ORDER BY js_category.categoryName";
 if ($result_select_available = $conn->query($sql_select_available)) {
 	$row_count_select_available =mysqli_num_rows($result_select_available);
 	if ($row_count_select_available>0) {
@@ -78,6 +78,7 @@ if ($result_select_available = $conn->query($sql_select_available)) {
 	$row_count_select_available = 0;
 }
 
+/*
 // Select current posts
 $sql_select_current = "SELECT * FROM job WHERE js_username = '$username' AND status = 'current'";
 if ($result_select_current = $conn->query($sql_select_current)) {
@@ -242,7 +243,7 @@ if ($result_select_specialities = $conn->query($sql_select_specialities)) {
 									</div>
 
 									<div class="container-available-posts">
-										<?php /*
+										<?php
 										for ($i = 1; $i <=$row_count_select_available; $i++) {
 											echo "<div id='$jobID_selected_available[$i]' class='job-panel col-sm-6 col-md-4 animated fadeInUp'>
 												<div class='panel panel-default'>
@@ -270,7 +271,7 @@ if ($result_select_specialities = $conn->query($sql_select_specialities)) {
 													</a>
 												</div>
 											</div>";
-										}*/
+										}
 										?>
 
 
