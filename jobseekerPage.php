@@ -60,10 +60,8 @@ if ($result_select_current_post = $conn->query($sql_select_current_post)) {
 
 */
 
-
-/*
 // Select current posts
-$sql_select_current = "SELECT * FROM job WHERE js_username = '$username' AND status = 'current'";
+$sql_select_current = "SELECT * FROM job JOIN js_job ON job.jobID = js_job.jobID WHERE js_username = '$username' AND status != 'passed'";
 if ($result_select_current = $conn->query($sql_select_current)) {
 	$row_count_select_current =mysqli_num_rows($result_select_current);
 	if ($row_count_select_current>0) {
@@ -82,7 +80,7 @@ if ($result_select_current = $conn->query($sql_select_current)) {
 }
 
 // Select passed posts
-$sql_select_passed = "SELECT * FROM job WHERE client_username = '$username' AND status = 'passed'";
+$sql_select_passed = "SELECT * FROM job JOIN js_job ON job.jobID = js_job.jobID WHERE js_username = '$username' AND status = 'passed'";
 if ($result_select_passed = $conn->query($sql_select_passed)) {
 	$row_count_select_passed =mysqli_num_rows($result_select_passed);
 	if ($row_count_select_passed>0) {
@@ -99,7 +97,6 @@ if ($result_select_passed = $conn->query($sql_select_passed)) {
 } else {
 	$row_count_select_passed = 0;
 }
-*/
 
 // Select specialities
 $sql_select_specialities = "SELECT * FROM js_category WHERE js_username = '$username' ORDER BY categoryName";
@@ -234,7 +231,8 @@ if ($result_select_specialities = $conn->query($sql_select_specialities)) {
 											</div>
 											<div class='category-job-list-container row'>";
 											// Select available posts based on category
-											$sql_select_available = "SELECT job.jobID, job.title, job.startDate, job.salary, job.status FROM js_category JOIN job ON js_category.categoryName = job.categoryName Left JOIN js_job ON job.jobID = js_job.jobID WHERE js_category.js_username = '$username' AND isAvailable = 1 AND job.categoryName = '$speciality_selected_specialities[$i]' AND js_job.js_username IS NULL";
+											$sql_select_available = "SELECT job.jobID, job.title, job.startDate, job.salary, job.status FROM js_category JOIN job ON js_category.categoryName = job.categoryName Left JOIN js_job ON job.jobID = js_job.jobID WHERE
+											js_category.js_username = '$username' AND isAvailable = 1 AND job.categoryName = '$speciality_selected_specialities[$i]' AND js_job.js_username IS NULL";
 											if ($result_select_available = $conn->query($sql_select_available)) {
 												$row_count_select_available =mysqli_num_rows($result_select_available);
 												if ($row_count_select_available>0) {
@@ -294,7 +292,7 @@ if ($result_select_specialities = $conn->query($sql_select_specialities)) {
 									<div class="main-section-category-title col-xs-12 text-center">
 										<h1>Current Job Posts</h1>
 									</div>
-									<?php /*
+									<?php
 									for ($i = 1; $i <=$row_count_select_current; $i++) {
 										echo "<div id='$jobID_selected_current[$i]' class='job-panel col-sm-6 col-md-4 animated fadeInUp'>
 											<div class='panel panel-default'>
@@ -304,7 +302,7 @@ if ($result_select_specialities = $conn->query($sql_select_specialities)) {
 												<table class='table job-panel-table'>
 													<tbody>
 														<tr>
-															<th>Started on</th>
+															<th>Start on</th>
 															<td>$startDate_selected_current[$i]</td>
 														</tr>
 														<tr>
@@ -322,7 +320,7 @@ if ($result_select_specialities = $conn->query($sql_select_specialities)) {
 												</a>
 											</div>
 										</div>";
-									}*/
+									}
 									?>
 								</div><!-- End current Section -->
 
@@ -331,7 +329,7 @@ if ($result_select_specialities = $conn->query($sql_select_specialities)) {
 									<div class="main-section-category-title col-xs-12 text-center">
 										<h1>Passed Job Posts</h1>
 									</div>
-									<?php /*
+									<?php
 									for ($i = 1; $i <=$row_count_select_passed; $i++) {
 										echo "<div id='$jobID_selected_passed[$i]' class='job-panel col-sm-6 col-md-4 animated fadeInUp'>
 											<div class='panel panel-default'>
@@ -359,7 +357,7 @@ if ($result_select_specialities = $conn->query($sql_select_specialities)) {
 												</a>
 											</div>
 										</div>";
-									}*/
+									}
 									?>
 								</div>
 								<!-- End Passed Section -->
