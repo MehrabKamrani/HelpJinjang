@@ -402,9 +402,9 @@ if ($result_select_specialities = $conn->query($sql_select_specialities)) {
 											</div>
 										</div>
 										<div class="modal-footer" id="footer_to_hide">
-											<form action="updateSession_main.php" method="post">
+											<form action="joinJob.php" method="post">
 												<input class="hidden" id="job-id" name="jobID" value="">
-												<button type="submit" class="btn btn-default">Update</button>
+												<button type="submit" class="btn btn-default">Join</button>
 											</form>
 										</div>
 									</div>
