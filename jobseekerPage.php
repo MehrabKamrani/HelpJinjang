@@ -60,7 +60,7 @@ if ($result_select_current_post = $conn->query($sql_select_current_post)) {
 
 */
 // Select available posts
-$sql_select_available = "SELECT * FROM js_category JOIN job ON js_category.categoryName = job.categoryName WHERE js_username = '$username' AND isAvailable = 1 AND status = 'upcoming' ORDER BY js_category.categoryName";
+$sql_select_available = "SELECT * FROM js_category JOIN job ON js_category.categoryName = job.categoryName WHERE js_username = '$username' AND isAvailable = 1";
 if ($result_select_available = $conn->query($sql_select_available)) {
 	$row_count_select_available =mysqli_num_rows($result_select_available);
 	if ($row_count_select_available>0) {
