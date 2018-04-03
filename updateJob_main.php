@@ -82,10 +82,11 @@
         <div id="update-session" class="col-sm-6 col-sm-offset-3 form-section">
           <h1 class="text-center" style="font-family: 'Oswald', sans-serif;">Update Job</h1>
 
+           <!-- Display Title of the Job -->
           <div class="form-header-title"><?php echo $row['title'] ?></div>
 
           <div class="form-content">
-            <form data-toggle="validator" class="form-horizontal" id="update-session-form" action="updateSession.php" method="POST">
+            <form data-toggle="validator" class="form-horizontal" id="update-session-form" action="updateJob.php" method="POST">
                 <fieldset>
 
                   <!-- Start Date -->
@@ -124,6 +125,7 @@
                     </div>
                   </div>
 
+                  <!-- Salary -->
                   <div class="form-group has-feedback">
                     <label class="control-label" for="fee">Salary</label>
                     <div class="controls">
@@ -136,8 +138,10 @@
                     </div>
                   </div>
 
+
+                  <!-- Number of jobseekers -->
                   <div id="participants-section" class="form-group has-feedback">
-                    <label class="control-label" for="maxParticipants">Number of Needed Jobseekers</label>
+                    <label class="control-label" for="maxJobseekers">Number of Needed Jobseekers</label>
                     <div class="controls">
                         <input type="number" min="1" id="maxJobseekers" name="maxJobseekers"  value="<?php echo $row['qtyOfJobSeekers']; ?>" class="form-control" required>
                         <p class="help-block with-errors">Please provide the number of Jobseekers needed</p>
@@ -145,6 +149,7 @@
                   </div>
 
 
+                  <!-- description -->
                   <div class="form-group">
                       <label class="control-label" for="description">Description</label>
                       <div class="controls">
@@ -155,7 +160,7 @@
 
                   
                     <div class="controls">
-                      <input class="hidden" id="session-id" name="session_id" value="">
+                      <input class="hidden" id="jobID" name="jobID" value="">
                       <button type="reset" class="btn btn-reset btn-default">Reset</button>
                       <button type="submit" class="btn btn-submit btn-success pull-right">Update</button>
                     </div>
@@ -221,7 +226,7 @@
         $('#canceled').attr('checked', true);
       }
 
-      $('#session-id').attr('value', <?php echo $row['session_id']; ?>);
+      $('#jobID').attr('value', <?php echo $row['jobID']; ?>);
 
     });
 
