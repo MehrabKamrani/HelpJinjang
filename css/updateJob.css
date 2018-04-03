@@ -1,0 +1,106 @@
+/* Start Navhar Style */
+.navbar-form{
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+#navigation .navbar{
+  background-color: rgba(0,0,0,0.8);
+}
+.navbar-fixed-top {
+    border:none;
+}
+.navbar-brand {
+  height: initial;
+}
+.navbar-toggle{
+  background-color: transparent;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.navbar-inverse .navbar-toggle {
+    border-color: white;
+}
+.icon-bar{
+  background-color: #c8c8c8;
+}
+
+#login-username, #login-password{
+  background-color: transparent;
+  color: #c8c8c8;
+  border-color: #c8c8c8;
+}
+#login-username:focus, #login-password:focus,#login-username:hover, #login-password:hover{
+  color: white;
+  border-color: white;
+  box-shadow: none;
+}
+#login-btn{
+  color: #4cae4c;
+  border-color: #4cae4c;
+  background-color: transparent;
+}
+#login-btn:hover{
+  color: #5fd85f;
+  border-color: #5fd85f;
+}
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+    outline: none;
+}
+
+/* Start Footer Style */
+#footer{
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: black;
+}
+.footer-logo{
+  width: 100%;
+}
+#copyright{
+  color:rgb(200,200,200);
+}
+
+/* Start SignUp Style */
+#update-session-section{
+  margin-top: 100px;
+}
+
+.form-section{
+  margin-bottom: 50px;
+}
+.form-header-title{
+  padding: 10px 15px;
+  text-align: center;
+  border: solid 1px black;
+  border-bottom: none;
+  color: black;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.form-content{
+  border: 1px solid #333;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  padding: 20px;
+}
+.form-control{
+  box-shadow: none;
+}
+.form-control:focus {
+    border-color: #333;
+    box-shadow: none;
+}
+.form-horizontal .form-group {
+    margin-right: 0;
+    margin-left: 0;
+}
+.input-group-addon {
+    background-color: transparent;
+}
+textarea{
+  resize: vertical;
+}
+.btn-reset, .btn-submit{
+  margin-top: 20px;
+  width: 33.3334%;
+}

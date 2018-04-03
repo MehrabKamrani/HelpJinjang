@@ -376,7 +376,7 @@ if ($result_select_passed = $conn->query($sql_select_passed)) {
 											</div>
 										</div>
 										<div class="modal-footer" id="footer_to_hide">
-											<form action="updateSession_main.php" method="post">
+											<form action="updateJob_main.php" method="post">
 												<input class="hidden" id="job-id" name="jobID" value="">
 												<button type="submit" class="btn btn-default">Update</button>
 											</form>
