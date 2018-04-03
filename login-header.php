@@ -31,6 +31,12 @@ if(!isset($_SESSION)){
                     <p class="navbar-text navbar-right"> <a href="clientPage.php"><?php echo $_SESSION['cl_username'];?></a></p>
                 </form>
 
+            <?php elseif(!empty($_SESSION['js_username'])) : ?>
+                <!-- If Jobseeker signed in put his fullname -->
+                <form class="navbar-form-user navbar-right" action="" method="POST" id="login-form">
+                    <p class="navbar-text navbar-right"> <a href="jobseekerPage.php"><?php echo $_SESSION['js_username'];?></a></p>
+                </form>
+
             <?php else: ?>
                 <!-- If he is not signed in put Buttons -->
                 <form class="navbar-form navbar-right" action="" method="POST" id="login-form">
