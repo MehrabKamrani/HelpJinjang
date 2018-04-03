@@ -234,7 +234,7 @@ if ($result_select_specialities = $conn->query($sql_select_specialities)) {
 											</div>
 											<div class='category-job-list-container row'>";
 											// Select available posts based on category
-											$sql_select_available = "SELECT * FROM js_category JOIN job ON js_category.categoryName = job.categoryName WHERE js_username = '$username' AND isAvailable = 1 AND job.categoryName = '$speciality_selected_specialities[$i]'";
+											$sql_select_available = "SELECT job.jobID, job.title, job.startDate, job.salary, job.status FROM js_category JOIN job ON js_category.categoryName = job.categoryName Left JOIN js_job ON job.jobID = js_job.jobID WHERE js_category.js_username = '$username' AND isAvailable = 1 AND job.categoryName = '$speciality_selected_specialities[$i]' AND js_job.js_username IS NULL";
 											if ($result_select_available = $conn->query($sql_select_available)) {
 												$row_count_select_available =mysqli_num_rows($result_select_available);
 												if ($row_count_select_available>0) {
