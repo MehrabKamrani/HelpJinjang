@@ -35,7 +35,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Update Session</title>
+    <title>Update Job</title>
 
     <!-- icon -->
     <link rel="icon" href="icon.ico" type="image/x-icon">
@@ -47,7 +47,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/updateSession.css" rel="stylesheet">
+    <link href="css/updateJob.css" rel="stylesheet">
 
 
 </head>
@@ -70,8 +70,8 @@
 				</div>
 				<!-- Collect the nav links for toggling -->
 				<div class="collapse navbar-collapse" id="tr-mainNavbar">
-					<p class="navbar-text navbar-right">Michael Jackson</p>
-					<a href="home.html" type="button" id="btn-logout" class="btn btn-default navbar-btn navbar-right">Log out</a>
+					<p class="navbar-text navbar-right"><?php echo $_SESSION['cl_username'];?></p>
+					<a href="logout.php" type="button" id="btn-logout" class="btn btn-default navbar-btn navbar-right">Log out</a>
 				</div>
 				<!-- End .navbar-collapse -->
 			</div>
@@ -84,8 +84,8 @@
       <div class="row">
 
 
-        <div id="update-session" class="col-sm-6 form-section">
-          <h1 class="text-center" style="font-family: 'Oswald', sans-serif;">Update Session</h1>
+        <div id="update-session" class="col-sm-6 col-sm-offset-3 form-section">
+          <h1 class="text-center" style="font-family: 'Oswald', sans-serif;">Update Job</h1>
 
           <div class="form-header-title"><?php echo $row['title'] . " (" . "$session_type_grpOrPrs" . " Session)"; ?></div>
 
@@ -93,80 +93,72 @@
             <form data-toggle="validator" class="form-horizontal" id="update-session-form" action="updateSession.php" method="POST">
                 <fieldset>
 
+                  <!-- Start Date -->
                   <div class="form-group has-feedback">
-                    <label class="control-label" for="date">Date</label>
+                    <label class="control-label" for="date">Start Date</label>
                     <div class="controls">
-                      <input type="date" id="date" name="date" value="<?php echo $row['session_date']; ?>" class="form-control" data-min-error="Date must be tomorrow or later." required>
+                      <input type="date" id="start_date" name="start_date" value="<?php echo $row['session_date']; ?>" class="form-control" data-min-error="Date must be tomorrow or later." required>
                       <p class="help-block with-errors">Please provide the date</p>
                     </div>
                   </div>
 
-                  <div class="form-group has-feedback">
-                    <label class="control-label" for="time">Time</label>
+                  <!-- End Date -->
+                   <div class="form-group has-feedback">
+                    <label class="control-label" for="date">End Date</label>
                     <div class="controls">
-                      <input type="time" id="time" name="time" value="<?php echo $time ?>" class="form-control" required>
+                      <input type="date" id="end_date" name="end_date" value="<?php echo $row['session_date']; ?>" class="form-control" data-min-error="Date must be tomorrow or later." required>
+                      <p class="help-block with-errors">Please provide the date</p>
+                    </div>
+                  </div>
+
+                  <!-- Start Time -->
+                  <div class="form-group has-feedback">
+                    <label class="control-label" for="time">Start Time</label>
+                    <div class="controls">
+                      <input type="time" id="start_time" name="start_time" value="<?php echo $time ?>" class="form-control" required>
+                      <p class="help-block with-errors">Please provide the time</p>
+                    </div>
+                  </div>
+
+                  <!-- End Time -->
+                  <div class="form-group has-feedback">
+                    <label class="control-label" for="time">End Time</label>
+                    <div class="controls">
+                      <input type="time" id="end_time" name="end_time" value="<?php echo $time ?>" class="form-control" required>
                       <p class="help-block with-errors">Please provide the time</p>
                     </div>
                   </div>
 
                   <div class="form-group has-feedback">
-                    <label class="control-label" for="fee">Fee</label>
+                    <label class="control-label" for="fee">Salary</label>
                     <div class="controls">
                       <div class="input-group">
                         <span class="input-group-addon">RM</span>
-                        <input type="number" min="1" id="fee" name="fee" value="<?php echo $row['fee']; ?>" class="form-control" required>
+                        <input type="number" min="1" id="salary" name="salary" value="<?php echo $row['salary']; ?>" class="form-control" required>
                         <span class="input-group-addon">.00</span>
                       </div>
-                      <p class="help-block with-errors">Please provide the fee</p>
+                      <p class="help-block with-errors">Please provide the salary</p>
                     </div>
                   </div>
 
                   <div id="participants-section" class="form-group has-feedback">
-                    <label class="control-label" for="maxParticipants">Maximum number of participants</label>
+                    <label class="control-label" for="maxParticipants">Number of Needed Jobseekers</label>
                     <div class="controls">
-                        <input type="number" min="1" id="maxParticipants" name="maxParticipants"  value="<?php echo $row['max_num_part']; ?>" class="form-control" required>
-                        <p class="help-block with-errors">Please provide the maximum number of participants</p>
+                        <input type="number" min="1" id="maxJobseekers" name="maxJobseekers"  value="<?php echo $row['max_num_part']; ?>" class="form-control" required>
+                        <p class="help-block with-errors">Please provide the number of Jobseekers needed</p>
                     </div>
                   </div>
+
 
                   <div class="form-group">
-                    <label class="control-label" for="typeOptions">Type</label>
-                    <div class="controls">
-                      <label class="radio-inline">
-                        <input type="radio" name="typeOptions" id="dance" value="Dance" checked> Dance
-                      </label>
-                      <label class="radio-inline">
-                        <input type="radio" name="typeOptions" id="mma" value="MMA"> MMA
-                      </label>
-                      <label class="radio-inline">
-                        <input type="radio" name="typeOptions" id="sport" value="Sport"> Sport
-                      </label>
-                      <p class="help-block">Please select the type</p>
+                      <label class="control-label" for="description">Description</label>
+                      <div class="controls">
+                            <textarea class="form-control" id="description" name="description" rows="3" maxlength="500" value="<?php echo $row['max_num_part']; ?>" required></textarea>
+                          <p class="help-block with-errors">Please provide the descriptions</p>
+                      </div>
                     </div>
-                  </div>
 
-                  <div class="form-group">
-                    <label class="control-label" for="statusOptions">Status</label>
-                    <div class="controls">
-                      <label class="radio-inline">
-                        <input type="radio" name="statusOptions" id="available" value="Available" checked> Available
-                      </label>
-                      <label class="radio-inline">
-                        <input type="radio" name="statusOptions" id="canceled" value="Canceled"> Canceled
-                      </label>
-                      <p class="help-block">Please select the status</p>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label class="control-label" for="notes">Notes</label>
-                    <div class="controls">
-                        <textarea class="form-control" id="notes" name="notes" rows="3"><?php echo $row['notes']; ?></textarea>
-                        <p class="help-block">Please provide the notes</p>
-                    </div>
-                  </div>
-
-
+                  
                     <div class="controls">
                       <input class="hidden" id="session-id" name="session_id" value="">
                       <button type="reset" class="btn btn-reset btn-default">Reset</button>
@@ -178,30 +170,7 @@
         </div>
       </div>
     </div>
-    <footer id="footer">
-        <div class="container text-center">
-            <div class="footer-logo">
-                <h1 style="font-family: 'Oswald', sans-serif; color:white;">ProteInshape</h1>
-            </div>
-
-            <hr>
-            <ul class="footer-social list-inline">
-                <li>
-                    <a href="https://facebook.com"><img alt="social icon" src="glyphs/fb.png"></a>
-                </li>
-                <li>
-                    <a href="https://instagram.com"><img alt="social icon" src="glyphs/in.png"></a>
-                </li>
-                <li>
-                    <a href="https://twitter.com"><img alt="social icon" src="glyphs/t.png"></a>
-                </li>
-                <li>
-                    <a href="https://plus.google.com"><img alt="social icon" src="glyphs/g.png"></a>
-                </li>
-            </ul>
-            <p id="copyright">Copyright &copy; ProteInshape 2017</p>
-        </div>
-    </footer>
+   <?php include "footer.php" ?>
 
 
 
