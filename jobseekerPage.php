@@ -59,24 +59,7 @@ if ($result_select_current_post = $conn->query($sql_select_current_post)) {
 }
 
 */
-// Select available posts
-$sql_select_available = "SELECT * FROM js_category JOIN job ON js_category.categoryName = job.categoryName WHERE js_username = '$username' AND isAvailable = 1 AND status = 'upcoming' ORDER BY js_category.categoryName";
-if ($result_select_available = $conn->query($sql_select_available)) {
-	$row_count_select_available =mysqli_num_rows($result_select_available);
-	if ($row_count_select_available>0) {
-		$i = 1;
-		while($row_select_available=mysqli_fetch_assoc($result_select_available)) {
-			$jobID_selected_available[$i] = $row_select_available['jobID'];
-			$title_selected_available[$i] = $row_select_available['title'];
-			$startDate_selected_available[$i] = $row_select_available['startDate'];
-			$salary_selected_available[$i] = $row_select_available['salary'];
-			$category_selected_available[$i] = $row_select_available['categoryName'];
-			$i++;
-		}
-	}
-} else {
-	$row_count_select_available = 0;
-}
+
 
 /*
 // Select current posts
@@ -119,7 +102,7 @@ if ($result_select_passed = $conn->query($sql_select_passed)) {
 */
 
 // Select specialities
-$sql_select_specialities = "SELECT * FROM js_category WHERE js_username = '$username'";
+$sql_select_specialities = "SELECT * FROM js_category WHERE js_username = '$username' ORDER BY categoryName";
 if ($result_select_specialities = $conn->query($sql_select_specialities)) {
 	$row_count_select_specialities =mysqli_num_rows($result_select_specialities);
 	if ($row_count_select_specialities>0) {
@@ -238,41 +221,67 @@ if ($result_select_specialities = $conn->query($sql_select_specialities)) {
 
 								<!-- Start available Section -->
 								<div  id="available" class="row">
-									<div class="main-section-category-title col-xs-12 text-center">
+									<div class="text-center">
 										<h1>Available Job Posts</h1>
 									</div>
 
 									<div class="container-available-posts">
 										<?php
-										for ($i = 1; $i <=$row_count_select_available; $i++) {
-											echo "<div id='$jobID_selected_available[$i]' class='job-panel col-sm-6 col-md-4 animated fadeInUp'>
-												<div class='panel panel-default'>
-													<div class='panel-heading'>
-														<h3 class='panel-header-title'>$title_selected_available[$i]</h3>
+										for ($i = 1; $i <=$row_count_select_specialities; $i++) {
+											echo "
+											<div class='page-header category-page-header animated fadeInUp'>
+												<h3>$speciality_selected_specialities[$i]</h3>
+											</div>
+											<div class='category-job-list-container row'>";
+											// Select available posts based on category
+											$sql_select_available = "SELECT * FROM js_category JOIN job ON js_category.categoryName = job.categoryName WHERE js_username = '$username' AND isAvailable = 1 AND job.categoryName = '$speciality_selected_specialities[$i]'";
+											if ($result_select_available = $conn->query($sql_select_available)) {
+												$row_count_select_available =mysqli_num_rows($result_select_available);
+												if ($row_count_select_available>0) {
+													$k = 1;
+													while($row_select_available=mysqli_fetch_assoc($result_select_available)) {
+														$jobID_selected_available[$k] = $row_select_available['jobID'];
+														$title_selected_available[$k] = $row_select_available['title'];
+														$startDate_selected_available[$k] = $row_select_available['startDate'];
+														$salary_selected_available[$k] = $row_select_available['salary'];
+														$status_selected_available[$k] = $row_select_available['status'];
+														$k++;
+													}
+												}
+											} else {
+												$row_count_select_available = 0;
+											}
+											for ($j = 1; $j <=$row_count_select_available; $j++) {
+												echo "<div id='$jobID_selected_available[$j]' class='job-panel col-sm-6 col-md-4 animated fadeInUp'>
+													<div class='panel panel-default'>
+														<div class='panel-heading'>
+															<h3 class='panel-header-title'>$title_selected_available[$j]</h3>
+														</div>
+														<table class='table job-panel-table'>
+															<tbody>
+																<tr>
+																	<th>Start on</th>
+																	<td>$startDate_selected_available[$j]</td>
+																</tr>
+																<tr>
+																	<th>Salary</th>
+																	<td>$salary_selected_available[$j]</td>
+																</tr>
+																<tr>
+																	<th>Status</th>
+																	<td>$status_selected_available[$j]</td>
+																</tr>
+															</tbody>
+														</table>
+														<a class='displayJobModal' href='' id='$jobID_selected_available[$j]' data-toggle='modal' data-target='#jobModal'>
+															<div class='panel-footer text-center' data-text='$title_selected_available[$j]'>View Details</div>
+														</a>
 													</div>
-													<table class='table job-panel-table'>
-														<tbody>
-															<tr>
-																<th>Start on</th>
-																<td>$startDate_selected_available[$i]</td>
-															</tr>
-															<tr>
-																<th>Salary</th>
-																<td>$salary_selected_available[$i]</td>
-															</tr>
-															<tr>
-																<th>Category</th>
-																<td>$category_selected_available[$i]</td>
-															</tr>
-														</tbody>
-													</table>
-													<a class='displayJobModal' href='' id='$jobID_selected_available[$i]' data-toggle='modal' data-target='#jobModal'>
-														<div class='panel-footer text-center' data-text='$title_selected_available[$i]'>View Details</div>
-													</a>
-												</div>
-											</div>";
+												</div>";
+											}
+											echo "</div>";
 										}
-										?>
+	 									?>
 
 
 
