@@ -1,29 +1,24 @@
 <?php
-  $conn = new mysqli("localhost", "root", "", "proteinshape");
+  session_start();
+  $conn = new mysqli("localhost", "root", "", "helpjinjang");
 
   if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
   }
 
-  $session_id = $_POST['session_id'];
+  $jobID = $_POST['jobID'];
+//  $jobID = '1';
 
-  $sql = "SELECT * FROM training_session WHERE session_id = '$session_id'";
+  $sql = "SELECT * FROM job WHERE jobID = '$jobID'";
 
   if ($result = $conn->query($sql)) {
     $row=mysqli_fetch_assoc($result);
 
 
-    $time_arr = explode(':', $row['session_time']);
+    $time_arr = explode(':', $row['startTime']);
     $time = $time_arr[0] . ':' . $time_arr[1];
 
-
-    if ($row['max_num_part'] == 1) {
-      $session_type_grpOrPrs = 'Personal';
-    } else {
-      $session_type_grpOrPrs = 'Group';
-    }
-
-  }
+ }
 
 ?>
 <!DOCTYPE html>
@@ -87,7 +82,7 @@
         <div id="update-session" class="col-sm-6 col-sm-offset-3 form-section">
           <h1 class="text-center" style="font-family: 'Oswald', sans-serif;">Update Job</h1>
 
-          <div class="form-header-title"><?php echo $row['title'] . " (" . "$session_type_grpOrPrs" . " Session)"; ?></div>
+          <div class="form-header-title"><?php echo $row['title'] ?></div>
 
           <div class="form-content">
             <form data-toggle="validator" class="form-horizontal" id="update-session-form" action="updateSession.php" method="POST">
@@ -97,7 +92,7 @@
                   <div class="form-group has-feedback">
                     <label class="control-label" for="date">Start Date</label>
                     <div class="controls">
-                      <input type="date" id="start_date" name="start_date" value="<?php echo $row['session_date']; ?>" class="form-control" data-min-error="Date must be tomorrow or later." required>
+                      <input type="date" id="start_date" name="start_date" value="<?php echo $row['startDate']; ?>" class="form-control" data-min-error="Date must be tomorrow or later." required>
                       <p class="help-block with-errors">Please provide the date</p>
                     </div>
                   </div>
@@ -106,7 +101,7 @@
                    <div class="form-group has-feedback">
                     <label class="control-label" for="date">End Date</label>
                     <div class="controls">
-                      <input type="date" id="end_date" name="end_date" value="<?php echo $row['session_date']; ?>" class="form-control" data-min-error="Date must be tomorrow or later." required>
+                      <input type="date" id="end_date" name="end_date" value="<?php echo $row['endDate']; ?>" class="form-control" data-min-error="Date must be tomorrow or later." required>
                       <p class="help-block with-errors">Please provide the date</p>
                     </div>
                   </div>
@@ -144,7 +139,7 @@
                   <div id="participants-section" class="form-group has-feedback">
                     <label class="control-label" for="maxParticipants">Number of Needed Jobseekers</label>
                     <div class="controls">
-                        <input type="number" min="1" id="maxJobseekers" name="maxJobseekers"  value="<?php echo $row['max_num_part']; ?>" class="form-control" required>
+                        <input type="number" min="1" id="maxJobseekers" name="maxJobseekers"  value="<?php echo $row['qtyOfJobSeekers']; ?>" class="form-control" required>
                         <p class="help-block with-errors">Please provide the number of Jobseekers needed</p>
                     </div>
                   </div>
@@ -153,7 +148,7 @@
                   <div class="form-group">
                       <label class="control-label" for="description">Description</label>
                       <div class="controls">
-                            <textarea class="form-control" id="description" name="description" rows="3" maxlength="500" value="<?php echo $row['max_num_part']; ?>" required></textarea>
+                            <textarea class="form-control" id="description" name="description" rows="3" maxlength="500" required> <?php echo $row['description']; ?></textarea>
                           <p class="help-block with-errors">Please provide the descriptions</p>
                       </div>
                     </div>
