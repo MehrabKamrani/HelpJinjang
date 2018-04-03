@@ -221,7 +221,7 @@ if ($result_select_specialities = $conn->query($sql_select_specialities)) {
 
 								<!-- Start available Section -->
 								<div  id="available" class="row">
-									<div class="main-section-category-title col-xs-12 text-center">
+									<div class="text-center">
 										<h1>Available Job Posts</h1>
 									</div>
 
@@ -229,7 +229,7 @@ if ($result_select_specialities = $conn->query($sql_select_specialities)) {
 										<?php
 										for ($i = 1; $i <=$row_count_select_specialities; $i++) {
 											echo "
-											<div class='page-header animated fadeInUp'>
+											<div class='page-header category-page-header animated fadeInUp'>
 												<h3>$speciality_selected_specialities[$i]</h3>
 											</div>
 											<div class='category-job-list-container row'>";
