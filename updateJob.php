@@ -22,7 +22,7 @@
 			WHERE jobID = '3'";
 
 	if($conn->query($sql) === TRUE) {
-			$message = "Trainer details updated successfully";
+			$message = "Job details updated successfully";
 			echo "<script type='text/javascript'>alert('$message');
 			window.location.href = 'clientPage.php';</script>";
 		} else {
