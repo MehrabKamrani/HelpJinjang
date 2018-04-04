@@ -410,7 +410,7 @@ if ($result_select_passed = $conn->query($sql_select_passed)) {
 					$('.displayJobModal').on('click', function(){
 						var jobID = $(this).attr('id');
 						$.ajax({
-							url: 'jobModal.php',
+							url: 'clientJobModal.php',
 							type: 'POST',
 							data: {'jobID':jobID},
 							success: function(result){
@@ -432,7 +432,7 @@ if ($result_select_passed = $conn->query($sql_select_passed)) {
 								$('#job-category').html(result.categoryName);
 								$('#job-address').html(result.address);
 								$('#job-description').html(result.description);
-								if(result.status === "passed") {
+								if(result.isAssigned == 0 || result.status === "passed") {
 									$('#footer_to_hide').css("display", "none");
 								} else{
 									$('#footer_to_hide').css("display", "block");
