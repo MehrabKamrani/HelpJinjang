@@ -60,7 +60,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="trainer.html">HELPJinjang</a>
+					<a class="navbar-brand" href="home.php">HELPJinjang</a>
 
 				</div>
 				<!-- Collect the nav links for toggling -->
@@ -160,7 +160,7 @@
 
                   
                     <div class="controls">
-                      <input class="hidden" id="jobID" name="jobID" value="">
+                      <input class="hidden" id="jobID" name="jobID" value="<?php echo $jobID; ?>">
                       <button type="reset" class="btn btn-reset btn-default">Reset</button>
                       <button type="submit" class="btn btn-submit btn-success pull-right">Update</button>
                     </div>
@@ -206,7 +206,7 @@
       if(type == 'Dance'){
         $('#dance').attr('checked', true);
         $('#mma').attr('checked', false);
-        $('#sport').attr('checked', false);
+        $('#sport').attr('checked', false); 
       } else if(type == 'MMA'){
         $('#dance').attr('checked', false);
         $('#mma').attr('checked', true);
@@ -225,8 +225,6 @@
         $('#available').attr('checked', false);
         $('#canceled').attr('checked', true);
       }
-
-      $('#jobID').attr('value', <?php echo $row['jobID']; ?>);
 
     });
 

@@ -19,7 +19,7 @@
 	}
 
 	$sql = "UPDATE job SET startDate = '$startDate', endDate = '$endDate', startTime = '$startTime', endTime = '$endTime', salary = '$salary', qtyOfJobSeekers = '$maxJobseekers', description = '$description'
-			WHERE jobID = '3'";
+			WHERE jobID = '$jobID'";
 
 	if($conn->query($sql) === TRUE) {
 			$message = "Job details updated successfully";
