@@ -112,6 +112,27 @@ if ($result_select_specialities = $conn->query($sql_select_specialities)) {
 } else {
 	$row_count_select_specialities = 0;
 }
+
+// Select all available posts
+$sql_select_all_available = "SELECT job.jobID, job.title, job.startDate, job.salary, job.status, job.categoryName FROM job Left JOIN js_job ON job.jobID = js_job.jobID WHERE isAvailable = 1 AND js_job.js_username IS NULL";
+if ($result_select_all_available = $conn->query($sql_select_all_available)) {
+	$row_count_select_all_available =mysqli_num_rows($result_select_all_available);
+	if ($row_count_select_all_available>0) {
+		$i = 1;
+		while($row_select_all_available=mysqli_fetch_assoc($result_select_all_available)) {
+			$categoryName_selected_all_available[$i] = $row_select_all_available['categoryName'];
+			$jobID_selected_all_available[$i] = $row_select_all_available['jobID'];
+			$title_selected_all_available[$i] = $row_select_all_available['title'];
+			$startDate_selected_all_available[$i] = $row_select_all_available['startDate'];
+			$salary_selected_all_available[$i] = $row_select_all_available['salary'];
+			$status_selected_all_available[$i] = $row_select_all_available['status'];
+			$i++;
+		}
+	}
+} else {
+	$row_count_select_available = 0;
+}
+
 // Select available posts based on category
 $sql_select_available = "SELECT job.jobID, job.title, job.startDate, job.salary, job.status, job.categoryName FROM js_category JOIN job ON js_category.categoryName = job.categoryName Left JOIN js_job ON job.jobID = js_job.jobID WHERE
 js_category.js_username = '$username' AND isAvailable = 1 AND js_job.js_username IS NULL";
@@ -240,8 +261,11 @@ if ($result_select_available = $conn->query($sql_select_available)) {
 									<div class="text-center">
 										<h1>Available Job Posts</h1>
 									</div>
-
+									<div class="show-all-available pull-right" style="margin-right: 15px;">
+										<h4><a id="all-available-button" href="#">All Available Posts</a></h4>
+									</div>
 									<div class="container-available-posts">
+
 										<?php
 											for ($i = 1; $i <=$row_count_select_available; $i++) {
 												echo "
@@ -359,6 +383,53 @@ if ($result_select_available = $conn->query($sql_select_available)) {
 									?>
 								</div>
 								<!-- End Passed Section -->
+
+								<!-- Start all-available Section -->
+								<div  id="all-available" class="row" style="display:none">
+									<div class="text-center">
+										<h1>All Available Job Posts</h1>
+									</div>
+									<div class="container-all-available-posts">
+
+										<?php
+											for ($i = 1; $i <=$row_count_select_all_available; $i++) {
+												echo "
+												<div class='page-header category-page-header animated fadeInUp'>
+													<h3>$categoryName_selected_all_available[$i]</h3>
+												</div>
+												<div class='category-job-list-container row'>
+													<div id='$jobID_selected_all_available[$i]' class='job-panel col-sm-6 col-md-4 animated fadeInUp'>
+														<div class='panel panel-default'>
+															<div class='panel-heading'>
+																<h3 class='panel-header-title'>$title_selected_all_available[$i]</h3>
+															</div>
+															<table class='table job-panel-table'>
+																<tbody>
+																	<tr>
+																		<th>Start on</th>
+																		<td>$startDate_selected_all_available[$i]</td>
+																	</tr>
+																	<tr>
+																		<th>Salary</th>
+																		<td>$salary_selected_all_available[$i]</td>
+																	</tr>
+																	<tr>
+																		<th>Status</th>
+																		<td>$status_selected_all_available[$i]</td>
+																	</tr>
+																</tbody>
+															</table>
+															<a class='displayJobModal' href='' id='$jobID_selected_all_available[$i]' data-toggle='modal' data-target='#jobModal'>
+																<div class='panel-footer text-center' data-text='$title_selected_all_available[$i]'>View Details</div>
+															</a>
+														</div>
+													</div>
+												</div>";
+											}
+	 									?>
+
+									</div><!-- container-available-posts -->
+								</div><!-- End available Section -->
 
 
 							<!--Start Modal for Job-->

@@ -40,7 +40,7 @@ body{
 .container-upcoming-posts{
   margin-top: 100px;
 }
-.container-available-posts {
+.container-available-posts, .container-all-available-posts {
   margin: 15px;
 }
 .category-page-header {
