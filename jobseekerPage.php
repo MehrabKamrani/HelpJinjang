@@ -208,7 +208,7 @@ if ($result_select_specialities = $conn->query($sql_select_specialities)) {
 
 
 								<!-- Update button-->
-								<dt><a href="updateClientPage.php" role="button" class="btn btn-default myBtn">Update Profile</a></dt>
+								<dt><a href="updateJobSeekerPage.php" role="button" class="btn btn-default myBtn">Update Profile</a></dt>
 							</dl>
 						</div>
 					</div>

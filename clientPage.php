@@ -432,7 +432,7 @@ if ($result_select_passed = $conn->query($sql_select_passed)) {
 								$('#job-category').html(result.categoryName);
 								$('#job-address').html(result.address);
 								$('#job-description').html(result.description);
-								if(result.isAssigned == 0 || result.status === "passed") {
+								if(result.isAssigned == 1 || result.status === "passed") {
 									$('#footer_to_hide').css("display", "none");
 								} else{
 									$('#footer_to_hide').css("display", "block");

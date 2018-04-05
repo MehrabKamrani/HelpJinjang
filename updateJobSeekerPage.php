@@ -1,16 +1,16 @@
 <?php
  session_start();
 
- $conn = new mysqli("localhost", "root", "", "helpjinjang");
+  $conn = new mysqli("localhost", "root", "", "helpjinjang");
 
   if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
   }
 
-  $cl_username = $_SESSION['cl_username'];
+  $js_username = $_SESSION['js_username'];
 //  $jobID = '1';
 
-  $sql = "SELECT * FROM client WHERE client_username = '$cl_username'";
+  $sql = "SELECT * FROM jobseeker WHERE js_username = '$js_username'";
 
 
   if ($result = $conn->query($sql)) {
@@ -79,12 +79,12 @@
         <div class="form-content">
 
           <div id="update-client">
-            <form data-toggle="validator" class="form-horizontal" id="update-client-form" action="updateClient.php" method="POST">
+            <form data-toggle="validator" class="form-horizontal" id="update-client-form" action="updateJobSeeker.php" method="POST">
               <fieldset>
                 <div class="form-group has-feedback">
                   <label class="control-label" for="fullname">Full Name</label>
                   <div class="controls">
-                    <input type="text" id="fullname" name="fullname" class="form-control" value="<?php echo $row['client_fullname']; ?>" required>
+                    <input type="text" id="fullname" name="fullname" class="form-control" value="<?php echo $row['js_fullname']; ?>" required>
                     <p class="help-block with-errors">Please provide your full name</p>
                   </div>
                 </div>
@@ -93,7 +93,7 @@
                 <div class="form-group has-feedback ">
                   <label class="control-label" for="email">E-mail</label>
                   <div class="controls">
-                    <input type="email" id="email" name="email" class="form-control" value="<?php echo $row['client_email']; ?>" required>
+                    <input type="email" id="email" name="email" class="form-control" value="<?php echo $row['js_email']; ?>" required>
                     <p class="help-block with-errors">Please provide your E-mail (email@example.com)</p>
                   </div>
                 </div>
@@ -102,7 +102,7 @@
               <div class="form-group has-feedback ">
                 <label class="control-label" for="tel">Phone No</label>
                 <div class="controls">
-                  <input type="tel" pattern="[0-9]{1,}" data-minlength="10" id="cl_phoneNo" name="phoneNo" class="form-control" maxlength = "12" value="<?php echo $row['client_phoneNo']; ?>" required>
+                  <input type="tel" pattern="[0-9]{1,}" data-minlength="10" id="cl_phoneNo" name="phoneNo" class="form-control" maxlength = "12" value="<?php echo $row['js_phoneNo']; ?>" required>
                   <p class="help-block with-errors">Please provide your phone number (01112345678)</p>
                 </div>
               </div>
