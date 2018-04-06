@@ -20,18 +20,16 @@ WHERE js_username = '$username'";
 
 
 
-
-
-
-
 	// Compare the entered email with assigned one
 
-$assigned_sql_email_js = "SELECT js_email FROM jobseeker where js_username = 'legolas'";
+$assigned_sql_email_js = "SELECT js_email FROM jobseeker where js_username = '$username'";
 $assigned_row_email_js = mysqli_query($conn, $assigned_sql_email_js) or die(mysqli_error($conn));
 $result = mysqli_fetch_assoc($assigned_row_email_js);
 
 $assigned_email = $result['js_email'];
 
+
+//Only if email is different with already assigned one check others
 if ($assigned_email != $email) {
 	$dupesql_email_cl = "SELECT * FROM client where (client_email = '$email')";
 	$dupesql_email_js = "SELECT * FROM jobseeker where (js_email = '$email') and js_username != '$username'";
