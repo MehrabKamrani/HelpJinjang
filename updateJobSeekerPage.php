@@ -59,7 +59,7 @@
       </div>
       <!-- Collect the nav links for toggling -->
       <div class="collapse navbar-collapse" id="tr-mainNavbar">
-        <p class="navbar-text navbar-right"><a href="clientPage.php"><?php echo $_SESSION['cl_fullname'];?></a></p>
+        <p class="navbar-text navbar-right"><a href="jobSeekerPage.php"><?php echo $_SESSION['js_username'];?></a></p>
         <a href="logout.php" type="button" id="btn-logout" class="btn btn-default navbar-btn navbar-right">Log out</a>
       </div>
       <!-- End .navbar-collapse -->
@@ -111,7 +111,7 @@
                 <div class="form-group has-feedback">
                  <label class="control-label" for="cl_password">Password</label>
                  <div class="controls">
-                  <input type="password" data-minlength="6" id="cl_password" name="cl_password" class="form-control" data-error="Password should be at least 6 characters" required>
+                  <input type="password" data-minlength="6" id="js_password" name="js_password" class="form-control" data-error="Password should be at least 6 characters" required>
                   <p class="help-block with-errors">Please provide your password</p>
                 </div>
               </div>
@@ -119,7 +119,7 @@
               <div class="form-group has-feedback">
                 <label class="control-label" for="cl_password_confirm">Password (Confirm)</label>
                 <div class="controls">
-                  <input type="password" id="cl_password_confirm" data-match="#cl_password" data-match-error="Whoops, these don't match" name="cl_password_confirm" class="form-control" required>
+                  <input type="password" id="js_password_confirm" data-match="#js_password" data-match-error="Whoops, these don't match" name="cl_password_confirm" class="form-control" required>
                   <p class="help-block with-errors">Please confirm password</p>
                 </div>
               </div>
