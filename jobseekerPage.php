@@ -349,7 +349,7 @@ if ($result_select_available_category = $conn->query($sql_select_available_categ
 														</tr>
 													</tbody>
 												</table>
-												<a class='displayJobModal' href='' id='$jobID_selected_current[$i]' data-toggle='modal' data-target='#jobModal'>
+												<a class='displayJobModal' href='' id='$jobID_selected_current[$i]' data-toggle='modal' data-target='#currentPassedJobModal'>
 													<div class='panel-footer text-center' data-text='$title_selected_current[$i]'>View Details</div>
 												</a>
 											</div>
@@ -386,7 +386,7 @@ if ($result_select_available_category = $conn->query($sql_select_available_categ
 														</tr>
 													</tbody>
 												</table>
-												<a class='displayJobModal' href='' id='$jobID_selected_passed[$i]' data-toggle='modal' data-target='#jobModal'>
+												<a class='displayJobModal' href='' id='$jobID_selected_passed[$i]' data-toggle='modal' data-target='#currentPassedJobModal'>
 													<div class='panel-footer text-center' data-text='$title_selected_passed[$i]'>View Details</div>
 												</a>
 											</div>
@@ -475,29 +475,29 @@ if ($result_select_available_category = $conn->query($sql_select_available_categ
 									<div class="modal-content">
 										<div class="modal-header">
 											<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-											<h3 class="modal-title" id="job-title"></h3>
+											<h3 class="modal-title job-title"></h3>
 										</div>
 										<div class="modal-body">
 											<div class="modal-dl">
 												<table class="table table-bordered table-striped">
 
-													<tr><th>Starting Date:</th><td id="job-startDate"></td></tr>
+													<tr><th>Starting Date:</th><td class="job-startDate"></td></tr>
 
-													<tr><th>Ending Date:</th><td id="job-endDate"></td></tr>
+													<tr><th>Ending Date:</th><td class="job-endDate"></td></tr>
 
-													<tr><th>Starting Time:</th><td id="job-startTime"></td></tr>
+													<tr><th>Starting Time:</th><td class="job-startTime"></td></tr>
 
-													<tr><th>Ending Time:</th><td id="job-endTime"></td></tr>
+													<tr><th>Ending Time:</th><td class="job-endTime"></td></tr>
 
-													<tr><th>Salary:</th><td id="job-salary"></td></tr>
+													<tr><th>Salary:</th><td class="job-salary"></td></tr>
 
-													<tr><th>Category:</th><td id="job-category"></td></tr>
+													<tr><th>Category:</th><td class="job-category"></td></tr>
 
-													<tr><th>No. Needed Jobseekers:</th><td id="job-qtyOfJobSeekers"></td></tr>
+													<tr><th>No. Needed Jobseekers:</th><td class="job-qtyOfJobSeekers"></td></tr>
 
-													<tr><th>Description:</th><td id="job-description"></td></tr>
+													<tr><th>Description:</th><td class="job-description"></td></tr>
 
-													<tr><th>Address:</th><td id="job-address"></td></tr>
+													<tr><th>Address:</th><td class="job-address"></td></tr>
 
 												</table>
 
@@ -505,7 +505,7 @@ if ($result_select_available_category = $conn->query($sql_select_available_categ
 										</div>
 										<div class="modal-footer" id="footer_to_hide">
 											<form action="joinJob.php" method="post">
-												<input class="hidden" id="job-id" name="jobID" value="">
+												<input class="hidden job-id" name="jobID" value="">
 												<button type="submit" class="btn btn-default">Join</button>
 											</form>
 										</div>
@@ -513,7 +513,49 @@ if ($result_select_available_category = $conn->query($sql_select_available_categ
 
 								</div>
 							</div>
-							<!--End Modal for Session-->
+							<!--End Modal for Job-->
+
+							<!--Start Modal for current and passed Job-->
+							<div id="currentPassedJobModal" class="modal fade" role="dialog">
+								<div class="modal-dialog">
+
+									<!-- Modal content-->
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+											<h3 class="modal-title job-title"></h3>
+										</div>
+										<div class="modal-body">
+											<div class="modal-dl">
+												<table class="table table-bordered table-striped">
+
+													<tr><th>Starting Date:</th><td class="job-startDate"></td></tr>
+
+													<tr><th>Ending Date:</th><td class="job-endDate"></td></tr>
+
+													<tr><th>Starting Time:</th><td class="job-startTime"></td></tr>
+
+													<tr><th>Ending Time:</th><td class="job-endTime"></td></tr>
+
+													<tr><th>Salary:</th><td class="job-salary"></td></tr>
+
+													<tr><th>Category:</th><td class="job-category"></td></tr>
+
+													<tr><th>No. Needed Jobseekers:</th><td class="job-qtyOfJobSeekers"></td></tr>
+
+													<tr><th>Description:</th><td class="job-description"></td></tr>
+
+													<tr><th>Address:</th><td class="job-address"></td></tr>
+
+												</table>
+
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+							<!--End Modal for current and passed Job-->
 
 
 
@@ -549,17 +591,17 @@ if ($result_select_available_category = $conn->query($sql_select_available_categ
 								var endTime = result.endTime.split(":");
 								endTime = endTime[0] + ":" + endTime[1];
 
-								$('#job-id').attr('value', result.jobID);
-								$('#job-title').html(result.title);
-								$('#job-startDate').html(result.startDate);
-								$('#job-endDate').html(result.endDate);
-								$('#job-startTime').html(startTime);
-								$('#job-endTime').html(endTime);
-								$('#job-salary').html(result.salary);
-								$('#job-qtyOfJobSeekers').html(result.qtyOfJobSeekers);
-								$('#job-category').html(result.categoryName);
-								$('#job-address').html(result.address);
-								$('#job-description').html(result.description);
+								$('.job-id').attr('value', result.jobID);
+								$('.job-title').html(result.title);
+								$('.job-startDate').html(result.startDate);
+								$('.job-endDate').html(result.endDate);
+								$('.job-startTime').html(startTime);
+								$('.job-endTime').html(endTime);
+								$('.job-salary').html(result.salary);
+								$('.job-qtyOfJobSeekers').html(result.qtyOfJobSeekers);
+								$('.job-category').html(result.categoryName);
+								$('.job-address').html(result.address);
+								$('.job-description').html(result.description);
 								if(result.status === "passed") {
 									$('#footer_to_hide').css("display", "none");
 								} else{
