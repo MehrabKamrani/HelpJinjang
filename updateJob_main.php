@@ -14,10 +14,6 @@
   if ($result = $conn->query($sql)) {
     $row=mysqli_fetch_assoc($result);
 
-
-    $time_arr = explode(':', $row['startTime']);
-    $time = $time_arr[0] . ':' . $time_arr[1];
-
  }
 
 ?>
@@ -111,7 +107,7 @@
                   <div class="form-group has-feedback">
                     <label class="control-label" for="time">Start Time</label>
                     <div class="controls">
-                      <input type="time" id="start_time" name="start_time" value="<?php echo $time ?>" class="form-control" required>
+                      <input type="time" id="start_time" name="start_time" value="<?php echo $row['startTime'] ?>" class="form-control" required>
                       <p class="help-block with-errors">Please provide the time</p>
                     </div>
                   </div>
@@ -120,7 +116,7 @@
                   <div class="form-group has-feedback">
                     <label class="control-label" for="time">End Time</label>
                     <div class="controls">
-                      <input type="time" id="end_time" name="end_time" value="<?php echo $time ?>" class="form-control" required>
+                      <input type="time" id="end_time" name="end_time" value="<?php echo $row['endTime'] ?>" class="form-control" required>
                       <p class="help-block with-errors">Please provide the time</p>
                     </div>
                   </div>
@@ -196,35 +192,16 @@
         mm='0'+mm
 
       today = yyyy+'-'+mm+'-'+dd;
-      document.getElementById("date").setAttribute("min", today);
+      document.getElementById("start_date").setAttribute("min", today);
+      document.getElementById("end_date").setAttribute("min", today);
 
-      if("<?php echo $session_type_grpOrPrs; ?>" == 'Personal'){
-        $('#participants-section').remove();
-      }
+        $("#start_date").change(function() {
+        var startingDate = $("#start_date").val();
+        $("#end_date").attr("min", startingDate);
+        $("#end_date").attr("data-min-error", "Ending date must be after starting date.");
 
-      var type = "<?php echo $row['type']; ?>";
-      if(type == 'Dance'){
-        $('#dance').attr('checked', true);
-        $('#mma').attr('checked', false);
-        $('#sport').attr('checked', false); 
-      } else if(type == 'MMA'){
-        $('#dance').attr('checked', false);
-        $('#mma').attr('checked', true);
-        $('#sport').attr('checked', false);
-      } else{
-        $('#dance').attr('checked', false);
-        $('#mma').attr('checked', false);
-        $('#sport').attr('checked', true);
-      }
+      });
 
-      var status = "<?php echo $row['status']; ?>";
-      if(status == 'Available'){
-        $('#available').attr('checked', true);
-        $('#canceled').attr('checked', false);
-      } else{
-        $('#available').attr('checked', false);
-        $('#canceled').attr('checked', true);
-      }
 
     });
 
