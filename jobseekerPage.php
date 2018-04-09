@@ -13,7 +13,7 @@ if(!isset($_SESSION['js_username'])) {
 
 $username = $_SESSION['js_username'];
 
-/*
+
 // Update Available posts to Current post when startdate passed today
 $sql_select_available_post = "SELECT * FROM job WHERE client_username = '$username' AND status = 'available';";
 if ($result_select_available_post = $conn->query($sql_select_available_post)) {
@@ -58,7 +58,7 @@ if ($result_select_current_post = $conn->query($sql_select_current_post)) {
 	}
 }
 
-*/
+
 
 // Select current posts
 $sql_select_current = "SELECT * FROM job JOIN js_job ON job.jobID = js_job.jobID WHERE js_username = '$username' AND status != 'passed'";
