@@ -59,7 +59,7 @@
       </div>
       <!-- Collect the nav links for toggling -->
       <div class="collapse navbar-collapse" id="tr-mainNavbar">
-        <p class="navbar-text navbar-right"><a href="clientPage.php"><?php echo $_SESSION['cl_fullname'];?></a></p>
+        <p class="navbar-text navbar-right"><a href="clientPage.php"><?php echo $_SESSION['cl_username'];?></a></p>
         <a href="logout.php" type="button" id="btn-logout" class="btn btn-default navbar-btn navbar-right">Log out</a>
       </div>
       <!-- End .navbar-collapse -->

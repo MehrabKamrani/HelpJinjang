@@ -4,7 +4,7 @@
 		<title>Forgot Password</title>
 	</head>
 	<body>
-		<form class="form-signin" action="sendPassword.php" method="POST">
+		<form class="form-signin" action="mail.php" method="POST">
 			<h2 class="form-signin-heading">Forgot Password</h2>
 			<div class="input-group">
 				<span class="input-group-addon" id="basic-addon1">@</span>

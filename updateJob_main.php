@@ -192,15 +192,18 @@
         mm='0'+mm
 
       today = yyyy+'-'+mm+'-'+dd;
+      var startingDate = $("#start_date").val();
       document.getElementById("start_date").setAttribute("min", today);
-      document.getElementById("end_date").setAttribute("min", today);
+      document.getElementById("end_date").setAttribute("min", startingDate);
+     $("#end_date").attr("data-min-error", "Ending date must be after starting date.");
 
-        $("#start_date").change(function() {
+
+        /*$("#start_date").change(function() {
         var startingDate = $("#start_date").val();
         $("#end_date").attr("min", startingDate);
         $("#end_date").attr("data-min-error", "Ending date must be after starting date.");
 
-      });
+      });*/
 
 
     });

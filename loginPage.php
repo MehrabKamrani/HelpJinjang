@@ -58,9 +58,9 @@ error_reporting(0);
               <div class="controls">
                 <button type="submit" name = "submit" class="btn btn-submit btn-success btn-block">Login</button>
               </div>
-             <!-- Comment "Forgot password function" out for now 
-             <p class="help-block with-errors text-center">Or <a href="forgotPassword.php">Forgot Password</a></p> 
-              -->
+             <!-- Forgot password function -->
+             <p class="help-block with-errors text-center">Or <a target="_blank" href ="http://224tech.com/umarSendMail/forgotPassword.php">Forgot Password</a></p> 
+             
                <hr>
                <p class="help-block with-errors text-center">Don't have an account? <a href="signUp.php">Sign Up</a></p>
 
